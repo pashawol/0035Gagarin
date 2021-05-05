@@ -175,6 +175,10 @@
 
 		//align-self: flex-start;
 		padding: rem(11) rem(35);
+
+		&:hover{
+			color: $white!important;
+		}
 	}
 	&__{}
 }

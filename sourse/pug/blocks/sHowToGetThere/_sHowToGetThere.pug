@@ -1,9 +1,49 @@
 mixin sHowToGetThere(data)
 	// start sHowToGetThere
 	+b.SECTION.sHowToGetThere.section#sHowToGetThere&attributes(attributes)
+		+b.bg-txt.d-none.d-lg-block
+			img(loading="lazy" src=`img/svg/sHowToGetThere-txt.svg` alt="")
 		.container
 			+b.section-title.text-center
-				h2 sHowToGetThere
-				
-			.row
+				h2 Как добраться
+			+e.row.row
+				+sHowToGetThereItem({
+					imgNum: 1,
+					title: 'Карта проезда на машине',
+					descr: 'Из Симферополя до Межводного',
+					btnTxt: 'Открыть карту проезда',
+				})
+				+sHowToGetThereItem({
+					imgNum: 2,
+					title: 'Трансфер',
+					descr: 'Мы заберем ваз из Симферополя и довезем до Межводного',
+					btnTxt: 'Заказать трансфер',
+				})
+				+sHowToGetThereItem({
+					imgNum: 3,
+					title: 'Аренда автомобиля',
+					descr: 'Арендуйте автомобиль у наших партнеров из Симферополя',
+					btnTxt: 'Перейти на сайт партнера',
+				})
+				+sHowToGetThereItem({
+					imgNum: 4,
+					title: 'Расписание автобусов от Симферополя',
+					descr: '3 автобуса - утром, днем и вечером',
+					btnTxt: 'Открыть расписание',
+				})
 	// end sHowToGetThere
+
+mixin sHowToGetThereItem(data)
+	+e.col.col-6.col-lg-3.col-xxl-6
+		+e.item
+			+e.inner-row.row
+				+e.img-col.col-xxl-auto
+					img(loading="lazy" src=`img/@2x/get-img-${data.imgNum || 1}.jpg` alt="")
+				+e.content-col.col
+					+e.content.text-center.text-xxl-start
+						+e.title=data.title
+						+e.descr=data.descr
+						// 'Открыть расписание' replace with 'Подробнее'
+						+e.btn(href="#")
+							span.d-none.d-xxl-inline=data.btnTxt
+							span.d-xxl-none Открыть расписание
