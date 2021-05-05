@@ -12,6 +12,10 @@
 	// opacity: 0.7;
 } 
 
+.headerBlock{
+	min-height: 920px !important;
+}
+
 body,
 html {
 
@@ -117,6 +121,17 @@ body {
 
 .section-title {
 	padding-bottom: var(--sTPB);
+	h2{
+		position: relative;
+		&::after{
+			content: url(../img/@2x/datu-primary.png);
+			display: block;
+			margin-top: rem(0);
+		}
+	}
+}
+h2{
+	font-weight: bold;
 }
 
 

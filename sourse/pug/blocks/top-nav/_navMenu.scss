@@ -18,7 +18,7 @@
 	a{
 		display: block;
 		text-align: center;
-		padding: rem(18) rem(20);
+		padding: rem(17) rem(20);
 		font-weight: 600;
 		color: $body-color;
 		background-color: #fff;
@@ -95,7 +95,7 @@
 	display: inline-flex;
 	align-items: center;
 	// margin-left: rem(20);
-	padding: rem(18) rem(0);
+	padding: rem(17) rem(0);
 		@include media-breakpoint-up(xl) {
 
 			padding-left: rem(40);

@@ -3,7 +3,21 @@ mixin sAdvantages(data)
 	+b.SECTION.sAdvantages.section#sAdvantages&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sAdvantages
-				
-			.row
+				h2  Преимущества школы кайтсерфинга GAGARINKITE
+		.container-fluid.px-0
+			mixin item(i, t)
+				+e.item.row.gx-0
+					.col-lg-6
+						+e.img-wrap.bg-wrap
+							+pic(`adv-${i}.jpg`,'bg').picture-bg
+							+e.title!= t
+
+					+e.caption.col-lg-6
+						block
+			
+			+item(`3`,`Сервис`)
+			+item(`1`,`Безопасность`)
+			+item(`2`,`Профессионализм`)
+
+
 	// end sAdvantages

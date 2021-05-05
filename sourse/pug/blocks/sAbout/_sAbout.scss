@@ -1,5 +1,65 @@
 // start .sAbout
 .sAbout {
+	--sPB: 0;
+	@include media-breakpoint-up(lg){
+		--slidew: #{rem(648)};
+	}
+	
+	@include media-breakpoint-up(md){
+		--slidew: #{rem(432)};
+	}
+	--slidew: #{rem(540)};
+
+
+	h2{
+		max-width: rem(550);
+		margin-bottom: rem(45);
+		@include media-breakpoint-up(lg) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+		margin-left: auto;
+		margin-right: auto;
+	}
+	p{
+		line-height: 175%;
+		margin-bottom: rem(28);
+	}
+	&__head{
+		padding-bottom: rem(60);
+		picture{
+				@include media-breakpoint-up(lg){
+					padding-bottom: 0;
+				}
+				padding-bottom: rem(60);
+		}
+	}
+	&__row{
+		flex-wrap: nowrap;
+		@include roww(24px, m);
+		transform: translateX(-380px);
+		picture{
+			@include block(648,500);
+			
+			max-width: var(--slidew);
+			position: relative;
+			overflow: hidden;
+			border-radius: 15px;
+			&::after{
+				content: '';
+				position: absolute;
+				@include a-cent;
+				background: linear-gradient(0deg, rgba(96, 114, 134, 0.25), rgba(96, 114, 134, 0.25));
+			}
+			img{
+				position: absolute;
+				left: 0;
+				top: 0;
+				// width: 100%;
+				// height: 100%;
+			}
+		}
+	}
 		// --sPT: ;
 		// --sPB: ;
 		// --sTPB: ;

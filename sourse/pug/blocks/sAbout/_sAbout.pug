@@ -2,8 +2,15 @@ mixin sAbout(data)
 	// start sAbout
 	+b.SECTION.sAbout.section#sAbout&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sAbout
-				
-			.row
+			+e.head.row
+				.col-xxl-6.col-xl-auto.col-lg-6.text-lg-start.text-center
+					h2 Познакомьтесь с&nbsp;нашей кайт школой
+					+pic('school-logo.png','',0)
+				.col
+					p GagarinKite&nbsp;&mdash; единственная кайт школа в&nbsp;Межводном, имеющая официальный статус аффилированного центра международной организации кайтбординга IKO International Kiteboarding Organization (IKO)&nbsp;&mdash; самая большая и&nbsp;уважаемая в&nbsp;мировом кайт сообществе организация. Методика обучения IKO признана всеми странами мира как лучшая.
+
+					p Принцип методики&nbsp;&mdash; от&nbsp;простого к&nbsp;сложному. Шаг за&nbsp;шагом, урок за&nbsp;уроком студент осваивает кайт, постепенно усложняя упражнения: сначала учится управлять кайтом, удерживать его в&nbsp;разных позициях, затем учится создавать тягу, а&nbsp;только после того, как приходит уверенность при управлении парусом, добавляется доска. Таким образом, студент плавно и&nbsp;безопасно доходит до&nbsp;водного старта.
+		+e.row.row 
+			- for (var x = 1; x < 5; x++)
+				+pic(`gal-${x}.jpg`,'bg')
 	// end sAbout

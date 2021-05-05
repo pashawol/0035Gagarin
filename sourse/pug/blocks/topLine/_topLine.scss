@@ -2,7 +2,7 @@
 	// start .topLine
 	.topLine {
 		--sPT: #{rem(20)};
-		--sPB: #{rem(20)};
+		--sPB: #{rem(16)};
 		background-color: #fff;
 		border-bottom: 1px solid #D6E0EA;
 		position: relative;
@@ -95,9 +95,9 @@
 .place-block{
 		@include media-breakpoint-up(xl){
 
-			width: rem(273);
+			max-width: rem(273);
 		}
-		width: rem(236);
+		max-width: rem(236);
 	&__toggle{
 		cursor: pointer;
 		background: #F4F6FA;

@@ -4,21 +4,22 @@ mixin headerBlock()
 		iframe(src='https://www.youtube.com/embed/GSVTatsa2v8?mute=1&autoplay=1&controls=0&disablekb=1&showinfo=0&loop=1&playlist=GSVTatsa2v8&mute=1&rel=0&modestbranding=1' title='YouTube video player' width='560' height='315' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='' loading="lazy")
 
 		.container
-			+e.top-text Сезон 2021 - с 1 мая по 31 октября
-			h1 Кайтсерфинг в Крыму
+			+e.top-text Сезон 2021&nbsp;&mdash; с&nbsp;1&nbsp;мая по&nbsp;31&nbsp;октября
+			h1 Кайтсерфинг в&nbsp;Крыму
 			div
 				+e.row.row
 					mixin item(i,t)
-						+e.col.col-auto 
-							img(src=`img/svg/head-i-${i}.svg`, alt="")
+						+e.col.col-lg-auto.col-md-4
+							+e.img-wrap
+								img(src=`img/svg/head-i-${i}.svg`, alt="")
 							+e.title= t
 					+item(`1`,`Проживание, еда и досуг`)
 					+item(`2`,`Обучение от профессиональных инструкторов`)
 					+item(`3`,`Аренда кайт снаряжения`)
 			div
 			+e.btn(href="#") Записаться на обучение
-			div
-				+e.bottom Листайте вниз
-					br
-					+icon("chevron-down")
+		+e.footer.d-none.d-md-block
+			+e.bottom Листайте вниз
+				br
+				+icon("chevron-down")
 	// end headerBlock
