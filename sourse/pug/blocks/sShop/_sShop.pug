@@ -1,9 +1,45 @@
 mixin sShop(data)
 	// start sShop
 	+b.SECTION.sShop.section#sShop&attributes(attributes)
+		+b.bg-txt.d-none.d-lg-block
+			img(loading="lazy" src=`img/svg/sShop-txt.svg` alt="")
 		.container
 			+b.section-title.text-center
-				h2 sShop
-				
-			.row
+				h2 Интернет-магазин кайт оборудования
+			+e.brands-row.row
+				+sShopBrand()(class="active")
+				+sShopBrand(1)
+				+sShopBrand(2)
+				+sShopBrand(3)
+				+sShopBrand(4)
+				+sShopBrand(5)
+			+e.type-row.row.justify-content-center
+				+sShopType('Все', 30)(class="active")
+				+sShopType('Кайты', 8)
+				+sShopType('Доски', 16)
+				+sShopType('Трапеции', 4)
+				+sShopType('Гидрокостюмы', 2)
+			+e.slider-wrap
+				.swiper-container
+					.swiper-wrapper
 	// end sShop
+
+mixin sShopSlide()
+	.swiper-slide
+		+e.item
+			+e.name NORTH REACH KITE 2020
+
+
+mixin sShopType(txt, number)
+	.col-auto
+		+e.type&attributes(attributes)
+			+e.t-txt=txt
+			+e.t-number=number
+
+mixin sShopBrand(imgNum)
+	.col-4.col-lg-2
+		+e.brand(href='#')&attributes(attributes)
+			if imgNum
+				img(loading="lazy" src=`img/svg/brand-${imgNum}.svg` alt="")
+			else
+				+e.b-txt Все бренды
