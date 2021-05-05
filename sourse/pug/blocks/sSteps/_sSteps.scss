@@ -1,8 +1,31 @@
 // start .sSteps
 .sSteps {
+	background: #F6F8FB;
+	position: relative;
 		// --sPT: ;
 		// --sPB: ;
 		// --sTPB: ;
+	.swiper-slide-active{
+		transform: translateY(0) !important;
+	}
+	text-align: center;
+
+	&__btn{
+		@extend .btn;
+		@extend .btn-danger;
+		width: rem(300);
+	}
+	.carusel{
+		margin-bottom: var(--sPB);
+	}
+	position: relative;
+	z-index: 2;
+	.text{
+		position: absolute;
+		left: 0;
+		z-index: -1;
+		@include a-cent1(y);
+	}
 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
@@ -12,3 +35,19 @@
 	@include media-breakpoint-only(xl) {}
 	@include media-breakpoint-down(xl) {}
 } // end.sSteps
+
+.step-item{
+	picture{
+		@include block();
+		border-radius: 10px;
+		overflow: hidden;
+		margin-bottom: $grid-gutter-width;
+		img{
+			@include a-cent;
+		}
+	}
+	text-align: center; 
+	span{
+		color: $danger;
+	}
+}

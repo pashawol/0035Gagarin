@@ -1,9 +1,22 @@
 // start .sRews
 .sRews {
-		// --sPT: ;
-		// --sPB: ;
-		// --sTPB: ;
+	// --sPT: ;
+	@include media-breakpoint-up(md) {
 
+		--sPB: #{rem(80)};
+	}
+		// --sTPB: ;
+		.container-fluid{
+			position: relative;
+			z-index: 2;
+			.text{
+				z-index: -1;
+				position: absolute;
+				left: 0;
+				top: 0;
+				transform: translateY(-60%);
+			}
+		}
 		
 
 	@include media-breakpoint-up(xl) {}

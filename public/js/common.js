@@ -311,12 +311,21 @@ function eventHandler() {
 			prevEl: '.sBlog .swiper-button-prev'
 		}
 	});
-	var caruselSlider = new Swiper('.carusel__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+	var caruselSliderCenter = new Swiper('.carusel__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		centeredSlides: true,
 		slidesPerView: 'auto',
 		loop: true,
 		loopedSlides: 6,
 		centeredSlidesBounds: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev'
+		}
+	}));
+	var caruselSlider = new Swiper('.carusel__slider--not-center-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		slidesPerView: 'auto',
+		loopedSlides: 6,
+		loop: false,
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev'
