@@ -1,5 +1,7 @@
 // start .sAbout
 .sAbout {
+	position: relative;
+	overflow: hidden;
 	--sPB: 0;
 	@include media-breakpoint-up(lg){
 		--slidew: #{rem(648)};
