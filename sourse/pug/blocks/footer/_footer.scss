@@ -1,6 +1,4 @@
 .footer {
-	border-top: 1px solid red;
-
 	position: relative;
 	z-index: 1;
 	background-color: $white;
@@ -23,7 +21,10 @@
 		left: 0;
 		width: 100%;
 
-		bottom: 313px;
+		bottom: rem(450);
+		@include media-breakpoint-up(xl){
+			bottom: rem(360);
+		}
 		@include media-breakpoint-up(xxl){
 			bottom: rem(313px);
 		}
@@ -35,6 +36,18 @@
 	}
 	&__numbers{
 
+		&:after{
+			content: '';
+			display: block;
+			margin: 0 auto rem(60) auto;
+			width: 90px;
+			height: 11px;
+
+			background-image: url(./img/@2x/foot-waves.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
 	}
 	&__number{
 		display: block;
@@ -58,19 +71,6 @@
 			font-size: rem(60);
 			line-height: (73/60);
 		}
-
-		&:after{
-			content: '';
-			display: block;
-			margin: 0 auto rem(60) auto;
-			width: 90px;
-			height: 11px;
-
-			background-image: url(./img/@2x/foot-waves.png);
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: cover;
-		}
 	}
 	&__connect-txt{
 		font-weight: 600;
@@ -85,8 +85,14 @@
 		justify-content: center;
 		align-items: center;
 
-		--bs-gutter-y: rem(16);
 		padding-bottom: rem(60);
+
+		@include roww(rem(16));
+		--bs-gutter-y: #{rem(16)};
+		@include media-breakpoint-up(xl){
+			@include roww(rem(24));
+			--bs-gutter-y: #{rem(24)};
+		}
 	}
 	&__btn-col{
 
@@ -100,6 +106,7 @@
 
 		font-weight: 600;
 		font-size: rem(20);
+		padding: 18px 12px;
 		line-height: 1.2;
 
 		color: $white!important;
@@ -126,6 +133,10 @@
 	//
 	&__bot-row{
 		padding-bottom: rem(60);
+		@include media-breakpoint-up(xl){
+			padding-bottom: rem(120);
+		}
+
 		@include roww(rem(24));
 	}
 	&__link{
@@ -161,7 +172,7 @@
 
 	}
 	&__policy{
-		display: inline-flex;
+		display: inline-block;
 
 		font-weight: 600;
 		line-height: (19/16);
@@ -176,10 +187,15 @@
 			left: 0;
 			width: 100%;
 			height: 2px;
-			color: currentColor;
+			background-color: currentColor;
 		}
 	}
 	&__logo{
+		margin: 0 auto rem(60) auto;
+		@include media-breakpoint-up(md){
+			margin: 0;
+		}
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -193,11 +209,17 @@
 		}
 	}
 	&__development{
-		.gray{
+		display: flex;
+		justify-content: flex-end;
+		line-height: (19/16);
 
+		.gray{
+			font-weight: 600;
+			color: #607286;
 		}
 		.black{
-
+			font-weight: 600;
+			color: $body-color;
 		}
 	}
 	&__{}
