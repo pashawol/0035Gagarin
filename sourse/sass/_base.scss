@@ -552,3 +552,11 @@ iframe {
 		object-fit: cover;
 	}
 }
+
+.carusel{
+	&__slide{
+		width: rem(424);
+		margin-left: 12px;
+		margin-right: 12px;
+	}
+}

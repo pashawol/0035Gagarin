@@ -3,7 +3,26 @@ mixin sRews(data)
 	+b.SECTION.sRews.section#sRews&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sRews
-				
-			.row
+				h2 Отзывы
+		.container-fluid
+			+b.carusel
+				+e.slider--js.swiper-container 
+					.swiper-wrapper
+						- for (var x = 0; x < 6; x++)
+							+e.slide.swiper-slide
+								+b.rew-item
+									+e.video(href="" data-fancybox="rew").bg-wrap
+										+pic('gal-3.jpg','bg',0).picture-bg
+								//- +b.rew-item
+					+arrow
+			+b.carusel
+				+e.slider--js.swiper-container 
+					.swiper-wrapper
+						- for (var x = 0; x < 6; x++)
+							+e.slide.swiper-slide
+								+b.rew-item
+									+e.video(href="" data-fancybox="rew").bg-wrap
+										+pic('gal-3.jpg','bg',0).picture-bg
+								//- +b.rew-item
+					+arrow
 	// end sRews
