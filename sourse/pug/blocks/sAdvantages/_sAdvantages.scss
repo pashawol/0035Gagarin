@@ -3,20 +3,105 @@
 		// --sPT: ;
 		// --sPB: ;
 		// --sTPB: ;
+		.container-fluid{
+			max-width: rem(1920);
+		}
 		h2{
 			margin-left: auto;
 			margin-right: auto;
 			max-width: rem(1200);
 		}
 		&__img-wrap{
-			min-height: 100%;
-			 
-			@include block;
+			@include block();
+			@include media-breakpoint-up(md) {
+				--ratio: (960/ 805);
+
+					min-height: 100%; 
+				}
+			z-index: 4;
+			position: relative;
 
 		}
 		&__title{
 			@include a-cent1;
 			color: #fff;
+			font-weight: bold;
+			@extend .h2;
+			@include media-breakpoint-down(lg) {
+				font-size: 36px;
+			}
+			&::before{
+				content: url(../img/@2x/datu-white.png);
+				display: block;
+				text-align: center;
+				margin-bottom: rem(30);
+			}
+		}
+		&__before{
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: rem(116);
+			height: 100%;
+			// z-index: -1;
+			&::before{
+				content: attr(data-title);
+				position: absolute;
+				color: #fff;
+				@include rfs(116px);
+				// right: 0;
+				// left: 0;
+				// right: 0;	
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%) rotate(-90deg);
+				text-transform: uppercase;
+				font-weight: 700; 
+				
+			}
+		}
+		&__item{
+			// align-items: center;
+			background: #F6F8FB;
+			position: relative;
+		 
+			&:nth-child(even){
+				flex-direction: row-reverse;
+				.sAdvantages__before{
+					right: auto;
+					left: 0;
+				}
+			}
+		}
+
+		&__caption{
+			@include media-breakpoint-up(xl) {
+				padding: rem(54) rem(60);
+			}
+			
+			@include media-breakpoint-up(sm) {
+				padding: rem(54) rem(30);
+			}
+			padding: rem(54) rem(18);
+
+			align-self: center;
+		}
+		&__li{
+			margin-left: auto;
+			margin-right: auto;
+			max-width: rem(560);
+			display: flex;
+			align-items: center;
+			margin-bottom: rem(36);
+			z-index: 4;
+			// perspective-origin: ;
+			position: relative;
+		}
+		&__icon-wrap{
+			margin-right: rem(24);
+			width: rem(80);
+			text-align: center;
+			flex: 0 0 auto;
 		}
 
 	@include media-breakpoint-up(xl) {}
