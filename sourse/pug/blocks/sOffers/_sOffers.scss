@@ -1,14 +1,110 @@
 // start .sOffers
 .sOffers {
-		// --sPT: ;
-		// --sPB: ;
-		// --sTPB: ;
+	border-top: 1px solid red;
 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-between(md, xl) {}
-	@include media-breakpoint-only(xl) {}
-	@include media-breakpoint-down(xl) {}
+	--sPT: #{rem(80)};
+	--sPB: #{rem(80)};
+	--sTPB: #{rem(60)};
+	@include media-breakpoint-up(md){
+		--sPT: #{rem(80)};
+		--sPB: #{rem(80)};
+		--sTPB: #{rem(60)};
+	}
+	@include media-breakpoint-up(xl){
+		--sPT: #{rem(100)};
+		--sPB: #{rem(100)};
+		--sTPB: #{rem(80)};
+	}
+	@include media-breakpoint-up(xxl){
+		--sPT: #{rem(90)};
+		--sPB: #{rem(85)};
+		--sTPB: #{rem(70)};
+	}
+
+
+	&__slider-wrap{
+		.swiper-container{
+			@include media-breakpoint-up(sm){
+				overflow: visible!important;
+			}
+
+			@include media-breakpoint-up(lg){
+				margin: 0 -12px -12px -12px;
+				max-width: calc(100% + 24px);
+			}
+		}
+		.swiper-wrapper{
+			@include media-breakpoint-up(lg){
+				flex-wrap: wrap!important;
+				transform: none!important;
+
+				//margin: 0 -15px -15px -15px;
+			}
+		}
+
+		.swiper-slide{
+			@include media-breakpoint-up(sm){
+				width: calc((100% / 2) - (16px * 1 / 2));
+			}
+			@include media-breakpoint-up(lg){
+				width: calc(100% / 3);
+				padding: 0 12px;
+				margin-bottom: 12px;
+				margin-bottom: 12px;
+			}
+
+			&-duplicate{
+				@include media-breakpoint-up(lg){
+					display: none;
+				}
+			}
+		}
+
+
+	}
+
+	&__arrow-cont{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		padding-top: rem(60);
+		@include media-breakpoint-up(sm){
+			padding-top: 0;
+		}
+	}
+	.swiper-button-hand{
+		@include media-breakpoint-up(sm){
+			position: absolute;
+			top: rem(552);
+		}
+
+		@include media-breakpoint-up(sm){
+			top: rem(400);
+		}
+		@include media-breakpoint-up(md){
+			top: rem(273);
+			transform: translateY(-50%);
+		}
+
+		&-prev{
+			left: calc(-1 * (var(--swiperArrowSize) / 2));
+		}
+		&-next{
+			right: calc(-1 * (var(--swiperArrowSize) / 2));
+		}
+		&-prev{
+			margin-right: rem(12);
+			@include media-breakpoint-up(sm){
+				margin-right: 0;
+			}
+		}
+	}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
 } // end.sOffers

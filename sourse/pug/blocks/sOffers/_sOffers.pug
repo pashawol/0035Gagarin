@@ -3,7 +3,17 @@ mixin sOffers(data)
 	+b.SECTION.sOffers.section#sOffers&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sOffers
-				
-			.row
+				h2 Актуальные предложения
+			+e.slider-wrap
+				.swiper-container.sOffers-slider-js
+					.swiper-wrapper
+						- for(var i = 0; i < 3; i++)
+							.swiper-slide
+								+sBlogItem({
+									addClass: 'offers-item',
+									readMore: 'true',
+									title: 'Обучение на IKO инструкторов',
+								})
+					+e.arrow-cont.d-lg-none
+						+arrow()
 	// end sOffers

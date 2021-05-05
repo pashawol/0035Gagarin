@@ -19,11 +19,12 @@ mixin sBlog(data)
 	// end sBlog
 
 mixin sBlogItem(data)
-	+b.sBlogitem
+	+b.sBlogitem(class=`${data.addClass || ''}`)
 		+e.img(href='#')
 			img(loading="lazy" src=`img/@2x/blog-${data.imgNum || 1}.jpg` alt="")
 		+e.content
-			+e.name=data.name
+			if data.name
+				+e.name=data.name
 			+e.title=`${data.title || 'Кайтсерфинг в Крыму в октябре'}`
 			+e.descr
 				if block
@@ -31,3 +32,5 @@ mixin sBlogItem(data)
 				else
 					| Кайтсерфинг в Крыму в октябре 2020 года Будет ли работать кайт школа Гагарин кайт в Межводном в октябре?
 			+e.date 22 февраля 2021
+			if data.readMore
+				+e.read-more(href='#') Подробнее
