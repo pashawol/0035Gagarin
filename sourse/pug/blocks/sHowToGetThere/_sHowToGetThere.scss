@@ -33,20 +33,7 @@
 	}
 
 	&__row{
-		@include roww(rem(12));
-		--bs-gutter-y: #{rem(12)};
-		@include media-breakpoint-up(sm){
-			@include roww(rem(16));
-			--bs-gutter-y: #{rem(16)};
-		}
-		@include media-breakpoint-up(xl){
-			@include roww(rem(20));
-			--bs-gutter-y: #{rem(20)};
-		}
-		@include media-breakpoint-up(xxl){
-			@include roww(rem(24));
-			--bs-gutter-y: #{rem(24)};
-		}
+		@extend .default-row;
 	}
 	&__col{
 

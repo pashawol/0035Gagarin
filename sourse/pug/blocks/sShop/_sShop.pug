@@ -7,39 +7,51 @@ mixin sShop(data)
 			+b.section-title.text-center
 				h2 Интернет-магазин кайт оборудования
 			+e.brands-row.row
-				+sShopBrand()(class="active")
+				+sShopBrand()(checked)
 				+sShopBrand(1)
 				+sShopBrand(2)
 				+sShopBrand(3)
 				+sShopBrand(4)
 				+sShopBrand(5)
-			+e.type-row.row.justify-content-center
-				+sShopType('Все', 30)(class="active")
-				+sShopType('Кайты', 8)
-				+sShopType('Доски', 16)
-				+sShopType('Трапеции', 4)
-				+sShopType('Гидрокостюмы', 2)
+			+e.tr-cont
+				+e.type-row.row.justify-content-center
+					+sShopType('Все', 30)(class="active")
+					+sShopType('Кайты', 8)
+					+sShopType('Доски', 16)
+					+sShopType('Трапеции', 4)
+					+sShopType('Гидрокостюмы', 2)
 			+e.slider-wrap
-				.swiper-container
+				.swiper-container.sOffers-slider-js
 					.swiper-wrapper
+						- for(var i = 0; i < 4; i++)
+							+sShopSlide()
+					+e.arrow-cont.d-sm-none
+						+arrow()
+			+e.btn-cont.text-center
+				+e.btn(href="#") Перейти в интернет-магазин
 	// end sShop
 
-mixin sShopSlide()
+mixin sShopSlide(name='NORTH REACH KITE 2020')
 	.swiper-slide
 		+e.item
-			+e.name NORTH REACH KITE 2020
-
+			+e.name(href="#")=name
+			+e.img(href="#")
+				img(loading="lazy" src='img/@2x/sShop-img.png' alt="")
+			+e.price 72 900 ₽
+			+e.buy-btn(href="#") Купить
 
 mixin sShopType(txt, number)
 	.col-auto
-		+e.type&attributes(attributes)
+		+e.type(href="#")&attributes(attributes)
 			+e.t-txt=txt
-			+e.t-number=number
+			+e.t-ball=number
 
 mixin sShopBrand(imgNum)
 	.col-4.col-lg-2
-		+e.brand(href='#')&attributes(attributes)
-			if imgNum
-				img(loading="lazy" src=`img/svg/brand-${imgNum}.svg` alt="")
-			else
-				+e.b-txt Все бренды
+		+e.LABEL.brand-label
+			input(type="checkbox" name=`brand${number}` class='invisible')&attributes(attributes)
+			span.brand(href='#')
+				if imgNum
+					img(loading="lazy" src=`img/svg/brand-${imgNum}.svg` alt="")
+				else
+					+e.b-txt Все бренды
