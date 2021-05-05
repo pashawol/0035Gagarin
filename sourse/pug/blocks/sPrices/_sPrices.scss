@@ -3,7 +3,60 @@
 		// --sPT: ;
 		// --sPB: ;
 		// --sTPB: ;
+		h2{
+			color: #fff;
+			&::after{
+				content: url(../img/@2x/datu-white.png);
+			}
+		}
+		.rew-item{
+			padding-bottom: rem(36);
+			display: flex;
+			flex-direction: column;
+		
+			&__block{
+				flex-grow: 1;
+				display: flex;
+				flex-direction: column;
+			}
+		}
+		&__head{
 
+		}
+
+		p{
+			margin-bottom: rem(24);
+			flex-grow: 1;
+			line-height: 175%;
+			margin-bottom: rem(33);
+		}
+		.btn{
+			max-width: rem(300);
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: rem(10);
+		}
+		@include media-breakpoint-down(sm) {
+
+			.swiper-button-hand{
+				margin-left: 15px;
+				margin-right: 15px;
+				margin-bottom: rem(60);
+			}
+		}
+		.carusel{
+			@include media-breakpoint-up(sm) {
+
+				// padding-bottom: rem(60);
+			}
+			// margin-bottom: var(--sPB);
+			&__slider{
+				max-width: reM(424);
+			}
+		}
+		.btn-center{
+			margin-bottom: 0;
+		}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

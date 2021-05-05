@@ -92,7 +92,11 @@ body {
 	}
 }
 
-// .main-wrapper { 
+.main-wrapper {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
 // 	display: flex;
 // 	flex-direction: row; 
 // 	// overflow: scroll;
@@ -637,6 +641,28 @@ iframe {
 	}
 }
 
+
+.btn-center{
+	margin-left: auto;
+	margin-right: auto;
+	@extend .btn;
+	@extend .btn-danger;
+	max-width: rem(300);
+	display: block;
+	width: 100%;
+}
+
+.btn-outline-danger{
+	border-width: 2px;
+}
+
+.fw-400{
+	font-weight: 400;
+}
+
+p{
+	// line-height: 175%;
+}
 .default-row{
 	@include roww(rem(12));
 	--bs-gutter-y: #{rem(12)};

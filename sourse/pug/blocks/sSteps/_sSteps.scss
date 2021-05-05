@@ -2,6 +2,7 @@
 .sSteps {
 	background: #F6F8FB;
 	position: relative;
+	
 		// --sPT: ;
 		// --sPB: ;
 		// --sTPB: ;
@@ -27,6 +28,24 @@
 		@include a-cent1(y);
 	}
 
+	.swiper-button-hand{
+		@include media-breakpoint-up(sm) {
+			
+		}
+		position: absolute;
+		top: 50%;
+		transform: translateY(calc(-1 * var(--swiperArrowSize) / 2));
+		margin-left: 0;
+		margin-right: 0;
+		@include media-breakpoint-down(sm) {
+			margin-top: rem(-30);
+			--swiperArrowPosition: 42px;
+		}
+	}
+
+	.carusel__control-wrap{
+		margin: 0;
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
