@@ -1,5 +1,6 @@
 .pixel-perfect {
-	top: 0;
+	bottom: 0;
+	//top: 0;
 	display: block;
 	@include a-cent(x);
 	pointer-events: none;

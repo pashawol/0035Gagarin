@@ -1,43 +1,205 @@
 .footer {
-		
-	margin-top: auto;
+	border-top: 1px solid red;
 
-// 
-@include media-breakpoint-up(xl) {}
+	position: relative;
+	z-index: 1;
+	background-color: $white;
 
-@include media-breakpoint-up(lg) {}
+	padding: rem(80) 0 rem(60) 0;
+	@include media-breakpoint-up(md){
+		padding: rem(90) 0 rem(60) 0;
+	}
+	@include media-breakpoint-up(xl){
+		padding: rem(90) 0 rem(60) 0;
+	}
+	@include media-breakpoint-up(xxl){
+		padding: rem(90) 0;
+	}
 
-@include media-breakpoint-up(md) {}
+	&__bg-txt{
+		position: absolute;
+		//background-color: red;
+		z-index: -1;
+		left: 0;
+		width: 100%;
 
-@include media-breakpoint-up(sm) {}
+		bottom: 313px;
+		@include media-breakpoint-up(xxl){
+			bottom: rem(313px);
+		}
 
-@include media-breakpoint-up(xs) {}
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+	&__numbers{
 
+	}
+	&__number{
+		display: block;
+		font-weight: bold;
+		text-align: center;
 
-// 
-@include media-breakpoint-between(md, xl) {}
+		color: $body-color;
+		&:hover{
+			color: $primary;
+		}
 
+		margin-bottom: rem(30);
+		font-size: rem(36);
+		line-height: (44/36);
+		@include media-breakpoint-up(md){
+			margin-bottom: rem(45);
+			font-size: rem(48);
+			line-height: (58/48);
+		}
+		@include media-breakpoint-up(xxl){
+			font-size: rem(60);
+			line-height: (73/60);
+		}
 
-// 
-@include media-breakpoint-only(xs) {}
+		&:after{
+			content: '';
+			display: block;
+			margin: 0 auto rem(60) auto;
+			width: 90px;
+			height: 11px;
 
-@include media-breakpoint-only(sm) {}
+			background-image: url(./img/@2x/foot-waves.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+	}
+	&__connect-txt{
+		font-weight: 600;
+		text-align: center;
 
-@include media-breakpoint-only(md) {}
+		font-size: rem(26);
+		line-height: (31/26);
+		margin-bottom: rem(60);
+	}
+	//foot-waves
+	&__btns-row{
+		justify-content: center;
+		align-items: center;
 
-@include media-breakpoint-only(lg) {}
+		--bs-gutter-y: rem(16);
+		padding-bottom: rem(60);
+	}
+	&__btn-col{
 
-@include media-breakpoint-only(xl) {}
+	}
+	&__btn{
+		width: rem(300);
+		border-radius: rem(5);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 
+		font-weight: 600;
+		font-size: rem(20);
+		line-height: 1.2;
 
-// 
-@include media-breakpoint-down(xl) {}
+		color: $white!important;
+		&:hover{
+			color: $white!important;
+		}
+		.icon{
+			color: $white;
+			font-size: rem(30);
+			margin-right: rem(12);
+		}
 
-@include media-breakpoint-down(lg) {}
+		@extend .btn;
+		&--wa{
+			@extend .btn-success;
+		}
+		&--vb{
+			@extend .btn-purple;
+		}
+		&--tg{
+			@extend .btn-primary;
+		}
+	}
+	//
+	&__bot-row{
+		padding-bottom: rem(60);
+		@include roww(rem(24));
+	}
+	&__link{
+		display: flex;
+		align-items: center;
 
-@include media-breakpoint-down(md) {}
+		&:hover{
+			opacity: .9;
+		}
+	}
+	&__img{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: rem(24);
+		height: rem(24);
+		margin-right: rem(12);
 
-@include media-breakpoint-down(sm) {}
+		img{
+			width: auto;
+			height: auto;
+			max-height: 100%;
+			max-width: 100%;
+		}
+	}
+	&__l-txt{
+		font-weight: 600;
+		line-height: (19/16);
+		color: $body-color;
+	}
+	//
+	&__lowest-row{
 
-@include media-breakpoint-down(xs) {}
+	}
+	&__policy{
+		display: inline-flex;
+
+		font-weight: 600;
+		line-height: (19/16);
+		color: $dark;
+
+		position: relative;
+		&:before{
+			@include mt();
+			content: '';
+			position: absolute;
+			bottom: -5px;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			color: currentColor;
+		}
+	}
+	&__logo{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: rem(155);
+
+		img{
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	&__development{
+		.gray{
+
+		}
+		.black{
+
+		}
+	}
+	&__{}
+	&__{}
 }
