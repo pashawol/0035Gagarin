@@ -14,13 +14,7 @@
 		padding: rem(90) 0;
 	}
 
-	&__bg-txt{
-		position: absolute;
-		//background-color: red;
-		z-index: -1;
-		left: 0;
-		width: 100%;
-
+	.bg-txt{
 		bottom: rem(450);
 		@include media-breakpoint-up(xl){
 			bottom: rem(360);
@@ -28,12 +22,8 @@
 		@include media-breakpoint-up(xxl){
 			bottom: rem(313px);
 		}
-
-		img{
-			width: 100%;
-			height: auto;
-		}
 	}
+
 	&__numbers{
 
 		&:after{
@@ -224,4 +214,17 @@
 	}
 	&__{}
 	&__{}
+}
+
+
+.bg-txt{
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	width: 100%;
+
+	img{
+		width: 100%;
+		height: auto;
+	}
 }

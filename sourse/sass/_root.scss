@@ -13,8 +13,15 @@
 	--sTPB: #{rem(50)};
 
 
-	--swiperArrowSize: #{rem(68)};
-	--swiperArrowPosition: calc(-1 * var(--swiperArrowSize) / 2);
+	--swiperArrowSize: #{rem(60)};
+
+	--swiperArrowPosition: #{rem(10)};
+	@include media-breakpoint-up(xl){
+		--swiperArrowPosition: #{rem(20)};
+	}
+	@include media-breakpoint-up(xxl){
+		--swiperArrowPosition: #{rem(45)};
+	}
 	--swiperBorderColorDef: var(--bs-primary);
 	--swiperColorDef: var(--bs-primary);
 	--swiperBgDef: #ffffff;

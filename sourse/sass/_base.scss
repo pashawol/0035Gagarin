@@ -302,21 +302,22 @@ ul {
 }
 
 .swiper-button-hand {
+	@include mt();
 	width: var(--swiperArrowSize);
 	height: var(--swiperArrowSize);
 	border-radius: 50%;
-	background-color: var(--swiperBgDef);
-	border: 2px solid var(--swiperBorderColorDef);
-	color: var(--swiperColorDef);
-	@include bgs;
+	background-color: $blue;
+	border: none;
+	color: $white;
+	//@include bgs;
 	z-index: 300;
-	outline: none !important;
-	// margin-bottom: 0;
+	outline: none!important;
 	background-image: none;
 	margin: 0;
-	@include a-cent(y);
-	box-shadow: 0 15px 60px rgba(0, 0, 0, 0.1);
-	@include mt;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	user-select: none;
 
 	&:hover {
@@ -331,7 +332,8 @@ ul {
 
 	&::after {
 		display: none;
-	} 
+	}
+
 	&-next {
 		right: var(--swiperArrowPosition);
 	}
@@ -506,4 +508,47 @@ iframe {
 }
 .btn-danger{
 	color: #fff !important;
+}
+
+//
+
+.accept-ratio-frame {
+	display: block;
+	width: 100%;
+	height: 0;
+	position: relative;
+
+	overflow: hidden;
+	&:hover {
+		img {
+			filter: brightness(80%);
+		}
+	}
+
+	img {
+		@include mt();
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+.accept-ratio-frame-nh {
+	display: block;
+	width: 100%;
+	height: 0;
+	position: relative;
+	overflow: hidden;
+
+	img {
+		@include mt();
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
 }
