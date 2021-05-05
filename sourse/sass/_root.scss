@@ -1,71 +1,28 @@
 :root {
 	--animate-delay: 1.2s;
 	--fontSizeBase: #{$em-base};
-	@include media-breakpoint-up(md) {
 
+	@include media-breakpoint-up(md) {
 		--sPT: #{rem(80)};
 		--sPB: #{rem(90)};
 		--sTPB: #{rem(40)};
 	}
-
 	--sPT: #{rem(80 / 2)};
 	--sPB: #{rem(90 / 2)};
 	--sTPB: #{rem(40 / 2)};
 
 
-		--swiperArrowSize: #{rem(68)};
-		--swiperArrowPosition: calc(-1 * var(--swiperArrowSize) / 2);
-		--swiperBorderColorDef: var(--bs-primary);
-		--swiperColorDef: var(--bs-primary);
-		--swiperBgDef: #ffffff;
-	
-		--swiperBorderColorDefHover: var(--bs-primary);
-		--swiperColorDefHover: var(--bs-primary);
-		--swiperBgDefHover: #ffffff;
+	--swiperArrowSize: #{rem(68)};
+	--swiperArrowPosition: calc(-1 * var(--swiperArrowSize) / 2);
+	--swiperBorderColorDef: var(--bs-primary);
+	--swiperColorDef: var(--bs-primary);
+	--swiperBgDef: #ffffff;
+	--swiperBorderColorDefHover: var(--bs-primary);
+	--swiperColorDefHover: var(--bs-primary);
+	--swiperBgDefHover: #ffffff;
 
-
-
-		--header-height: #{rem(166)};
-	
-		--chevron-down: url("data:image/svg+xml,%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.40805 8.58984L12.998 13.1698L17.588 8.58984L18.998 9.99984L12.998 15.9998L6.99805 9.99984L8.40805 8.58984Z' fill='%232D3741'/%3E%3C/svg%3E%0A");
-
-		--check--white: url("data:image/svg+xml,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M0.998047 7.9786L6.1347 13.1251L15.998 3.27146L14.582 1.875L6.1347 10.3125L2.39448 6.5723L0.998047 7.9786Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='15' height='15' fill='white' transform='translate(0.998047)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
-
-		--dots: url("data:image/svg+xml,%3Csvg width='25' height='5' viewBox='0 0 25 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2.5' cy='2.5' r='2.5' fill='%23FF1B34'/%3E%3Ccircle cx='12.5' cy='2.5' r='2.5' fill='%23FF1B34'/%3E%3Ccircle cx='22.5' cy='2.5' r='2.5' fill='%23FF1B34'/%3E%3C/svg%3E%0A");
+	--header-height: #{rem(166)};
+	--chevron-down: url("data:image/svg+xml,%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.40805 8.58984L12.998 13.1698L17.588 8.58984L18.998 9.99984L12.998 15.9998L6.99805 9.99984L8.40805 8.58984Z' fill='%232D3741'/%3E%3C/svg%3E%0A");
+	--check--white: url("data:image/svg+xml,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M0.998047 7.9786L6.1347 13.1251L15.998 3.27146L14.582 1.875L6.1347 10.3125L2.39448 6.5723L0.998047 7.9786Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='15' height='15' fill='white' transform='translate(0.998047)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+	--dots: url("data:image/svg+xml,%3Csvg width='25' height='5' viewBox='0 0 25 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2.5' cy='2.5' r='2.5' fill='%23FF1B34'/%3E%3Ccircle cx='12.5' cy='2.5' r='2.5' fill='%23FF1B34'/%3E%3Ccircle cx='22.5' cy='2.5' r='2.5' fill='%23FF1B34'/%3E%3C/svg%3E%0A");
 }
-
-@include media-breakpoint-up(xl) {}
-
-@include media-breakpoint-up(lg) {}
-
-@include media-breakpoint-up(md) {}
-
-@include media-breakpoint-up(sm) {}
-
-@include media-breakpoint-up(xs) {}
-
-//
-@include media-breakpoint-between(md, xl) {}
-
-
-//
-@include media-breakpoint-only(xs) {}
-
-@include media-breakpoint-only(sm) {}
-
-@include media-breakpoint-only(md) {}
-
-@include media-breakpoint-only(lg) {}
-
-@include media-breakpoint-only(xl) {}
-
-//
-@include media-breakpoint-down(xl) {}
-
-@include media-breakpoint-down(lg) {}
-
-@include media-breakpoint-down(md) {}
-
-@include media-breakpoint-down(sm) {}
-
-@include media-breakpoint-down(xs) {}

@@ -1,2 +1,45 @@
 mixin footer()
-	footer.footer
+  +b.FOOTER.footer
+    +e.bg-txt
+      img(loading="lazy" src=`img/svg/footer-txt.svg` alt="")
+    .container
+      +e.numbers
+        +e.number(href='tel:+79525434470') +7 (952) 543-44-70
+        +e.number(href='tel:+79523621145') +7 (952) 362-11-45
+      +e.connect-txt или свяжитесь с нами в мессенджерах:
+      +e.btns-row.row
+        +e.btn-col.col-md-auto
+          +e.btn--wa(href='#')
+            +icon('wa')
+            span Whatsapp
+        +e.btn-col.col-md-auto
+          +e.btn--vb(href='#')
+            +icon('vb')
+            span Viber
+        +e.btn-col.col-md-auto
+          +e.btn--tg(href='#')
+            +icon('tg')
+            span Telegram
+      +e.bot-row.row.justify-content-center
+        .col-auto
+          +e.link(href='#')
+            +e.img
+              img(loading="lazy" src='img/svg/skype.svg' alt="")
+            +e.l-txt Jollykite
+        .col-auto
+          +e.link(href='mailto:GagarinKite@gmail.com')
+            +e.img
+              img(loading="lazy" src='img/svg/email.svg' alt="")
+            +e.l-txt GagarinKite@gmail.com
+      +e.lowest-row.row.align-items-center
+        .col-md
+          +e.policy Политика конфиденциальности
+        .col-md-auto.order-first.order-md-0
+          +e.logo(href='#')
+            img(loading="lazy" src="img/svg/logo.svg" alt="")
+        .col-md
+          +e.development
+            span.gray
+              | Разработка сайта –
+              |
+            a.black(href='#') AD HEADS
