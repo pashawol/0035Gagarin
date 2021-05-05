@@ -1,14 +1,163 @@
 // start .sHowToGetThere
 .sHowToGetThere {
-		// --sPT: ;
-		// --sPB: ;
-		// --sTPB: ;
+	--sPT: #{rem(80)};
+	--sPB: #{rem(80)};
+	--sTPB: #{rem(60)};
+	@include media-breakpoint-up(md){
+		--sPT: #{rem(80)};
+		--sPB: #{rem(80)};
+		--sTPB: #{rem(60)};
+	}
+	@include media-breakpoint-up(xl){
+		--sPT: #{rem(100)};
+		--sPB: #{rem(100)};
+		--sTPB: #{rem(80)};
+	}
+	@include media-breakpoint-up(xxl){
+		--sPT: #{rem(90)};
+		--sPB: #{rem(90)};
+		--sTPB: #{rem(66)};
+	}
 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-between(md, xl) {}
-	@include media-breakpoint-only(xl) {}
-	@include media-breakpoint-down(xl) {}
+	background: $light;
+	position: relative;
+	z-index: 1;
+	.bg-txt{
+		top: rem(246);
+		@include media-breakpoint-up(xl){
+			top: rem(235);
+		}
+		@include media-breakpoint-up(xxl){
+			top: rem(219);
+		}
+	}
+
+	&__row{
+		@include roww(rem(12));
+		--bs-gutter-y: #{rem(12)};
+		@include media-breakpoint-up(sm){
+			@include roww(rem(16));
+			--bs-gutter-y: #{rem(16)};
+		}
+		@include media-breakpoint-up(xl){
+			@include roww(rem(20));
+			--bs-gutter-y: #{rem(20)};
+		}
+		@include media-breakpoint-up(xxl){
+			@include roww(rem(24));
+			--bs-gutter-y: #{rem(24)};
+		}
+	}
+	&__col{
+
+	}
+	&__item{
+		min-height: 100%;
+		border-radius: rem(10);
+		overflow: hidden;
+		background-color: $white;
+
+		display: flex;
+		flex-direction: column;
+
+		position: relative;
+		z-index: 1;
+		&:before{
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: rem(10);
+			border: 1px solid $gray-100;
+		}
+	}
+	&__inner-row{
+		@include roww(0);
+		flex-grow: 1;
+
+		@include media-breakpoint-down(xxl){
+			display: flex;
+			flex-direction: column;
+			min-height: 100%;
+		}
+	}
+	&__img-col{
+		height: rem(176);
+		@include media-breakpoint-up(xl){
+			height: rem(220);
+		}
+		@include media-breakpoint-up(xxl){
+			height: rem(308);
+			width: (312/648) * 100%;
+		}
+
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__content-col{
+		display: flex;
+		flex-direction: column;
+	}
+	&__content{
+		min-height: 100%;
+		flex-grow: 1;
+
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		padding: rem(24) rem(16);
+		@include media-breakpoint-up(xl){
+			padding: rem(24) rem(20) rem(36) rem(20);
+		}
+		@include media-breakpoint-up(xxl){
+			padding: rem(29) rem(24) rem(24) rem(24);
+			justify-content: center;
+		}
+	}
+	&__title{
+		width: 100%;
+		font-weight: 600;
+		color: $body-color;
+
+		font-size: rem(18);
+		line-height: 1.5;
+		margin-bottom: rem(12);
+		@include media-breakpoint-up(xxl){
+			font-size: rem(26);
+			line-height: (31/26);
+			margin-bottom: rem(24);
+		}
+
+	}
+	&__descr{
+		width: 100%;
+		line-height: 1.75;
+		color: $body-color;
+		margin-bottom: rem(24);
+	}
+	&__btn{
+		@extend .btn;
+		@extend .btn-outline-danger;
+
+		&:hover{
+			color: $white!important;
+		}
+
+		padding: rem(11) rem(12);
+		margin: auto auto 0 auto;
+		@include media-breakpoint-up(xxl){
+			margin: 0;
+			min-width: rem(250);
+		}
+	}
+
+	&__{}
+	&__{}
 } // end.sHowToGetThere
