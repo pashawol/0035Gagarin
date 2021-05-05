@@ -1,9 +1,36 @@
 mixin topLine()
 	// start topLine
-	+b.SECTION.topLine.section#topLine&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 topLine
-				
+	+b.topLine.section#topLine&attributes(attributes)
+		.container-fluid
 			.row
+				.col-auto
+					+e.logo(href="/")
+						img(src="img/svg/logo.svg", alt="") 
+				.col
+					+b.place-block
+						+e.toggle 
+							+e.title пос. Межводное
+							+e.text Кайт школа GagarinKite
+						+e.dropdown
+							- for (var x = 0; x < 3; x++)
+								+e.item
+									+e.title пос. Межводное
+									+e.text Кайт школа GagarinKite
+				.col-auto.d-none.d-md-block
+					+soc()
+				.col-auto.d-lg-none 
+					+e.tel--mobile(href="tel:+7(952)354-77-40") 
+						+icon('tel')
+				+e.tel-wrap.col-auto.d-none.d-lg-block
+					.row 
+						.col-xxl-auto 
+							+e.tel(href="tel:+7(952)354-77-40")  +7 (952) 354-77-40
+							
+						.col-xxl-auto
+							+e.tel(href="tel:+7(952)362-11-45") +7 (952) 362-11-45
+				.col-auto.d-none.d-lg-block
+					+e.btn(href="#") Перезвоните мне 
+				.col-auto.d-lg-none
+					+b.toggle-menu-mobile--js
+						span
 	// end topLine

@@ -1,26 +1,25 @@
 //- WP menu
 mixin mnu()
 	-
-		var nav= { 
-			"Наши работы":"#",
-			"Цены":"#",
-			"Калькулятор":"#",
-			"Акции":"#" ,
-			"Заказать":"#",
+		var nav= {
+			"О нас":"#",
+			"Преимущества  ":"#",
+			"Отзывы":"#",
+			"Как стать кайтером ":"#",
+			"Курсы и цены":"#",
+			"Инструкторы":"#",
+			"Станция":"#",
+			"Досуг":"#", 
+			"Питание":"#", 
+			"Кайт спот":"#", 
+			"Аренда":"#", 
+			"Услуги":"#", 
+			"Проживание":"#", 
+			"Как добраться":"#", 
+			"Блог":"#", 
+			"Контакты":"#", 
 			}
 	ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
-		li.menu-item.menu-item-has-children
-			a(href="#" itemprop="url") О нас
-			ul.sub-menu
-				-
-					var subnav= { 
-						"Строительство загородных домов":"#",
-						"Отделка загородных домов":"#",
-						"Покраска деревянных домов":"#",
-						"Штукатурные фасады загородных домов":"#" ,
-						}
-				each sublinkPatch, sublinkName in nav
-					li.menu-item(itemprop="item" ): a(href= sublinkPatch itemprop="url")= sublinkName
 		each linkPatch, linkName in nav
 			li.menu-item(itemprop="item" ): a(href= linkPatch itemprop="url")= linkName
 
@@ -29,35 +28,29 @@ mixin mnu()
 
 
 
-mixin mnu()
-	-
-		var nav= {
-			"Главная":"#sContact",
-			"Услуги  ":"#",
-			"Подбор септика   ":"#",
-			"Акции ":"#",
-			" О компании  ":"#",
-			" Доставка и оплата ":"#",
-			" Клиентам  ":"#",
-			" Наши работы   ":"#",
-			"Контакты ":"#sContact"
-			}
-	+b.UL.navMenu(itemscope itemtype="http://schema.org/SiteNavigationElement")
-		+e.LI.item--has-children( itemprop="item" )
-			+e.A.link(href="#" itemprop="url") О нас
-			+b.UL.sub-menu
-				-
-					var subnav= { 
-						"Строительство загородных домов":"#",
-						"Отделка загородных домов":"#",
-						"Покраска деревянных домов":"#",
-						"Штукатурные фасады загородных домов":"#" ,
-						}
-				each sublinkPatch, sublinkName in nav
-					+e.LI.item( temprop="item"  )
-						+e.A.link(href="#" itemprop="url")= sublinkName 
-						
-		each linkPatch, linkName in nav
-			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="#" itemprop="url")= linkName
+//- mixin mnu()
+//- 	-
+//- 		var nav= {
+//- 			"О нас":"#",
+//- 			"Преимущества  ":"#",
+//- 			"Отзывы":"#",
+//- 			"Как стать кайтером ":"#",
+//- 			"Курсы и цены":"#",
+//- 			"Инструкторы":"#",
+//- 			"Станция":"#",
+//- 			"Досуг":"#", 
+//- 			"Питание":"#", 
+//- 			"Кайт спот":"#", 
+//- 			"Аренда":"#", 
+//- 			"Услуги":"#", 
+//- 			"Проживание":"#", 
+//- 			"Как добраться":"#", 
+//- 			"Блог":"#", 
+//- 			"Контакты":"#", 
+//- 			}
+//- 	+b.UL.navMenu(itemscope itemtype="http://schema.org/SiteNavigationElement")
+//- 		+e.LI.item--has-children( itemprop="item" )
+//- 		each linkPatch, linkName in nav
+//- 			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="#" itemprop="url")= linkName
 		
-//- /menu
+//- //- /menu

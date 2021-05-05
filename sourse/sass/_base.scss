@@ -26,7 +26,7 @@ html{
 }
 
 body {
-	// min-width: 320px; 
+	min-width: 570px; 
 	-webkit-font-smoothing: antialiased;
 	position: relative;
 	overflow-x: hidden; 
@@ -474,4 +474,17 @@ iframe {
 	&::-webkit-scrollbar-button {
 		display: none
 	}
+}
+
+
+.btn,
+.form-control{
+	box-shadow: none !important;
+}
+
+.btn-primary{
+	color: #fff !important;
+}
+.btn-danger{
+	color: #fff !important;
 }

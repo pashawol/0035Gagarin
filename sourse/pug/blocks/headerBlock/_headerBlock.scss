@@ -1,20 +1,88 @@
 // start .headerBlock
 .headerBlock {
-	margin-bottom: 1px;
+	z-index: 2;
+	overflow: hidden;
+	// margin-bottom: 1px;
+	iframe{
+		position: absolute;
+		left: -30%;
+		top: -30%;
+		width: 160% !important;
+		height: 160% !important;
+		z-index: -1;
+		// object-fit: cover;
+	}
 	min-height: 100vh;
-	min-height: calc(var(--vh, 1vh) * 100);
-	// background-image: url(../img);
-	// background-color: #000000;
-
-	h1 {
-		margin-bottom: 1px;
+	min-height: calc(var(--vh, 1vh) * 100 - var(--header-height));
+	text-align: center;
+	color: #fff;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #000;
+	&::after{
+		content: '';
+		position: absolute;
+		@include a-cent;
+		background: linear-gradient(0deg, rgba(96, 114, 134, 0.8), rgba(96, 114, 134, 0.8));
+		z-index: -1;
+	}
+	h1{
+		font-weight: bold;
+		margin-bottom: rem(30);
+	}
+	.row{
+		justify-content: space-between;
 	}
 
-	h2 {
-		margin-bottom: 1px;
+
+	&__top-text{
+		position: relative;
+		font-weight: 600;
+		@include rfs(20px);
+		margin-bottom: rem(30);
+		&::after{
+			content: url(../img/@2x/datu-white.png);
+			display: block;
+			text-align: center;
+			margin-top: rem(30);
+		}
+	}
+	&__col{
+		img{
+			margin-bottom: rem(30);
+		}
+		margin-bottom: rem(45);
+	}
+	&__btn{
+		@extend .btn; 
+		@extend .btn-danger;
+		width: rem(300);
+		margin-bottom: rem(50);
 	}
 
-	@include media-breakpoint-up(xl) {}
+	&__bottom{
+		cursor: pointer;
+		font-weight: 600;
+		.icon{
+				font-size: 1rem;
+				margin-top: rem(30);
+		}
+	}
+	.container{
+	@include media-breakpoint-up(xl) {
+			max-width: cacl(980px + var(--bs-gutter-x));
+		}
+		flex-grow: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		 > div	{
+			width: 100%;
+		}
+	}
 
 	@include media-breakpoint-up(lg) {}
 

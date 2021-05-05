@@ -3,6 +3,24 @@ extends layout/main.pug
 
 include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sAdvantages/_sAdvantages.pug
+include ../blocks/sRews/_sRews.pug
+include ../blocks/sSteps/_sSteps.pug
+include ../blocks/sPrices/_sPrices.pug
+include ../blocks/sInstructors/_sInstructors.pug
+include ../blocks/sSertificates/_sSertificates.pug
+include ../blocks/sKiteStation/_sKiteStation.pug
+include ../blocks/sLeisure/_sLeisure.pug
+include ../blocks/sCuisine/_sCuisine.pug
+include ../blocks/sPlace/_sPlace.pug
+include ../blocks/sRent/_sRent.pug
+include ../blocks/sAdditionalServises/_sAdditionalServises.pug
+include ../blocks/sAccommodation/_sAccommodation.pug
+include ../blocks/sShop/_sShop.pug
+include ../blocks/sHowToGetThere/_sHowToGetThere.pug
+include ../blocks/sOffers/_sOffers.pug
+include ../blocks/sBlog/_sBlog.pug
 
 block variables
 	- let  mainPage= null 
@@ -16,48 +34,27 @@ block pagecontent
 
 	+mob-mnu()
 	+header()
-	+top-nav()
-	+soc()
-	a(href="")
-	//- img(src="img/", alt="")
-	//- img(src="img/@2x/avif/r.avif", alt="")
-	//- img(src="img/@1x/avif/r.avif", alt="")
-	+in-c("checkbox", "text")
-	//- +pic('f8af7db0d56028b5cc1c7dfc78ec06e8.jpg')
-	//- img(src="img/r.avif", alt="")
-	img(src="img/@2x/r.jpg", alt="")
-
-	img(src="img/@2x/webp/r.webp", alt="")
-	//- img(src="img/002-book.avif", alt="")
-	img(src="img/@2x/002-book.png", alt="")
-	img(src="img/@2x/webp/002-book.webp", alt="")
-
-	+b.tabs--js.opacity-50
-		+e.caption.d-flex
-			+e.btn.btn.btn-warning.active  btn1
-			+e.btn.btn.btn-warning btn 2
-			+e.btn.btn.btn-warning btn 3
-			+e.btn.btn.btn-warning btn 4
-		+e.wrap
-			+e.content.active content 1
-			+e.content content 2
-			+e.content content 3
-			+e.content content 4
-	+b.tabs--js
-		+e.caption.d-flex
-			+e.btn.btn.btn-success.active  btn  2 1
-			+e.btn.btn.btn-success btn 2  2
-			+e.btn.btn.btn-success btn 2  3
-			+e.btn.btn.btn-success btn  2 4
-		+e.wrap
-			+e.content.active content 1
-			+e.content content 2
-			+e.content content 3
-			+e.content content 4
-
-	+topLine()
-	+headerBlock()
-	+sForm()
+		+topLine
+		+top-nav()
+	+headerBlock
+	+sAbout
+	+sAdvantages
+	+sRews
+	+sSteps
+	+sPrices
+	+sInstructors
+	+sSertificates
+	+sKiteStation
+	+sLeisure
+	+sCuisine
+	+sPlace
+	+sRent
+	+sAdditionalServises
+	+sAccommodation
+	+sShop
+	+sHowToGetThere
+	+sOffers
+	+sBlog
 	+sContact()
 	+footer()
       

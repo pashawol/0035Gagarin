@@ -1,24 +1,31 @@
 
-$h: em(2);
+$h: 3px;
 
 .toggle-menu-mobile {
-	display: block;
-	height: $h* 12;
+	display: block; 
 	position: relative;
-	color: $primary;
+	color: #fff !important;
 	font-size: 32px;
 	width: 1em;
-	&.on {
-		color: #ffffff;
-	}
-
+	padding: 0;
+	@extend .btn;
+	@extend .btn-danger;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: rem(48);
+	height: rem(48);
+	border-radius: 5px; 
 	span:after,
 	span:before {
 		content: "";
 		position: absolute;
-		left: 0;
+		right: 0;
 	}
-
+	&.on{
+		background: #F4F6FA;
+		border-color: #F4F6FA;
+	}
 	span {
 		@include a-cent(y);
 	}
@@ -26,11 +33,11 @@ $h: em(2);
 	span:before {
 
 
-		top: $h * 2;
+		top: $h * 3;
 	}
 
 	span:after {
-		bottom: $h * 2;
+		bottom: $h * 3;
 	}
 
 	span { 
@@ -43,7 +50,7 @@ $h: em(2);
 		// width: 32px;
 		width: 1em;
 		height: $h;
-		background-color: currentColor;
+		background-color: #fff;
 		transition: all 0.3s;
 		backface-visibility: hidden;
 		border-radius: 6px;
@@ -58,11 +65,15 @@ $h: em(2);
 		background-color: transparent;
 	}
 
+	&:not(.on) span:before{
+		width: 50%;
+	}
 	&.on span:after,
 	&.on span:before {
 
 		top: 0;
 		bottom: 0;
+		background-color: #607286;
 		
 	}
 

@@ -1,26 +1,15 @@
 .top-nav {
-	position: sticky; 
-	left: 0;
-	// left: 200px;
-	// right: -200px;
-	// margin-right: -200px;
-	top: 0;
-	left: 0;
-	z-index: 800;
+	position: relative;
+	z-index: 2;
 	background-color: #fff;
-	border-bottom: 1px solid #000; 
-	--color-link: 255,
-	0,
-	0;
-	background-color: #{rgba(var(--color-link), .5)};
-	&.fixed { 
-		bottom: auto;
-		margin-top: 0;
-	}
-	.row{
-	 
+	
+
+	&__body{
+		display: flex;
+		align-items: center;
 	}
 
+	
 	// 
 	@include media-breakpoint-up(xl) {}
 
@@ -32,30 +21,7 @@
 
 	@include media-breakpoint-up(xs) {}
 
-	// 
-	@include media-breakpoint-between(md, xl) {}
-
-	// 
-	@include media-breakpoint-only(xs) {}
-
-	@include media-breakpoint-only(sm) {}
-
-	@include media-breakpoint-only(md) {}
-
-	@include media-breakpoint-only(lg) {}
-
-	@include media-breakpoint-only(xl) {}
-
-	// 
-	@include media-breakpoint-down(xl) {}
-
-	@include media-breakpoint-down(lg) {}
-
-	@include media-breakpoint-down(md) {}
-
-	@include media-breakpoint-down(sm) {}
 
 	@include media-breakpoint-down(xs) {}
 }
-
 
