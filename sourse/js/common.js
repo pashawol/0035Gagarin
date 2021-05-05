@@ -251,21 +251,8 @@ function eventHandler() {
 		lazy: {
 			loadPrevNext: true,
 		},
-		watchOverflow: true,
-		spaceBetween: 0,
+		watchOverflow: true, 
 		loop: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		pagination: {
-			el: ' .swiper-pagination',
-			type: 'bullets',
-			clickable: true,
-			// renderBullet: function (index, className) {
-			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-			// }
-		},
 	}
 
 	const swiper4 = new Swiper('.sBanners__slider--js', {
@@ -317,6 +304,18 @@ function eventHandler() {
 			},
 		},
 
+		navigation: {
+			nextEl: '.sBlog .swiper-button-next',
+			prevEl: '.sBlog .swiper-button-prev',
+		},
+	});
+	let caruselSlider = new Swiper('.carusel__slider--js', {
+		...defaultSl,
+		centeredSlides: true,
+		slidesPerView: 'auto',
+		loop: true,
+		loopedSlides: 6,
+		centeredSlidesBounds: true,
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',

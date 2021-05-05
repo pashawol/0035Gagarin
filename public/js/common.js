@@ -214,8 +214,6 @@ var JSCCommon = {
 var $ = jQuery;
 
 function eventHandler() {
-	var _defaultSl;
-
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('.tabs--js');
 	JSCCommon.mobileMenu();
@@ -252,23 +250,14 @@ function eventHandler() {
 		passive: true
 	});
 	whenResize();
-	var defaultSl = (_defaultSl = {
+	var defaultSl = {
 		spaceBetween: 0,
 		lazy: {
 			loadPrevNext: true
 		},
-		watchOverflow: true
-	}, _defineProperty(_defaultSl, "spaceBetween", 0), _defineProperty(_defaultSl, "loop", true), _defineProperty(_defaultSl, "navigation", {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}), _defineProperty(_defaultSl, "pagination", {
-		el: ' .swiper-pagination',
-		type: 'bullets',
-		clickable: true // renderBullet: function (index, className) {
-		// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-		// }
-
-	}), _defaultSl);
+		watchOverflow: true,
+		loop: true
+	};
 	var swiper4 = new Swiper('.sBanners__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		slidesPerView: 'auto',
 		freeMode: true,
@@ -318,10 +307,21 @@ function eventHandler() {
 			}
 		},
 		navigation: {
+			nextEl: '.sBlog .swiper-button-next',
+			prevEl: '.sBlog .swiper-button-prev'
+		}
+	});
+	var caruselSlider = new Swiper('.carusel__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		centeredSlides: true,
+		slidesPerView: 'auto',
+		loop: true,
+		loopedSlides: 6,
+		centeredSlidesBounds: true,
+		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev'
 		}
-	});
+	}));
 	var sOffersSlider = new Swiper('.sOffers-slider-js', {
 		//...defaultSl,
 		slidesPerView: 'auto',
