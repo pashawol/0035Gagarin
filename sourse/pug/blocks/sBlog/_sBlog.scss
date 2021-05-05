@@ -1,5 +1,7 @@
 // start .sBlog
 .sBlog {
+	//overflow-x: hidden;
+
 	--sPT: #{rem(80)};
 	--sPB: #{rem(80)};
 	--sTPB: #{rem(60)};
@@ -115,9 +117,18 @@
 	overflow: hidden;
 	min-height: 100%;
 
+
+	--descr-mb: #{rem(33)};
+	--date-mb: #{0};
+	&.offers-item{
+		--descr-mb: #{rem(12)};
+		--date-mb: #{rem(24)};
+	}
+
 	&__img{
 		@extend .accept-ratio-frame;
-		padding-top: (273/424) * 100%;
+		height: rem(273);
+		//padding-top: (273/424) * 100%;
 	}
 	&__content{
 		display: flex;
@@ -126,6 +137,8 @@
 
 		border: 1px solid $gray-100;
 		border-top: none;
+		align-items: flex-start;
+		border-radius: 0 0 rem(10) rem(10);
 	}
 	&__name{
 		font-weight: 600;
@@ -147,12 +160,21 @@
 	}
 	&__descr{
 		line-height: 1.75;
-		margin-bottom: rem(33);
+		margin-bottom: var(--descr-mb, #{rem(33)});
 	}
 	&__date{
 		margin-top: auto;
 		color: $dark;
+		margin-bottom: var(--date-mb, #{rem(24)});
 	}
-	&__{}
+
+
+	&__read-more{
+		@extend .btn;
+		@extend .btn-outline-danger;
+
+		//align-self: flex-start;
+		padding: rem(11) rem(35);
+	}
 	&__{}
 }

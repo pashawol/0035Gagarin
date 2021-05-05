@@ -7,23 +7,62 @@ mixin sRews(data)
 		.container-fluid
 			+b.carusel
 				+e.slider--js.swiper-container 
-					.swiper-wrapper
-						- for (var x = 0; x < 6; x++)
-							+e.slide.swiper-slide
-								+b.rew-item
-									+e.video(href="" data-fancybox="rew").bg-wrap
-										+pic('gal-3.jpg','bg',0).picture-bg
-										+e.play
-								//- +b.rew-item
-					+arrow
-			+b.carusel
-				+e.slider--js.swiper-container 
-					.swiper-wrapper
-						- for (var x = 0; x < 6; x++)
-							+e.slide.swiper-slide
-								+b.rew-item
-									+e.video(href="" data-fancybox="rew").bg-wrap
-										+pic('gal-3.jpg','bg',0).picture-bg
-								//- +b.rew-item
-					+arrow
+					.swiper-wrapper 
+						+e.slide.swiper-slide
+							+b.rew-item
+								+e.video(href="" data-fancybox="rew").bg-wrap
+									+pic('gal-3.jpg','bg',0).picture-bg
+									+e.play
+							//- +b.rew-item
+						+e.slide.swiper-slide
+							+b.rew-item
+								+e.block
+									+e.head.pb-4
+										.row 
+											.col
+												img(src="img/svg/rew-logo.svg" loading="lazy", alt="")
+											.col-auto
+												+b.star-block 
+													+icon("star").active
+													+icon("star").active
+													+icon("star").active
+													+icon("star").active
+													+icon("star")
+									+e.body 
+										.h6.mb-4 Мария Васильева
+										p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст...
+										.text-dark 22 февраля 2021
+						+e.slide.swiper-slide
+							+b.rew-item
+								+e.block
+									+e.head.pb-4
+										.row 
+											.col
+												+e.avatar-block 	
+													img(src="img/@1x/avatar.jpg" loading="lazy", alt="")
+													+e.soc(style="--color: #4A7BD6")
+														+icon('vk')
+											.col-auto
+												+b.star-block 
+													+icon("star").active
+													+icon("star").active
+													+icon("star").active
+													+icon("star").active
+													+icon("star")
+									+e.body 
+										.h6.mb-4 Мария Васильева
+										p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст...
+										.text-dark 22 февраля 2021
+					+e.control-wrap
+						+arrow
+			//- +b.carusel
+			//- 	+e.slider--js.swiper-container 
+			//- 		.swiper-wrapper
+			//- 			- for (var x = 0; x < 6; x++)
+			//- 				+e.slide.swiper-slide
+			//- 					+b.rew-item
+			//- 						+e.video(href="" data-fancybox="rew").bg-wrap
+			//- 							+pic('gal-3.jpg','bg',0).picture-bg
+			//- 					//- +b.rew-item
+			//- 		+arrow
 	// end sRews

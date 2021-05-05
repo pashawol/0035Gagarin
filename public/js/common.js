@@ -294,6 +294,7 @@ function eventHandler() {
 		slidesPerView: 1,
 		loop: true,
 		loopedSlides: 6,
+		//centeredSlides: true,
 		breakpoints: {
 			0: {
 				spaceBetween: 16
@@ -315,11 +316,29 @@ function eventHandler() {
 		slidesPerView: 'auto',
 		loop: true,
 		loopedSlides: 6,
+		centeredSlidesBounds: true,
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev'
 		}
-	})); //end luckyone js
+	}));
+	var sOffersSlider = new Swiper('.sOffers-slider-js', {
+		//...defaultSl,
+		slidesPerView: 'auto',
+		loop: true,
+		breakpoints: {
+			0: {
+				spaceBetween: 16
+			},
+			992: {
+				spaceBetween: 0
+			}
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev'
+		}
+	}); //end luckyone js
 }
 
 ;
