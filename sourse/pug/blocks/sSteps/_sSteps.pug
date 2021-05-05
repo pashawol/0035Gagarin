@@ -1,9 +1,23 @@
 mixin sSteps(data)
 	// start sSteps
 	+b.SECTION.sSteps.section#sSteps&attributes(attributes)
+		img.res-i(src="img/svg/steps-text.svg", alt="").text.d-none.d-sm-block
 		.container
 			+b.section-title.text-center
-				h2 sSteps
-				
-			.row
+				h2 6 шагов, как стать кайтером 
+			+b.carusel
+				+e.slider--not-center-js.swiper-container 
+					.swiper-wrapper 
+						mixin item(i, t)
+							+e.slide.swiper-slide
+								+b.step-item
+									+pic(`step-${i}.jpg`,'bg',0)
+									+e.title.h6!= t
+						+item(`1`,`<span>1 шаг.</span> Подать заявку`)
+						+item(`2`,`<span>2 шаг.</span> Знакомство с инструктором`)
+						+item(`3`,`<span>3 шаг.</span> Обучение пилотированию кайтом`)
+						+item(`4`,`<span>4 шаг.</span> Обучение самоспасению`)
+						+item(`5`,`<span>5 шаг.</span> Водный старт`)
+						+item(`6`,`<span>6 шаг.</span> Ты крутой кайтер`)
+			+e.btn(href="#") Записаться на обучение
 	// end sSteps
