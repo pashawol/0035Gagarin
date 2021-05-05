@@ -298,7 +298,29 @@ function eventHandler() {
 		});
 	}
 
-	;
+	; //luckyone js
+
+	var sBlogSlider = new Swiper('.sBlog-slider-js', {
+		//...defaultSl,
+		slidesPerView: 1,
+		loop: true,
+		loopedSlides: 6,
+		breakpoints: {
+			0: {
+				spaceBetween: 16
+			},
+			1200: {
+				spaceBetween: 20
+			},
+			1400: {
+				spaceBetween: 24
+			}
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev'
+		}
+	}); //end luckyone js
 }
 
 ;

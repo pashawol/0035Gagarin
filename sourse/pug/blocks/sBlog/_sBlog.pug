@@ -1,9 +1,33 @@
 mixin sBlog(data)
 	// start sBlog
 	+b.SECTION.sBlog.section#sBlog&attributes(attributes)
+		+b.bg-txt.d-none.d-lg-block
+			img(loading="lazy" src=`img/svg/sBlog-txt.svg` alt="")
 		.container
 			+b.section-title.text-center
-				h2 sBlog
-				
-			.row
+				h2 Блог
+			+e.slider-wrap
+				.swiper-container.sBlog-slider-js
+					.swiper-wrapper
+						- for(var i = 0; i < 10; i++)
+							.swiper-slide
+								+sBlogItem({
+									name: 'Фотоотчет',
+								})
+					+e.arrow-cont
+						+arrow()
 	// end sBlog
+
+mixin sBlogItem(data)
+	+b.sBlogitem
+		+e.img(href='#')
+			img(loading="lazy" src=`img/@2x/blog-${data.imgNum || 1}.jpg` alt="")
+		+e.content
+			+e.name=data.name
+			+e.title=`${data.title || 'Кайтсерфинг в Крыму в октябре'}`
+			+e.descr
+				if block
+					block
+				else
+					| Кайтсерфинг в Крыму в октябре 2020 года Будет ли работать кайт школа Гагарин кайт в Межводном в октябре?
+			+e.date 22 февраля 2021

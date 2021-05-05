@@ -277,7 +277,6 @@ function eventHandler() {
 		touchRatio: 0.2,
 		slideToClickedSlide: true,
 		freeModeMomentum: true,
-
 	});
 	// modal window
 
@@ -285,7 +284,6 @@ function eventHandler() {
 
 	var wrapper = document.querySelector(".top-nav");
 	if (wrapper) {
-
 		var nav = priorityNav.init({
 			mainNavWrapper: ".top-nav__body", // mainnav wrapper selector (must be direct parent from mainNav)
 			mainNav: ".menu", // mainnav selector. (must be inline-block)
@@ -297,8 +295,35 @@ function eventHandler() {
 			// moved: function () { scrolldrop()}, // executed when item is moved to dropdown
 			// movedBack: function () { scrolldrop()} // executed when item is moved back to main menu
 		});
-
 	};
+
+	//luckyone js
+	let sBlogSlider = new Swiper('.sBlog-slider-js', {
+		//...defaultSl,
+		slidesPerView: 1,
+		loop: true,
+		loopedSlides: 6,
+		breakpoints: {
+			0:{
+				spaceBetween: 16,
+			},
+			1200:{
+				spaceBetween: 20,
+			},
+			1400:{
+				spaceBetween: 24,
+			},
+		},
+
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+
+
+	//end luckyone js
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

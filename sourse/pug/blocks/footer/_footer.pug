@@ -1,6 +1,6 @@
 mixin footer()
   +b.FOOTER.footer
-    +e.bg-txt.d-none.d-lg-block
+    +b.bg-txt.d-none.d-lg-block
       img(loading="lazy" src=`img/svg/footer-txt.svg` alt="")
     .container
       +e.numbers
@@ -33,7 +33,7 @@ mixin footer()
             +e.l-txt GagarinKite@gmail.com
       +e.lowest-row.row.align-items-center
         .col-6.col-md
-          +e.policy Политика конфиденциальности
+          +e.policy(href="#") Политика конфиденциальности
         .col-md-auto.order-first.order-md-0
           +e.logo(href='#')
             img(loading="lazy" src="img/svg/logo.svg" alt="")
