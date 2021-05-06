@@ -37,6 +37,10 @@ background: #fff;
 }
 .modal-win {
 	// display: block;
+		@include media-breakpoint-down(sm) {
+			padding-left: rem(18);
+			padding-right: rem(18);
+		}
 		@include media-breakpoint-down(lg) {
 			position: static;
 		}
@@ -137,6 +141,9 @@ background: #fff;
 			}
 		
 		}
+	}
+	.sRent{
+		background: transparent;
 	}
 }
 

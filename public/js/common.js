@@ -370,6 +370,16 @@ function eventHandler() {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev'
 		}
+	}); //
+
+	let sPlaceSlider = new Swiper('.sPlace-slider-js', {
+		slidesPerView: 'auto',
+		spaceBetween: 10,
+		loop: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev'
+		}
 	}); //end luckyone js
 }
 

@@ -1,9 +1,26 @@
 mixin sLeisure(data)
 	// start sLeisure
 	+b.SECTION.sLeisure.section#sLeisure&attributes(attributes)
+		+b.bg-txt.d-none.d-lg-block
+			img(loading="lazy" src=`img/svg/sBlog-txt.svg` alt="")
 		.container
 			+b.section-title.text-center
-				h2 sLeisure
-				
-			.row
+				h2 Досуг в лагере
+			+e.row.row
+				+sLeisureItem(1, 'Йога')
+				+sLeisureItem(2, 'Волейбол')
+				+sLeisureItem(3, 'Кинотеатр')
+				+sLeisureItem(4, 'Кальян')
+				+sLeisureItem(5, 'Настольные игры')
+				+sLeisureItem(6, 'Экскурсии')
 	// end sLeisure
+
+mixin sLeisureItem(imgNum, txt)
+	.col-6.col-lg-4
+		+e.item
+			+e.bg
+				img(loading="lazy" src=`img/@2x/sLeisure-bg-${imgNum}.jpg` alt="")
+			+e.ball
+				img(loading="lazy" src=`img/svg/sLeisure-${imgNum}.svg` alt="")
+			+e.txt=txt
+		//sLeisure-

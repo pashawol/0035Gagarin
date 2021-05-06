@@ -274,85 +274,149 @@
 		</div>
 		<!-- #modal-team-->
 		<div class="modal-win modal-win--lg modal-win--order" id="modal-order" style="display: none">
-			<div class="form-wrap container">
+			<div class="form-wrap">
 				<form>
 					<div class="form-wrap__title">Забронировать <span class="text-primary">«Полный комплект»</span>
 					</div>
-					<div class="order-block"> 
-						<div class="order-block__table">
-							<div class="order-block__tr order-block__tr--thead">
-								<div class="order-block__td order-block__td--title">Снаряжение
+					<section class="sRent">
+						<div class="sRent__t-head d-none d-xl-block">
+							<div class="sRent__row row align-items-center">
+								<div class="sRent__img-col col-auto">
+									<div class="sRent__th-txt sRent__th-txt--img-title">Снаряжение
+									</div>
 								</div>
-								<div class="order-block__td order-block__td--title">Час
-								</div>
-								<div class="order-block__td order-block__td--title">День
-								</div>
-								<div class="order-block__td order-block__td--title">Неделя
-								</div>
-								<div class="order-block__td order-block__td--title">Месяц
-								</div>
-							</div>
-							<div class="order-block__tr order-block__tr--tbody">
-								<div class="order-block__td">
-									<div class="row"> 
-										<div class="col-auto">
-											<!-- picture-->
-											<picture> 
-												<source type="image/webp" srcset="img/@2x/webp/.webp" media="(min-width:576px)"/>
-												<source type="image/webp" srcset="img/@1x/webp/.webp"/>
-												<source type="image/jpg" srcset="img/@2x/.jpg" media="(min-width:576px)"/>
-												<source type="image/jpg" srcset="img/@1x/.jpg"/><img src="img/@2x/.jpg" alt="" loading="lazy"/>
-											</picture>
-											<!-- /picture-->
-										</div>
-										<div class="col">
-											<div class="h5">Полный комплект</div>
-											<ul> 
-												<li>Кайт с планкой</li>
-												<li>Доска</li>
-												<li>Трапеция<span>Без гидрокостюма</span></li>
-											</ul>
+								<div class="sRent__data-col col">
+									<div class="sRent__data-sub-row row">
+										<div class="sRent__chars-col col">
+											<div class="sRent__chars-row row align-items-center">
+												<div class="col-3">
+													<div class="sRent__th-txt">Час
+													</div>
+												</div>
+												<div class="col-3">
+													<div class="sRent__th-txt">День
+													</div>
+												</div>
+												<div class="col-3">
+													<div class="sRent__th-txt">Неделя
+													</div>
+												</div>
+												<div class="col-3">
+													<div class="sRent__th-txt">Месяц 
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
-								<div class="order-block__td">1 800 ₽ 
-								</div>
-								<div class="order-block__td">4 500 ₽ 
-								</div>
-								<div class="order-block__td">18 000 ₽ 
-								</div>
-								<div class="order-block__td">43 000 ₽
+							</div>
+						</div>
+						<div class="sRent__items">
+							<div class="sRent__item">
+								<div class="sRent__row row align-items-center">
+									<div class="sRent__img-col col-lg-auto">
+										<div class="sRent__img-sub-row row align-items-center">
+											<div class="col-auto">
+												<div class="sRent__img"><img loading="lazy" src="img/@2x/sRent-1.jpg" alt=""/>
+												</div>
+											</div>
+											<div class="col">
+												<div class="sRent__name">Полный комплект
+												</div>
+												<div class="sRent__chars">
+													<ul>
+														<li>Кайт с планкой</li>
+														<li>Доска</li>
+														<li>Трапеция</li>
+													</ul>
+													<div class="sRent__red-txt">Без гидрокостюма
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="sRent__data-col col-lg">
+										<div class="sRent__data-sub-row row align-items-center">
+											<div class="sRent__chars-col col-xl">
+												<div class="sRent__chars-row row align-items-center">
+													<div class="col-3">
+														<div class="sRent__th-txt d-xl-none">Час
+														</div>
+														<div class="sRent__price">1 800 ₽
+														</div>
+													</div>
+													<div class="col-3">
+														<div class="sRent__th-txt d-xl-none">День
+														</div>
+														<div class="sRent__price">4 500 ₽
+														</div>
+													</div>
+													<div class="col-3">
+														<div class="sRent__th-txt d-xl-none">Неделя
+														</div>
+														<div class="sRent__price">18 000 ₽
+														</div>
+													</div>
+													<div class="col-3">
+														<div class="sRent__th-txt d-xl-none">Месяц
+														</div>
+														<div class="sRent__price">43 000 ₽
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</section>
 					<p class="text-center">Заполните форму, и мы свяжемся с Вами в ближайшее время</p>
-					<div class="row"> 
-						<div class="col-lg-6"> 
-							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="date" type="date" placeholder="__.__.____"/> 
+					<div class="container">
+						<div class="row"> 
+							<div class="col-lg-6"> 
+								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="date" type="date" placeholder="__.__.____"/> 
+								</div>
+								<!-- +e.input-wrap-->
 							</div>
-							<!-- +e.input-wrap-->
+							<div class="col-lg-6"> 
+								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="date" type="date" placeholder="__.__.____"/> 
+								</div>
+								<!-- +e.input-wrap-->
+							</div>
+							<div class="col-lg-6"> 
+								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя"/> 
+								</div>
+								<!-- +e.input-wrap-->
+							</div>
+							<div class="col-lg-6"> 
+								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Ваш телефон"/> 
+								</div>
+								<!-- +e.input-wrap-->
+							</div>
 						</div>
-						<div class="col-lg-6"> 
-							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="date" type="date" placeholder="__.__.____"/> 
-							</div>
-							<!-- +e.input-wrap-->
-						</div>
-						<div class="col-lg-6"> 
-							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя"/> 
-							</div>
-							<!-- +e.input-wrap-->
-						</div>
-						<div class="col-lg-6"> 
-							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Ваш телефон"/> 
-							</div>
-							<!-- +e.input-wrap-->
+						<button class="form-wrap__btn btn" type="submit">Забронировать оборудование
+						</button>
+						<div class="form-wrap__polite">Я&nbsp;согласен(а) на&nbsp;обработку и&nbsp;хранение моих персональных данных в&nbsp;соответствии с&nbsp;условиями.
 						</div>
 					</div>
-					<button class="form-wrap__btn btn" type="submit">Забронировать оборудование
-					</button>
-					<div class="form-wrap__polite">Я&nbsp;согласен(а) на&nbsp;обработку и&nbsp;хранение моих персональных данных в&nbsp;соответствии с&nbsp;условиями.
+				</form>
+			</div>
+		</div>
+		<!-- #modal-order-->
+		<div class="modal-win modal-win--lg modal-win--text" id="modal-rules" style="display: none">
+			<div class="form-wrap">
+				<form>
+					<div class="form-wrap__title pb-3">Правила и&nbsp;условия аренды кайт снаряжения в&nbsp;Кайт школе &laquo;ГагаринКайт&raquo; Крым, Межводное
 					</div>
+					<ol> 
+						<li> Необходимо иметь сертификацию IKO не&nbsp;ниже уровня&nbsp;3K (умеете контролировать скорость, контролируемо останавливаться, умеете зарезаться вверх по&nbsp;ветру). Если у&nbsp;вас нет сертификата IKO, вы&nbsp;можете взять пол часа с&nbsp;инструктором за&nbsp;1500&nbsp;рублей, и&nbsp;кайт школа GagarinKite выдаст вам сертификат, конечно&nbsp;же, если ваши навыки соответствуют заявленным.</li>
+						<li> Владелец оборудования (кайт школа &laquo;ГагаринКайт&raquo;) и&nbsp;арендатор обязуются проверить оборудование перед и&nbsp;после эксплуатации на&nbsp;предмет поломок, разрывов, порезов или иных повреждений.</li>
+						<li>  Если перед эксплуатацией оборудование оказывается непригодным для использования, то&nbsp;владелец&nbsp;&mdash; кайт школа, обязуется выдать другой комплект оборудования. Если перед эксплуатацией на&nbsp;оборудовании замечено незначительное повреждение, которое не&nbsp;приведет к&nbsp;поломке (например, порез, который можно заклеить), и&nbsp;это устраивает обе стороны, то&nbsp;данное оборудование сдается в&nbsp;аренду.</li>
+						<li>  Время аренды оборудования (кайта, планки управления кайтом, кайт борда, трапеции, гидроодежды, спасательного жилета, шлема) начинается после проверки оборудования арендатором и&nbsp;владельцем и&nbsp;заканчивается после проверки оборудования арендатором и&nbsp;владельцем. + 15&nbsp;минут бесплатно на&nbsp;сборку и&nbsp;разборку кайта, в&nbsp;случае, если в&nbsp;аренде кайт или планка управления кайтом. По&nbsp;окончании времени аренды оборудования арендатор&nbsp;&mdash; клиент обязуется аккуратно сложить оборудование так, чтобы не&nbsp;причинить ему вред. Если по&nbsp;окончании времени проката кайт школа берет оборудование в&nbsp;личное пользование или передаёт снаряжение другому клиенту, в&nbsp;этом случае арендатор&nbsp;&mdash; клиент не&nbsp;складывает оборудование, но&nbsp;при передаче проводится осмотр оборудования обеими сторонами.</li>
+						<li>Чтобы взять оборудование в&nbsp;аренду, арендатор оставляет залог за&nbsp;оборудование в&nbsp;размере 15&nbsp;000&nbsp;руб. Если арендатор причиняет ущерб оборудованию на&nbsp;сумму не&nbsp;превышающую сумму залога, тогда сумма ущерба вычитается из&nbsp;залога, а&nbsp;остаток возвращается арендатору . Сумму ущерба определяет владелец оборудования по&nbsp;формуле &laquo;потеря рентабельности оборудования + стоимость ремонта оборудования = сумма ущерба&raquo; (вычисляется для каждой единицы отдельно, так что повредив планку на&nbsp;13&nbsp;000&nbsp;руб., кайт на&nbsp;10&nbsp;000&nbsp;руб.&nbsp;и&nbsp;кайт борд на&nbsp;5&nbsp;000 руб арендатор обязан уплатить сумму ущерба оборудования, но&nbsp;не&nbsp;обязан его приобретать ). Если сумма ущерба единицы оборудования превышает сумму залога, тогда арендатор обязан приобрести данную единицу оборудования за&nbsp;сумму указанную на&nbsp;каждом мешке из&nbsp;под кайта, кайтборде или трапеции.</li>
+						<button class="btn-center mt-5 modal-close-js" type="button">Я ознакомился</button>
+					</ol>
 				</form>
 			</div>
 		</div>

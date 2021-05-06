@@ -1,9 +1,36 @@
 mixin sPlace(data)
 	// start sPlace
 	+b.SECTION.sPlace.section#sPlace&attributes(attributes)
+		+b.bg-txt.d-none.d-lg-block
+			img(loading="lazy" src=`img/svg/sPlace-txt.svg` alt="")
 		.container
 			+b.section-title.text-center
-				h2 sPlace
-				
-			.row
+				h2 Кайт-спот Межводное
+			+e.items
+				+e.item
+					+e.row.row.align-items-center
+						+e.img-col.col-auto
+							+sPlaceSlider()
+						+e.txt-col.col Школа кайтсерфинга Гагарин Кайт расположена на Западном побережье Крыма, на огромной песчаной косе, между поселком Межводное и городом Черноморское. Эти места известны всем своими сильными и постоянными ветрами благодаря степной местности, что делает наш спот лучшим местом для кайтсерфинга в России. Межводное одно из лучших мест для обучения кайт серфингу не только в Крыму, но и во всем мире. Просторная мелководная и чистая кайт лагуна без волн.  Райский спот находиться на западном побережье Крыма близь самой западной точки, мыса тарханкут и поселков Черноморское, Оленевка. В 70 км от Евпатории
+				+e.item
+					+e.row.row.align-items-center
+						+e.img-col.col-auto
+							+e.img
+								img(loading="lazy" src="img/@2x/sPlace-img.png" alt="")
+						+e.txt-col.col
+							| Ветер работает во всех направлениях, но чаще всего дует с Севера — в берег и с Северо-Запада — под углом в берег. В этих случаях, скорость ветра увеличивается на пару метров в секунду, и даже когда по прогнозу стоит штиль, на нашем споте все равно катаются и учат.
+							br
+							br
+							| Редко приходит Восточный или Юго-Восточный ветер — с берега. При таких направлениях мы учим в лимане, где ученик застрахован от того, чтобы его унесло в море.
+
 	// end sPlace
+
+mixin sPlaceSlider()
+	+e.slider-wrap
+		.swiper-container.sPlace-slider-js
+			.swiper-wrapper
+				- for (var i = 1; i < 4; i++)
+					.swiper-slide
+						+e.slide-img(href=`img/@2x/sPlace-${i}.jpg` data-fancybox="sPlaceGalery1")
+							img(loading="lazy" src=`img/@2x/sPlace-${i}.jpg` alt="")
+			+arrow()

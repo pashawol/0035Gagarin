@@ -464,7 +464,7 @@ $table-variants: ("primary": shift-color($primary, $table-bg-scale),
 
 // scss-docs-start input-btn-variables
 $input-btn-padding-y: rem(21) !default;
-$input-btn-padding-x: .75rem !default;
+$input-btn-padding-x: rem(24) !default;
 $input-btn-font-family: null !default;
 $input-btn-font-size: $font-size-base !default;
 $input-btn-line-height: $line-height-base !default;
