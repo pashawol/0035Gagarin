@@ -161,7 +161,7 @@
 				<!--  мобильное меню-->
 			</header>
 			<!-- end header-->
-			<div class="section container"> <a class="btn btn-danger link-modal-js px-4 m-2" href="#modal-call">Заказать звонок</a><a class="btn btn-danger link-modal-js px-4 m-2" href="#modal-team">Об инструкторе</a><a class="btn btn-danger link-modal-js px-4 m-2" href="#modal-order">Забронировать «Полный комплект»</a><a class="btn btn-danger link-modal-js px-4 m-2" href="#modal-hotel">Гостиница «Караван Сарай»</a><a class="btn btn-danger link-modal-js px-4 m-2" href="#"></a><a class="btn btn-danger link-modal-js px-4 m-2" href="#"></a>
+			<div class="section container"> <a class="btn btn-danger link-modal-js px-4 m-2" href="#modal-call">Заказать звонок</a><a class="btn btn-danger link-modal-js px-4 m-2" href="#modal-team">Об инструкторе</a><a class="btn btn-danger link-modal-js px-4 m-2" href="#modal-order">Забронировать «Полный комплект»</a><a class="btn btn-danger link-modal-js px-4 m-2" href="#modal-hotel">Гостиница «Караван Сарай»</a><a class="btn btn-danger link-modal-js px-4 m-2" href="#modal-reserve">Забронировать Гостиница «Караван Сарай»</a><a class="btn btn-danger link-modal-js px-4 m-2" href="#modal-transfer">Забронировать трансфер</a><a class="btn btn-danger link-modal-js px-4 m-2" href="#modal-map">Карта проезда</a>
 			</div>
 			<!-- start headerBlock-->
 			<div class="headerBlock section" id="headerBlock">
@@ -591,6 +591,74 @@
 					</div>
 					<!-- end modals-->
 				</div>
+			</div>
+		</div>
+		<div class="modal-win" id="modal-reserve" style="display: none">
+			<div class="form-wrap">
+				<form>
+					<div class="form-wrap__title"><span>
+							Забронировать Гостиница
+							</span><span class="text-primary">«Караван Сарай»</span>
+					</div>
+					<p class="text-center">Выберите период, на который хотите забронировать:</p>
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="date" type="date" placeholder="__.__.____"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="date" type="date" placeholder="__.__.____"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Ваш телефон"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<button class="form-wrap__btn btn" type="submit">Забронировать
+					</button>
+					<div class="form-wrap__polite">Я&nbsp;согласен(а) на&nbsp;обработку и&nbsp;хранение моих персональных данных в&nbsp;соответствии с&nbsp;условиями.
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="modal-win" id="modal-transfer" style="display: none">
+			<div class="form-wrap">
+				<form>
+					<div class="form-wrap__title">Забронировать трансфер
+					</div>
+					<p class="text-center">
+						Мы заберем вас из Симферополя и довезем в Межводное.
+						<br/>Укажите дату и время приезда:
+					</p>
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="date" type="date" placeholder="__.__.____"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group">
+						<select class="form-wrap__input form-select" name="select">
+							<option value="10:00">10:00</option>
+							<option value=" placeholder 1">placeholder 1</option>
+							<option value=" placeholder 2">placeholder 2</option>
+							<option value=" placeholder 3">placeholder 3</option>
+							<option value=" placeholder 4">placeholder 4</option>
+						</select>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Ваш телефон"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<button class="form-wrap__btn btn" type="submit">Забронировать
+					</button>
+					<div class="form-wrap__polite">Я&nbsp;согласен(а) на&nbsp;обработку и&nbsp;хранение моих персональных данных в&nbsp;соответствии с&nbsp;условиями.
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="modal-win modal-win--lg modal-win--text" id="modal-map" style="display: none">
+			<div class="form-wrap__title pb-3">Карта проезда</div>
+			<div class="map-cont">
+				<div id="map"></div>
 			</div>
 		</div>
 		<!-- modal libs-->

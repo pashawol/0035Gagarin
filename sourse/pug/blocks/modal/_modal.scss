@@ -352,8 +352,6 @@ a {
 				columns: 3!important;
 			}
 		}
-
-
 	}
 	&__armor-btn{
 		@extend .btn;
@@ -363,6 +361,27 @@ a {
 		min-width: rem(224);
 	}
 	//
+	&__map-inner{
+
+	}
+	//
 	&__{}
 	&__{}
+}
+
+.map-cont{
+	display: block;
+
+	height: rem(593);
+	@include media-breakpoint-up(lg){
+		height: rem(480);
+	}
+
+	border-radius: 5px;
+	overflow: hidden;
+
+	#map{
+		width: 100%!important;
+		height: 100% !important;
+	}
 }

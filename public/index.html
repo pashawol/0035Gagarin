@@ -1291,8 +1291,14 @@
 			<!-- end sLeisure-->
 			<!-- start sCuisine-->
 			<section class="sCuisine section" id="sCuisine">
-				<div class="sCuisine__bg"><img loading="lazy" src="img/@2x/kitchen-bg.jpg" alt=""/>
-				</div>
+				<!-- picture-->
+				<picture class="sCuisine__bg"> 
+					<source type="image/webp" srcset="img/@2x/webp/kitchen-bg.webp" media="(min-width:576px)"/>
+					<source type="image/webp" srcset="img/@1x/webp/kitchen-bg.webp"/>
+					<source type="image/jpg" srcset="img/@2x/kitchen-bg.jpg" media="(min-width:576px)"/>
+					<source type="image/jpg" srcset="img/@1x/kitchen-bg.jpg"/><img src="img/@2x/kitchen-bg.jpg" alt="" loading="lazy"/>
+				</picture>
+				<!-- /picture-->
 				<div class="container">
 					<div class="section-title text-white text-center">
 						<h2>Вкуснейшая кухня на кайт станции</h2>
@@ -2952,6 +2958,74 @@
 					</div>
 					<!-- end modals-->
 				</div>
+			</div>
+		</div>
+		<div class="modal-win" id="modal-reserve" style="display: none">
+			<div class="form-wrap">
+				<form>
+					<div class="form-wrap__title"><span>
+							Забронировать Гостиница
+							</span><span class="text-primary">«Караван Сарай»</span>
+					</div>
+					<p class="text-center">Выберите период, на который хотите забронировать:</p>
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="date" type="date" placeholder="__.__.____"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="date" type="date" placeholder="__.__.____"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Ваш телефон"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<button class="form-wrap__btn btn" type="submit">Забронировать
+					</button>
+					<div class="form-wrap__polite">Я&nbsp;согласен(а) на&nbsp;обработку и&nbsp;хранение моих персональных данных в&nbsp;соответствии с&nbsp;условиями.
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="modal-win" id="modal-transfer" style="display: none">
+			<div class="form-wrap">
+				<form>
+					<div class="form-wrap__title">Забронировать трансфер
+					</div>
+					<p class="text-center">
+						Мы заберем вас из Симферополя и довезем в Межводное.
+						<br/>Укажите дату и время приезда:
+					</p>
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="date" type="date" placeholder="__.__.____"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group">
+						<select class="form-wrap__input form-select" name="select">
+							<option value="10:00">10:00</option>
+							<option value=" placeholder 1">placeholder 1</option>
+							<option value=" placeholder 2">placeholder 2</option>
+							<option value=" placeholder 3">placeholder 3</option>
+							<option value=" placeholder 4">placeholder 4</option>
+						</select>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Ваш телефон"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<button class="form-wrap__btn btn" type="submit">Забронировать
+					</button>
+					<div class="form-wrap__polite">Я&nbsp;согласен(а) на&nbsp;обработку и&nbsp;хранение моих персональных данных в&nbsp;соответствии с&nbsp;условиями.
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="modal-win modal-win--lg modal-win--text" id="modal-map" style="display: none">
+			<div class="form-wrap__title pb-3">Карта проезда</div>
+			<div class="map-cont">
+				<div id="map"></div>
 			</div>
 		</div>
 		<!-- modal libs-->

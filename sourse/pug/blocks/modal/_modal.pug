@@ -1,7 +1,5 @@
-
-mixin modal() 
+mixin modal()
 	//  start modals
-
 	+b.modal-win(id="modal-call" class=" " style="display: none" )
 		+form-wrap
 			+e.title Заказать звонок
@@ -118,6 +116,41 @@ mixin modal()
 					li Душ
 					li Чайник
 					li Интернет
+	//-
+	+b.modal-win(id="modal-reserve" class=" " style="display: none" )
+		+form-wrap
+			+e.title
+				span
+					| Забронировать Гостиница
+					|
+				span.text-primary «Караван Сарай»
+			p.text-center Выберите период, на который хотите забронировать:
+			+input("__.__.____",'date')(required)
+			+input("__.__.____",'date')(required)
+			+input("Ваше Имя")(required)
+			+input("Ваш телефон",'tel')(required)
+			+e.BUTTON.btn.btn(type="submit"  ) Забронировать
+			+polite()
+	//-
+	+b.modal-win(id="modal-transfer" class=" " style="display: none" )
+		+form-wrap
+			+e.title Забронировать трансфер
+			p.text-center
+				| Мы заберем вас из Симферополя и довезем в Межводное.
+				|
+				br
+				| Укажите дату и время приезда:
+			+input("__.__.____",'date')(required)
+			+input('10:00', 'select')
+			+input("Ваше Имя")(required)
+			+input("Ваш телефон",'tel')(required)
+			+e.BUTTON.btn.btn(type="submit"  ) Забронировать
+			+polite()
+	//-
+	+b.modal-win--lg.--text(id="modal-map" class=" " style="display: none" )
+		.form-wrap__title.pb-3 Карта проезда
+		+b.map-cont
+			#map
 
 mixin modHotelItem(data)
 	+e.item

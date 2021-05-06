@@ -1,7 +1,8 @@
 mixin sCuisine(data)
 	// start sCuisine
 	+b.SECTION.sCuisine.section#sCuisine&attributes(attributes)
-		+e.bg
+		+pic('kitchen-bg.jpg')(class="sCuisine__bg")
+		//-+e.bg
 			img(loading="lazy" src="img/@2x/kitchen-bg.jpg" alt="")
 		.container
 			+b.section-title.text-white.text-center
