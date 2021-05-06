@@ -72,6 +72,67 @@ mixin modal()
 
 				button.btn-center.mt-5(type="button").modal-close-js Я ознакомился
 	// #modal-order
-	
-	
+	+b.modal-win--lg.--text(id="modal-hotel" class=" " style="display: none" )
+		.form-wrap__title.pb-3 Гостиница «Караван Сарай»
+		+b.modal-hotel
+			+e.descr.text-center
+				| Мы предлагаем поселиться в гостинице КАРАВАН-САРАЙ. Это самый ближайший отель к кайт споту. Он находится всего в 1 км от кайт-школы GAGARIN KITE прямо на берегу Черного моря. При бронировании через нас вы получите скидку.
+				br
+				br
+				| На территории гостиницы есть свой собственный мини пляж, детская площадка, столовая, кухня для пользования постояльцев и парковка.
+			+e.items
+				+modHotelItem({
+					name: 'Однакомнатные апартаменты «ЛЮКС»',
+					price: '2 800 ₽ в сутки',
+					listClasses: 'one-columned',
+				})
+					li Телевизор
+					li Диван, стол, стулья
+					li Двуспальная кровать
+					li Балкон
+					li Кухня со всем необходимым
+					li Интернет
+				+modHotelItem({
+					name: 'Двухкомнатные апартаменты «ЛЮКС»',
+					price: '4 000 ₽ в сутки',
+					listClasses: 'two-columned',
+				})
+					li Терраса
+					li Кухня
+					li Две спальни
+					li Гостиная
+					li Туалет
+					li Душ
+					li Телевизор
+					li Wi-Fi
+				+modHotelItem({
+					name: 'Номер «СТАНДАРТ»',
+					price: '1 800 ₽ в сутки',
+					listClasses: 'two-columned',
+				})
+					li 2 отдельные кровати
+					li Телевизор
+					li Шкаф, стол, стулья
+					li Холодильник
+					li Туалет
+					li Душ
+					li Чайник
+					li Интернет
+
+mixin modHotelItem(data)
+	+e.item
+		.text-center.d-xl-none.d-xl-none
+			+e.name=data.name
+			+e.price=data.price
+		+e.row.row.align-items-center
+			.col-xl-6
+				+sPlaceSlider()
+			+e.txt-col.col-xl-6
+				+e.name.d-none.d-xl-block=data.name
+				+e.price.d-none.d-xl-block=data.price
+				+e.list-wrap(class=`${data.listClasses}`)
+					ul
+						block
+				+e.btn-cont.text-center.text-xl-start
+					+e.armor-btn(href='#') Забронировать
 	// end modals
