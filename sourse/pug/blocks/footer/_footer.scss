@@ -25,6 +25,8 @@
 	}
 
 	&__numbers{
+		text-align: center;
+		font-weight: bold;
 
 		&:after{
 			content: '';
@@ -33,16 +35,14 @@
 			width: 90px;
 			height: 11px;
 
-			background-image: url(./img/@2x/foot-waves.png);
+			background-image: url(../img/@2x/foot-waves.png);
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
 		}
 	}
 	&__number{
-		display: block;
-		font-weight: bold;
-		text-align: center;
+		display: inline-block;
 
 		color: $body-color;
 		&:hover{

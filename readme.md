@@ -1,4 +1,1 @@
-1. Отключил lazy плагин. Поставил  loading="lazy"
-
-
-rm -rf node_modules
+<https://pashawol.github.io/0035Gagarin/public/index.html>
