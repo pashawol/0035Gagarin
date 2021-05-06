@@ -32,10 +32,10 @@ html(lang="ru")
 		<meta name="format-detection" content="telephone=no"> 
 		+allcss()
 	block variables
-	//- style.
-	//- 	.loaded_hiding {  opacity: 0; pointer-events: none;  } .loaded_hiding::before { display: none; }
+	style.
+		.op {  opacity: 0; pointer-events: none;  } 
 	//- body.loaded_hiding(class= mainPage) 
-	body(class= mainPage data-bg= bg)
+	body.op(class= mainPage data-bg= bg)
 		.main-wrapper
 			block pagecontent
 				h3 content

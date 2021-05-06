@@ -2,11 +2,11 @@ mixin sAdvantages(data)
 	// start sAdvantages
 	+b.SECTION.sAdvantages.section#sAdvantages&attributes(attributes)
 		.container
-			+b.section-title.text-center
+			+b.section-title.text-center(class="wow  animate__fadeIn  " )
 				h2  Преимущества школы кайтсерфинга GAGARINKITE
 		.container-fluid.px-0
 			mixin item(i, t)
-				+e.item.row.gx-0
+				+e.item.row.gx-0(class="wow  animate__fadeIn  " )
 					+e.before.d-none.d-md-block(data-title= t) 
 					.col-md-6
 						+e.img-wrap.bg-wrap

@@ -1,13 +1,13 @@
 mixin sSertificates(data)
 	// start sSertificates
 	+b.SECTION.sSertificates.section.bg-wrap#sSertificates&attributes(attributes)
-		+pic("sert-bg.jpg",'bg',0).picture-bg
+		+pic("sert-bg.jpg",'bg',0).picture-bg(class="wow  animate__fadeIn  " )
 		.container
 			+e.row.row.default-row
-				+e.col.col-lg-12
+				+e.col.col-lg-12(class="wow  animate__fadeIn  " )
 					+b.section-title.text-white
 						h2 Выдаем сертификаты IKO тем, кто прошел обучение в&nbsp;нашей кайт школе
-				+e.col.col-lg-12
+				+e.col.col-lg-12(class="wow  animate__fadeIn  " )
 					+e.block 
 						+e.block-head
 							+e.block-title.h4 Учим по методике
@@ -29,7 +29,7 @@ mixin sSertificates(data)
 							+li(`4`,`<strong>Единственные в&nbsp;России, кто проводит курсы повышения квалификации инструкторов</strong>, за&nbsp;прошлое лето проведено 4&nbsp;курса, повышена квалификация более 20&nbsp;инструкторов.`)
 				+e.col--end.col-lg-12
 					mixin item(i,t,p)
-						+b.sert-card
+						+b.sert-card(class="wow  animate__fadeIn  " )
 							+pic(`in-${i}.jpg`,'bg',0)
 							div
 								.h5!= t

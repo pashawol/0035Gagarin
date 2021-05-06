@@ -3,9 +3,9 @@ mixin sSteps(data)
 	+b.SECTION.sSteps.section#sSteps&attributes(attributes)
 		img.res-i(src="img/svg/steps-text.svg", alt="").text.d-none.d-sm-block
 		.container
-			+b.section-title.text-center
+			+b.section-title.text-center(class="wow  animate__fadeIn  " )
 				h2 6 шагов, как стать кайтером 
-			+b.carusel
+			+b.carusel(class="wow  animate__fadeIn  " )
 				+e.slider--not-center-js.swiper-container 
 					.swiper-wrapper 
 						mixin item(i, t)

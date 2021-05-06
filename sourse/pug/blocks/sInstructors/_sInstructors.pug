@@ -4,9 +4,9 @@ mixin sInstructors(data)
 		//- img(src="img/svg/gagarin_team.svg", alt="")
 		img.res-i(src="img/svg/gagarin_team.svg", alt="").text.d-none.d-sm-block
 		.container
-			+b.section-title.text-center
+			+b.section-title.text-center(class="wow  animate__fadeIn  " )
 				h2 Профессиональные инструкторы
-		.container-fluid
+		.container-fluid(class="wow  animate__fadeIn  " )
 			+b.carusel
 				+e.slider--js.swiper-container 
 					.swiper-wrapper 
@@ -62,5 +62,5 @@ mixin sInstructors(data)
 						+slide(`5`,`Ник Роговенко`) 
 					+e.control-wrap
 						+arrow
-			a.btn-center(href="#") Подобрать программу
+			a.btn-center(href="#" class="wow  animate__fadeIn  " ) Подобрать программу
 	// end sInstructors

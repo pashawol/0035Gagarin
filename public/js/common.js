@@ -381,6 +381,17 @@ function eventHandler() {
 			prevEl: '.swiper-button-prev'
 		}
 	}); //end luckyone js
+
+	var wow = new WOW({
+		mobile: false,
+		animateClass: 'animate__animated'
+	});
+	$('body').removeClass("op");
+	wow.init();
+	setTimeout(() => {}, 1000);
+	setTimeout(() => {
+		$('.header').removeClass("op");
+	}, 500);
 }
 
 ;

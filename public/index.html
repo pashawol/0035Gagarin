@@ -13,12 +13,14 @@
 		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
 		<link href="libs/@fancyapps/fancybox/jquery.fancybox.min.css" rel="stylesheet"/>
 		<link href="libs/priority-nav/priority-nav-core.css" rel="stylesheet"/>
+		<link href="libs/animate.css/animate.min.css" rel="stylesheet"/>
 		<link href="css/main.min.css" rel="stylesheet"/>
 	</head>
-	<body data-bg="main.jpg">
+	<style>.op {  opacity: 0; pointer-events: none;  } </style>
+	<body class="op" data-bg="main.jpg">
 		<div class="main-wrapper">
 			<!-- start header-->
-			<header class="header" id="header">
+			<header class="header op">
 				<!-- start topLine-->
 				<div class="topLine section" id="topLine">
 					<div class="container-fluid">
@@ -162,7 +164,7 @@
 			</header>
 			<!-- end header-->
 			<!-- start headerBlock-->
-			<div class="headerBlock section" id="headerBlock">
+			<div class="headerBlock section wow animate__fadeIn" id="headerBlock">
 				<iframe src="https://www.youtube.com/embed/GSVTatsa2v8?mute=1&amp;autoplay=1&amp;controls=0&amp;disablekb=1&amp;showinfo=0&amp;loop=1&amp;playlist=GSVTatsa2v8&amp;mute=1&amp;rel=0&amp;modestbranding=1" title="YouTube video player" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
 				<div class="container">
 					<div class="headerBlock__top-text">Сезон 2021&nbsp;&mdash; с&nbsp;1&nbsp;мая по&nbsp;31&nbsp;октября
@@ -205,7 +207,7 @@
 			<section class="sAbout section" id="sAbout">
 				<div class="container">
 					<div class="sAbout__head row">
-						<div class="col-xxl-6 col-xl-auto col-lg-6 text-lg-start text-center">
+						<div class="col-xxl-6 col-xl-auto col-lg-6 text-lg-start text-center wow  animate__fadeIn  ">
 							<h2>Познакомьтесь с&nbsp;нашей кайт школой</h2>
 							<!-- picture-->
 							<picture> 
@@ -213,13 +215,13 @@
 							</picture>
 							<!-- /picture-->
 						</div>
-						<div class="col">
+						<div class="col wow  animate__fadeIn  ">
 							<p>GagarinKite&nbsp;&mdash; единственная кайт школа в&nbsp;Межводном, имеющая официальный статус аффилированного центра международной организации кайтбординга IKO International Kiteboarding Organization (IKO)&nbsp;&mdash; самая большая и&nbsp;уважаемая в&nbsp;мировом кайт сообществе организация. Методика обучения IKO признана всеми странами мира как лучшая.</p>
 							<p>Принцип методики&nbsp;&mdash; от&nbsp;простого к&nbsp;сложному. Шаг за&nbsp;шагом, урок за&nbsp;уроком студент осваивает кайт, постепенно усложняя упражнения: сначала учится управлять кайтом, удерживать его в&nbsp;разных позициях, затем учится создавать тягу, а&nbsp;только после того, как приходит уверенность при управлении парусом, добавляется доска. Таким образом, студент плавно и&nbsp;безопасно доходит до&nbsp;водного старта.</p>
 						</div>
 					</div>
 				</div>
-				<div class="sAbout__row row"> 
+				<div class="sAbout__row row wow animate__fadeIn">
 					<!-- picture-->
 					<picture> 
 						<source type="image/webp" srcset="img/@2x/webp/gal-1.webp" media="(min-width:576px)"/>
@@ -258,12 +260,12 @@
 			<!-- start sAdvantages-->
 			<section class="sAdvantages section" id="sAdvantages">
 				<div class="container">
-					<div class="section-title text-center">
+					<div class="section-title text-center wow animate__fadeIn">
 						<h2> Преимущества школы кайтсерфинга GAGARINKITE</h2>
 					</div>
 				</div>
 				<div class="container-fluid px-0">
-						<div class="sAdvantages__item row gx-0">
+						<div class="sAdvantages__item row gx-0 wow animate__fadeIn">
 							<div class="sAdvantages__before d-none d-md-block" data-title="Безопасность"> 
 							</div>
 							<div class="col-md-6">
@@ -307,7 +309,7 @@
 									</div>
 							</div>
 						</div>
-						<div class="sAdvantages__item row gx-0">
+						<div class="sAdvantages__item row gx-0 wow animate__fadeIn">
 							<div class="sAdvantages__before d-none d-md-block" data-title="Профессионализм"> 
 							</div>
 							<div class="col-md-6">
@@ -345,7 +347,7 @@
 									</div>
 							</div>
 						</div>
-						<div class="sAdvantages__item row gx-0">
+						<div class="sAdvantages__item row gx-0 wow animate__fadeIn">
 							<div class="sAdvantages__before d-none d-md-block" data-title="Сервис"> 
 							</div>
 							<div class="col-md-6">
@@ -407,12 +409,12 @@
 			<!-- start sRews-->
 			<section class="sRews section" id="sRews">
 				<div class="container">
-					<div class="section-title text-center">
+					<div class="section-title text-center wow animate__fadeIn">
 						<h2>Отзывы</h2>
 					</div>
 				</div>
 				<div class="container-fluid"><img class="res-i text d-none d-sm-block" src="img/svg/rew-text.svg" alt=""/>
-					<div class="carusel">
+					<div class="carusel wow animate__fadeIn">
 						<div class="carusel__slider carusel__slider--js swiper-container"> 
 							<div class="swiper-wrapper"> 
 								<div class="carusel__slide swiper-slide">
@@ -527,10 +529,10 @@
 			<!-- start sSteps-->
 			<section class="sSteps section" id="sSteps"><img class="res-i text d-none d-sm-block" src="img/svg/steps-text.svg" alt=""/>
 				<div class="container">
-					<div class="section-title text-center">
+					<div class="section-title text-center wow animate__fadeIn">
 						<h2>6 шагов, как стать кайтером </h2>
 					</div>
-					<div class="carusel">
+					<div class="carusel wow animate__fadeIn">
 						<div class="carusel__slider carusel__slider--not-center-js swiper-container"> 
 							<div class="swiper-wrapper"> 
 									<div class="carusel__slide swiper-slide">
@@ -618,7 +620,7 @@
 			</section>
 			<!-- end sSteps-->
 			<!-- start sPrices-->
-			<section class="sPrices section text-center bg-wrap" id="sPrices">
+			<section class="sPrices section text-center bg-wrap wow animate__fadeIn" id="sPrices">
 				<!-- picture-->
 				<picture class="picture-bg"> 
 					<source type="image/webp" srcset="img/@2x/webp/bgr.webp"/><img class="object-fit-js" src="img/@2x/bgr.jpg" alt="" loading="lazy"/>
@@ -714,11 +716,11 @@
 			<!-- start sInstructors-->
 			<section class="sInstructors section" id="sInstructors"><img class="res-i text d-none d-sm-block" src="img/svg/gagarin_team.svg" alt=""/>
 				<div class="container">
-					<div class="section-title text-center">
+					<div class="section-title text-center wow animate__fadeIn">
 						<h2>Профессиональные инструкторы</h2>
 					</div>
 				</div>
-				<div class="container-fluid">
+				<div class="container-fluid wow  animate__fadeIn  ">
 					<div class="carusel">
 						<div class="carusel__slider carusel__slider--js swiper-container"> 
 							<div class="swiper-wrapper"> 
@@ -1036,25 +1038,25 @@
 								</div>
 							</div>
 						</div>
-					</div><a class="btn-center" href="#">Подобрать программу</a>
+					</div><a class="btn-center wow  animate__fadeIn  " href="#">Подобрать программу</a>
 				</div>
 			</section>
 			<!-- end sInstructors-->
 			<!-- start sSertificates-->
 			<section class="sSertificates section bg-wrap" id="sSertificates">
 				<!-- picture-->
-				<picture class="picture-bg"> 
+				<picture class="picture-bg wow  animate__fadeIn  "> 
 					<source type="image/webp" srcset="img/@2x/webp/sert-bg.webp"/><img class="object-fit-js" src="img/@2x/sert-bg.jpg" alt="" loading="lazy"/>
 				</picture>
 				<!-- /picture-->
 				<div class="container">
 					<div class="sSertificates__row row default-row">
-						<div class="sSertificates__col col-lg-12">
+						<div class="sSertificates__col col-lg-12 wow animate__fadeIn">
 							<div class="section-title text-white">
 								<h2>Выдаем сертификаты IKO тем, кто прошел обучение в&nbsp;нашей кайт школе</h2>
 							</div>
 						</div>
-						<div class="sSertificates__col col-lg-12">
+						<div class="sSertificates__col col-lg-12 wow animate__fadeIn">
 							<div class="sSertificates__block"> 
 								<div class="sSertificates__block-head">
 									<div class="sSertificates__block-title h4">Учим по методике
@@ -1102,7 +1104,7 @@
 							</div>
 						</div>
 						<div class="sSertificates__col sSertificates__col--end col-lg-12">
-							<div class="sert-card">
+							<div class="sert-card wow animate__fadeIn">
 								<!-- picture-->
 								<picture> 
 									<source type="image/webp" srcset="img/@2x/webp/in-3.webp"/><img class="object-fit-js" src="img/@2x/in-3.jpg" alt="" loading="lazy"/>
@@ -1113,7 +1115,7 @@
 									<p><strong> Основатель и&nbsp;главный инструктор кайт школы GagarinKite</strong>&nbsp;&mdash; профессиональный спортсмен, призер многочисленных соревнований</p>
 								</div>
 							</div>
-							<div class="sert-card">
+							<div class="sert-card wow animate__fadeIn">
 								<!-- picture-->
 								<picture> 
 									<source type="image/webp" srcset="img/@2x/webp/in-2.webp"/><img class="object-fit-js" src="img/@2x/in-2.jpg" alt="" loading="lazy"/>
@@ -2792,6 +2794,12 @@
 		<!-- /slider libs-->
 		<script src="libs/inputmask/inputmask.min.js"></script>
 		<script src="libs/priority-nav/priority-nav.min.js"></script>
+		<script src="libs/wowjs/wow.min.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+		<script src="libs/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+		<script src="libs/gsap/ScrollToPlugin.min.js"></script>
+		<script src="libs/gsap/EasePack.min.js"></script>
+		<script src="libs/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 		<script src="js/common.js"></script>
 	</body>
 </html>
