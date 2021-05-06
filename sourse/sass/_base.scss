@@ -1,6 +1,6 @@
 .pixel-perfect {
 	bottom: 0;
-	top: 0;
+	//top: 0;
 	display: block;
 	@include a-cent(x);
 	pointer-events: none;
@@ -12,7 +12,7 @@
 	height: 26356px;
 
 	opacity: 0;
-	// opacity: 0.7;
+	//opacity: 0.7;
 } 
 
 .headerBlock{
