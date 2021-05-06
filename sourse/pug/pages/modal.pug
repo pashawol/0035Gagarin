@@ -27,31 +27,21 @@ block variables
 	- let  bg= 'main.jpg'
 
 block title
-	- let  title= 'title'
+	- let  title= 'Модалки'
 	title= title
 block pagecontent
 	+header()
 		+topLine
 		+top-nav()
 		+mob-mnu()
+
+	.section.container 
+		mixin btn(a,t)
+			a.btn.btn-danger.link-modal-js.px-4.m-2(href= a)= t
+		+btn("#modal-call", 'Заказать звонок')
+		+btn("#modal-team", 'Об инструкторе') 
+		+btn("#modal-order", 'Забронировать «Полный комплект»') 
 	+headerBlock
-	+sAbout
-	+sAdvantages
-	+sRews
-	+sSteps
-	+sPrices
-	+sInstructors
-	+sSertificates
-	+sKiteStation
-	+sLeisure
-	+sCuisine
-	+sPlace
-	+sRent
-	+sAdditionalServises
-	+sAccommodation
-	+sShop
-	+sHowToGetThere
-	+sOffers
-	+sBlog
+	 
 	//-+sContact()
 	+footer()

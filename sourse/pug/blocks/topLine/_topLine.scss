@@ -1,8 +1,13 @@
 
 	// start .topLine
 	.topLine {
-		--sPT: #{rem(20)};
-		--sPB: #{rem(16)};
+			@include media-breakpoint-up(md) {
+
+				--sPT: #{rem(20)};
+				--sPB: #{rem(16)};
+			}
+			--sPT: #{rem(12)};
+			--sPB: #{rem(12)};
 		background-color: #fff;
 		border-bottom: 1px solid #D6E0EA;
 		position: relative;

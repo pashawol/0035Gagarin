@@ -8,6 +8,9 @@ div.style.height = '50px';
 document.body.append(div);
 
 let scrollWidth = div.offsetWidth - div.clientWidth;
+let root = document.documentElement;
+root.style.setProperty('--spacing-end', scrollWidth + 'px');
+
 div.remove();
 const JSCCommon = {
 
@@ -37,14 +40,42 @@ const JSCCommon = {
 					// ZOOM: "Zoom"
 				},
 			},
-			beforeLoad: function () {
-				if (!document.querySelector("html").classList.contains(".fixed")) document.querySelector("html").style.marginRight = scrollWidth + 'px';
-			},
-			afterClose: function () {
-				if (!document.querySelector("html").classList.contains(".fixed")) document.querySelector("html").style.marginRight = null;
-				// 	document.querySelector("html").classList.remove("fixed")
-			},
 		});
+		const link2 = ".link-modal-team-js";
+		$(document).on("click", link2, function (e) {
+			e.preventDefault();
+			let href = this.getAttribute("href");
+			$(href + ' .content-for-modal ').remove();
+			$(this).parent().find(".content-for-modal").clone().prependTo(href);
+
+			console.log(href);
+			$.fancybox.open({
+				src: '#modal-team',
+				type: 'inline',
+				arrows: false,
+				infobar: false,
+				touch: false, 
+				autoFocus: false,
+				i18n: {
+					en: {
+						CLOSE: "Закрыть",
+						NEXT: "Вперед",
+						PREV: "Назад",
+					},
+				},
+				beforeLoad: function () {
+					root.style.setProperty('--spacing-end', scrollWidth + 'px');
+				},
+				afterClose: function () {
+					root.style.setProperty('--spacing-end', null);
+				},
+				
+			});
+		})
+		// $(link).fancybox({
+		// });
+
+
 		$(".modal-close-js").click(function () {
 			$.fancybox.close();
 		})
@@ -84,7 +115,6 @@ const JSCCommon = {
 			toggle.forEach(el => el.classList.toggle("on"));
 			menu.classList.toggle("active");
 			[document.body, document.querySelector('html')].forEach(el => el.classList.toggle("fixed"));
-			document.querySelector("html").style.marginRight = scrollWidth + 'px';
 		}, { passive: true });
 	},
 	closeMenu() {
@@ -93,8 +123,7 @@ const JSCCommon = {
 		if (menu.classList.contains("active")) {
 			this.btnToggleMenuMobile.forEach(element => element.classList.remove("on"));
 			this.menuMobile.classList.remove("active");
-			[document.body, document.querySelector('html')].forEach(el => el.classList.remove("fixed"));
-			document.querySelector("html").style.marginRight = null
+			[document.body, document.querySelector('html')].forEach(el => el.classList.remove("fixed")); 
 		}
 
 	},

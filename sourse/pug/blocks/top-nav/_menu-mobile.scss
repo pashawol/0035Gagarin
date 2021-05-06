@@ -25,6 +25,7 @@ $h: 3px;
 	&.on{
 		background: #F4F6FA;
 		border-color: #F4F6FA;
+		pointer-events: none
 	}
 	span {
 		@include a-cent(y);
@@ -87,17 +88,19 @@ $h: 3px;
 }
 
 .menu-mobile {
-	position: fixed !important;
-	z-index: 999;
-	max-width: 85%;
-	height: calc(var(--vh, 1vh) * 100);
-	width: 280px;
-	top: 0;
-	// left: 0;
-	right: 0;
-	background-color: #c3c3c3;
+	position: absolute;
+	
+	// z-index: 9;
+
+	height: calc(var(--vh, 1vh) * 100 - var(--header-height));
+	width: 100%;
+	top: 100%;
+	left: 0;
+	// right: 0;
+	background-color: #fff;
 	&:not(.active){
-		transform: translate3d(120%, 0,0);
+		// transform: translate3d(120%, 0,0);
+		transform: translateY(-100%);
 		--opacity: 0;
 
 	}
@@ -165,5 +168,27 @@ $h: 3px;
 			display: block;
 
 		}
+	}
+	.topLine{
+		text-align: center;
+	 border: none;
+		&__tel{
+			font-size: 32px;
+			display: inline-block;
+			margin-bottom: 10px;
+		}
+		&__btn{
+			font-size: 20px;
+			width: 240px;
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+
+	}
+	.soc{
+		justify-content: center;
+		--size: 45px;
+		--fz: 30px;
+		margin-bottom: 60px;
 	}
 }

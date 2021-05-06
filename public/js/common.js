@@ -6,20 +6,23 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var div = document.createElement('div');
+let div = document.createElement('div');
 div.style.overflowY = 'scroll';
 div.style.width = '50px';
 div.style.height = '50px'; // мы должны вставить элемент в документ, иначе размеры будут равны 0
 
 document.body.append(div);
-var scrollWidth = div.offsetWidth - div.clientWidth;
+let scrollWidth = div.offsetWidth - div.clientWidth;
+let root = document.documentElement;
+root.style.setProperty('--spacing-end', scrollWidth + 'px');
 div.remove();
-var JSCCommon = {
+const JSCCommon = {
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
 	menuMobile: document.querySelector(".menu-mobile--js"),
 	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
-	modalCall: function modalCall() {
-		var link = ".link-modal-js";
+
+	modalCall() {
+		const link = ".link-modal-js";
 		$(link).fancybox({
 			arrows: false,
 			infobar: false,
@@ -39,29 +42,54 @@ var JSCCommon = {
 					// ZOOM: "Zoom"
 
 				}
-			},
-			beforeLoad: function beforeLoad() {
-				if (!document.querySelector("html").classList.contains(".fixed")) document.querySelector("html").style.marginRight = scrollWidth + 'px';
-			},
-			afterClose: function afterClose() {
-				if (!document.querySelector("html").classList.contains(".fixed")) document.querySelector("html").style.marginRight = null; // 	document.querySelector("html").classList.remove("fixed")
 			}
 		});
+		const link2 = ".link-modal-team-js";
+		$(document).on("click", link2, function (e) {
+			e.preventDefault();
+			let href = this.getAttribute("href");
+			$(href + ' .content-for-modal ').remove();
+			$(this).parent().find(".content-for-modal").clone().prependTo(href);
+			console.log(href);
+			$.fancybox.open({
+				src: '#modal-team',
+				type: 'inline',
+				arrows: false,
+				infobar: false,
+				touch: false,
+				autoFocus: false,
+				i18n: {
+					en: {
+						CLOSE: "Закрыть",
+						NEXT: "Вперед",
+						PREV: "Назад"
+					}
+				},
+				beforeLoad: function () {
+					root.style.setProperty('--spacing-end', scrollWidth + 'px');
+				},
+				afterClose: function () {
+					root.style.setProperty('--spacing-end', null);
+				}
+			});
+		}); // $(link).fancybox({
+		// });
+
 		$(".modal-close-js").click(function () {
 			$.fancybox.close();
 		});
 		$.fancybox.defaults.backFocus = false;
-		var linkModal = document.querySelectorAll(link);
+		const linkModal = document.querySelectorAll(link);
 
 		function addData() {
-			linkModal.forEach(function (element) {
-				element.addEventListener('click', function () {
-					var modal = document.querySelector(element.getAttribute("href"));
-					var data = element.dataset;
+			linkModal.forEach(element => {
+				element.addEventListener('click', () => {
+					let modal = document.querySelector(element.getAttribute("href"));
+					const data = element.dataset;
 
 					function setValue(val, elem) {
 						if (elem && val) {
-							var el = modal.querySelector(elem);
+							const el = modal.querySelector(elem);
 							el.tagName == "INPUT" ? el.value = val : el.innerHTML = val; // console.log(modal.querySelector(elem).tagName)
 						}
 					}
@@ -76,92 +104,84 @@ var JSCCommon = {
 
 		if (linkModal) addData();
 	},
+
 	// /modalCall
-	toggleMenu: function toggleMenu() {
-		var toggle = this.btnToggleMenuMobile;
-		var menu = this.menuMobile;
+	toggleMenu() {
+		const toggle = this.btnToggleMenuMobile;
+		const menu = this.menuMobile;
 		document.addEventListener("click", function (event) {
-			var toggleEv = event.target.closest(".toggle-menu-mobile--js");
+			const toggleEv = event.target.closest(".toggle-menu-mobile--js");
 			if (!toggleEv) return;
-			toggle.forEach(function (el) {
-				return el.classList.toggle("on");
-			});
+			toggle.forEach(el => el.classList.toggle("on"));
 			menu.classList.toggle("active");
-			[document.body, document.querySelector('html')].forEach(function (el) {
-				return el.classList.toggle("fixed");
-			});
-			document.querySelector("html").style.marginRight = scrollWidth + 'px';
+			[document.body, document.querySelector('html')].forEach(el => el.classList.toggle("fixed"));
 		}, {
 			passive: true
 		});
 	},
-	closeMenu: function closeMenu() {
-		var menu = this.menuMobile;
+
+	closeMenu() {
+		let menu = this.menuMobile;
 		if (!menu) return;
 
 		if (menu.classList.contains("active")) {
-			this.btnToggleMenuMobile.forEach(function (element) {
-				return element.classList.remove("on");
-			});
+			this.btnToggleMenuMobile.forEach(element => element.classList.remove("on"));
 			this.menuMobile.classList.remove("active");
-			[document.body, document.querySelector('html')].forEach(function (el) {
-				return el.classList.remove("fixed");
-			});
-			document.querySelector("html").style.marginRight = null;
+			[document.body, document.querySelector('html')].forEach(el => el.classList.remove("fixed"));
 		}
 	},
-	mobileMenu: function mobileMenu() {
-		var _this = this;
 
+	mobileMenu() {
 		if (!this.menuMobileLink) return;
 		this.toggleMenu();
-		document.addEventListener('mouseup', function (event) {
-			var container = event.target.closest(".menu-mobile--js.active"); // (1)
+		document.addEventListener('mouseup', event => {
+			let container = event.target.closest(".menu-mobile--js.active"); // (1)
 
-			var link = event.target.closest(".navMenu__link"); // (1)
+			let link = event.target.closest(".navMenu__link"); // (1)
 
-			if (!container || link) _this.closeMenu();
+			if (!container || link) this.closeMenu();
 		}, {
 			passive: true
 		});
-		window.addEventListener('resize', function () {
-			if (window.matchMedia("(min-width: 992px)").matches) _this.closeMenu();
+		window.addEventListener('resize', () => {
+			if (window.matchMedia("(min-width: 992px)").matches) this.closeMenu();
 		}, {
 			passive: true
 		});
 	},
+
 	// /mobileMenu
 	// tabs  .
-	tabscostume: function tabscostume(tab) {
-		var tabs = document.querySelectorAll(tab); // const indexOf = element => Array.from(element.parentNode.children).indexOf(element);
+	tabscostume(tab) {
+		const tabs = document.querySelectorAll(tab); // const indexOf = element => Array.from(element.parentNode.children).indexOf(element);
 
-		tabs.forEach(function (element) {
-			var tabs = element;
-			var tabsCaption = tabs.querySelector(".tabs__caption");
-			var tabsBtn = tabsCaption.querySelectorAll(".tabs__btn");
-			var tabsWrap = tabs.querySelector(".tabs__wrap");
-			var tabsContent = tabsWrap.querySelectorAll(".tabs__content");
-			var random = Math.trunc(Math.random() * 1000);
-			tabsBtn.forEach(function (el, index) {
-				var data = "tab-content-".concat(random, "-").concat(index);
+		tabs.forEach(element => {
+			let tabs = element;
+			const tabsCaption = tabs.querySelector(".tabs__caption");
+			const tabsBtn = tabsCaption.querySelectorAll(".tabs__btn");
+			const tabsWrap = tabs.querySelector(".tabs__wrap");
+			const tabsContent = tabsWrap.querySelectorAll(".tabs__content");
+			const random = Math.trunc(Math.random() * 1000);
+			tabsBtn.forEach((el, index) => {
+				const data = "tab-content-".concat(random, "-").concat(index);
 				el.dataset.tabBtn = data;
-				var content = tabsContent[index];
+				const content = tabsContent[index];
 				content.dataset.tabContent = data;
 				if (!content.dataset.tabContent == data) return;
-				var active = content.classList.contains('active') ? 'active' : ''; // console.log(el.innerHTML);
+				const active = content.classList.contains('active') ? 'active' : ''; // console.log(el.innerHTML);
 
 				content.insertAdjacentHTML("beforebegin", "<div class=\"tabs__btn-accordion  btn btn-primary  mb-1 ".concat(active, "\" data-tab-btn=\"").concat(data, "\">").concat(el.innerHTML, "</div>"));
 			});
 			tabs.addEventListener('click', function (element) {
-				var btn = element.target.closest("[data-tab-btn]:not(.active)");
+				const btn = element.target.closest("[data-tab-btn]:not(.active)");
 				if (!btn) return;
-				var data = btn.dataset.tabBtn;
-				var tabsAllBtn = this.querySelectorAll("[data-tab-btn");
-				var content = this.querySelectorAll("[data-tab-content]");
-				tabsAllBtn.forEach(function (element) {
+				const data = btn.dataset.tabBtn;
+				const tabsAllBtn = this.querySelectorAll("[data-tab-btn");
+				const content = this.querySelectorAll("[data-tab-content]");
+				tabsAllBtn.forEach(element => {
 					element.dataset.tabBtn == data ? element.classList.add('active') : element.classList.remove('active');
 				});
-				content.forEach(function (element) {
+				content.forEach(element => {
 					element.dataset.tabContent == data ? (element.classList.add('active'), element.previousSibling.classList.add('active')) : element.classList.remove('active');
 				});
 			});
@@ -172,46 +192,49 @@ var JSCCommon = {
 		// 		.eq($(this).index()).fadeIn().addClass('active');
 		// });
 	},
+
 	// /tabs
-	inputMask: function inputMask() {
+	inputMask() {
 		// mask for input
-		var InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
-		InputTel.forEach(function (element) {
-			return element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}");
-		});
+		let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
+		InputTel.forEach(element => element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}"));
 		Inputmask("+9(999)999-99-99").mask(InputTel);
 	},
-	heightwindow: function heightwindow() {
+
+	heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-		var vh = window.innerHeight * 0.01; // Then we set the value in the --vh custom property to the root of the document
+		let vh = window.innerHeight * 0.01; // Then we set the value in the --vh custom property to the root of the document
 
 		document.documentElement.style.setProperty('--vh', "".concat(vh, "px")); // We listen to the resize event
 
-		window.addEventListener('resize', function () {
+		window.addEventListener('resize', () => {
 			// We execute the same script as before
-			var vh = window.innerHeight * 0.01;
+			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
 		}, {
 			passive: true
 		});
 	},
-	animateScroll: function animateScroll() {
+
+	animateScroll() {
 		$(document).on('click', " .scroll-link", function () {
-			var elementClick = $(this).attr("href");
-			var destination = $(elementClick).offset().top;
+			const elementClick = $(this).attr("href");
+			const destination = $(elementClick).offset().top;
 			$('html, body').animate({
 				scrollTop: destination
 			}, 1100);
 			return false;
 		});
 	},
-	getCurrentYear: function getCurrentYear(el) {
-		var now = new Date();
-		var currentYear = document.querySelector(el);
+
+	getCurrentYear(el) {
+		let now = new Date();
+		let currentYear = document.querySelector(el);
 		if (currentYear) currentYear.innerText = now.getFullYear();
 	}
+
 };
-var $ = jQuery;
+const $ = jQuery;
 
 function eventHandler() {
 	JSCCommon.modalCall();
@@ -222,7 +245,7 @@ function eventHandler() {
 	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile(); 
 
 	var x = window.location.host;
-	var screenName;
+	let screenName;
 	screenName = document.body.dataset.bg;
 
 	if (screenName && x.includes("localhost:30")) {
@@ -230,7 +253,7 @@ function eventHandler() {
 	}
 
 	function setFixedNav() {
-		var topNav = document.querySelector('.top-nav  ');
+		let topNav = document.querySelector('.top-nav  ');
 		if (!topNav) return;
 		window.scrollY > 0 ? topNav.classList.add('fixed') : topNav.classList.remove('fixed');
 	}
@@ -239,18 +262,18 @@ function eventHandler() {
 		setFixedNav();
 	}
 
-	window.addEventListener('scroll', function () {
+	window.addEventListener('scroll', () => {
 		setFixedNav();
 	}, {
 		passive: true
 	});
-	window.addEventListener('resize', function () {
+	window.addEventListener('resize', () => {
 		whenResize();
 	}, {
 		passive: true
 	});
 	whenResize();
-	var defaultSl = {
+	let defaultSl = {
 		spaceBetween: 0,
 		lazy: {
 			loadPrevNext: true
@@ -258,7 +281,7 @@ function eventHandler() {
 		watchOverflow: true,
 		loop: true
 	};
-	var swiper4 = new Swiper('.sBanners__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+	const swiper4 = new Swiper('.sBanners__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		slidesPerView: 'auto',
 		freeMode: true,
 		loopFillGroupWithBlank: true,
@@ -289,7 +312,7 @@ function eventHandler() {
 
 	; //luckyone js
 
-	var sBlogSlider = new Swiper('.sBlog-slider-js', {
+	let sBlogSlider = new Swiper('.sBlog-slider-js', {
 		//...defaultSl,
 		slidesPerView: 1,
 		loop: true,
@@ -311,7 +334,7 @@ function eventHandler() {
 			prevEl: '.sBlog .swiper-button-prev'
 		}
 	});
-	var caruselSliderCenter = new Swiper('.carusel__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+	let caruselSliderCenter = new Swiper('.carusel__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		centeredSlides: true,
 		slidesPerView: 'auto',
 		loop: true,
@@ -322,7 +345,7 @@ function eventHandler() {
 			prevEl: '.swiper-button-prev'
 		}
 	}));
-	var caruselSlider = new Swiper('.carusel__slider--not-center-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+	let caruselSlider = new Swiper('.carusel__slider--not-center-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		slidesPerView: 'auto',
 		loopedSlides: 6,
 		loop: false,
@@ -331,7 +354,7 @@ function eventHandler() {
 			prevEl: '.swiper-button-prev'
 		}
 	}));
-	var sOffersSlider = new Swiper('.sOffers-slider-js', {
+	let sOffersSlider = new Swiper('.sOffers-slider-js', {
 		//...defaultSl,
 		slidesPerView: 'auto',
 		loop: true,

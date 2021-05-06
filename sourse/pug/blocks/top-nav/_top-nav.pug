@@ -8,18 +8,22 @@ mixin mob-mnu()
 		//- request.responseType = 'json';
 		//- let dataJson = JSON.parse(json);
 	//- h1= dataJson['lala'] 
-	//- +b.menu-mobile--js.d-lg-none
-	//- 	+b.toggle-menu-mobile--js.on
-	//- 		span
-	//- 	+e.inner
-		
-	//- 		+mnu()
-	//- 		.text-right
+	+b.menu-mobile--js.d-lg-none
+		+e.inner 
+			+b.topLine
+				+e.tel(href="tel:+7(952)354-77-40")  +7 (952) 354-77-40
+				br
+				+e.tel(href="tel:+7(952)362-11-45") +7 (952) 362-11-45
+				br
+				+e.btn(href="#modal-call").link-modal-js Перезвоните мне 
+				+soc()
+			+mnu() 
 	//  мобильное меню
 mixin top-nav() 
 	// start top-nav
-	+b.top-nav.block-with-lazy
+	+b.top-nav.block-with-lazy.d-none.d-lg-block
 		.container-fluid
+
 			+e.body
 				+mnu()
 					

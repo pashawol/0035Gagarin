@@ -1,14 +1,17 @@
 .menu{
-	display: flex;
 	list-style: none;
 	@include media-breakpoint-up(xl) {
 		--bs-gutter-x: 40px;
 	}
-	@include roww(30px);
-	position: relative;
-	margin-bottom: 0;
-	max-width: 100%;
-	flex-wrap: wrap;
+	@include media-breakpoint-up(lg) {
+		
+		display: flex;
+		@include roww(30px);
+		position: relative;
+		margin-bottom: 0;
+		max-width: 100%;
+		flex-wrap: wrap;
+	}
 	li{
 		list-style: none;
 		padding-left: 0;
@@ -22,6 +25,9 @@
 		font-weight: 600;
 		color: $body-color;
 		background-color: #fff;
+		@include media-breakpoint-down(lg){
+			font-size: 36px;
+		}
 	
 	}
 }

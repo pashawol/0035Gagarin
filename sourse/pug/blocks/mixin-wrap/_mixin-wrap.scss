@@ -11,8 +11,8 @@
 		place-items: center;
 		background-color: var(--color, --bs-primary);
 		color: #fff !important;
-		width: rem(30);
-		height: rem(30);
+		width: var(--size, #{rem(30)});
+		height: var(--size, #{rem(30)});
 		border-radius: 50%;
 		&:hover{
 		 	// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
@@ -21,7 +21,7 @@
 		
 	}
 	.icon{
-		font-size: rem(20);
+		font-size: var(--fz, #{rem(20)});
 	}
 	 
 
