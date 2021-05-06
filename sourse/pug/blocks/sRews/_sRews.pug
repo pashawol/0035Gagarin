@@ -2,11 +2,11 @@ mixin sRews(data)
 	// start sRews
 	+b.SECTION.sRews.section#sRews&attributes(attributes)
 		.container
-			+b.section-title.text-center
+			+b.section-title.text-center(class="wow  animate__fadeIn  " )
 				h2 Отзывы
 		.container-fluid
 			img.res-i(src="img/svg/rew-text.svg", alt="").text.d-none.d-sm-block
-			+b.carusel
+			+b.carusel(class="wow  animate__fadeIn  " )
 				+e.slider--js.swiper-container 
 					.swiper-wrapper 
 						+e.slide.swiper-slide
