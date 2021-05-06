@@ -1,14 +1,94 @@
 // start .sAdditionalServises
 .sAdditionalServises {
-		// --sPT: ;
-		// --sPB: ;
-		// --sTPB: ;
+	//border-top: 1px solid red;
 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-between(md, xl) {}
-	@include media-breakpoint-only(xl) {}
-	@include media-breakpoint-down(xl) {}
+	--sPT: #{rem(80)};
+	--sPB: #{rem(80)};
+	--sTPB: #{rem(40)};
+	@include media-breakpoint-up(md){
+		--sPT: #{rem(80)};
+		--sPB: #{rem(80)};
+		--sTPB: #{rem(40)};
+	}
+	@include media-breakpoint-up(xl){
+		--sPT: #{rem(100)};
+		--sPB: #{rem(100)};
+		--sTPB: #{rem(40)};
+	}
+	@include media-breakpoint-up(xxl){
+		--sPT: #{rem(90)};
+		--sPB: #{rem(80)};
+		--sTPB: #{rem(40)};
+	}
+
+	&__items{
+
+	}
+	&__item{
+		padding: rem(24);
+		background: $light;
+		border-radius: rem(5);
+
+		margin-bottom: rem(12);
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__row{
+		@include roww(rem(24));
+	}
+	&__img{
+		width: rem(60);
+		height: rem(60);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img{
+			width: auto;
+			height: auto;
+			max-height: 100%;
+			max-width: 100%;
+		}
+	}
+	&__sub-row{
+		--bs-gutter-y: #{rem(12)};
+	}
+	&__descr{
+		font-weight: 600;
+		line-height: 1.75;
+	}
+	&__price{
+		line-height: 1.75;
+	}
+	&__title{
+		padding: rem(60) 0;
+		text-align: center;
+		font-weight: 600;
+
+		font-size: rem(32);
+		@include media-breakpoint-up(md){
+			font-size: rem(32);
+		}
+		line-height: 1.5;
+	}
+	&__btn-cont{
+		padding-top: rem(60);
+		@include media-breakpoint-up(sm){
+			padding-top: rem(80);
+		}
+		@include media-breakpoint-up(xxl){
+			padding-top: rem(90);
+		}
+	}
+	&__btn{
+		@extend .btn;
+		@extend .btn-outline-secondary;
+
+		min-width: rem(320);
+		color: $dark!important;
+	}
+	&__{}
+	&__{}
 } // end.sAdditionalServises
