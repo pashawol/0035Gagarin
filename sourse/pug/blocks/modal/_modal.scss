@@ -385,3 +385,37 @@ a {
 		height: 100% !important;
 	}
 }
+
+//
+.mw-shdeule{
+	&__items{}
+	&__item{
+		background-color: $light;
+		padding: rem(16) rem(24);
+		border-radius: rem(5);
+
+		margin-bottom: rem(12);
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__row{
+		@extend .default-row;
+	}
+	&__time-col{
+		font-weight: 600;
+		line-height: 1.75;
+		min-width: rem(70px);
+		@include media-breakpoint-up(lg){
+			min-width: rem(140px);
+		}
+	}
+	&__name-col{
+		line-height: 1.75;
+	}
+	&__number-col{
+		font-weight: 600;
+		line-height: 1.75;
+	}
+	&__{}
+}

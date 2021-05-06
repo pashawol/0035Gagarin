@@ -151,6 +151,26 @@ mixin modal()
 		.form-wrap__title.pb-3 Карта проезда
 		+b.map-cont
 			#map
+	//-
+	+b.modal-win--lg.--text(id="modal-shedule" class=" " style="display: none" )
+		.form-wrap__title.pb-3 Расписание проезда
+		+b.mw-shdeule
+			+e.items
+				-for(var i = 0; i < 6; i++)
+					+mwShedule()
+	+b.modal-win(id="modal-thanks" class=" " style="display: none" )
+		+form-wrap
+			+e.title Забронировать трансфер
+			p.text-center Мы свяжемся с Вами в ближайшее время для уточнения деталей
+			+e.btn.modal-close-js(type='button') Закрыть
+
+
+mixin mwShedule()
+	+e.item
+		+e.row.row.align-items-center
+			+e.time-col.col-auto 10:00
+			+e.name-col.col Наименование маршрута
+			+e.number-col.col-auto Номер автобуса
 
 mixin modHotelItem(data)
 	+e.item
