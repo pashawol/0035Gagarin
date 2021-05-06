@@ -163,24 +163,9 @@
 			padding-top: rem(6);
 		}
 		ul{
-			list-style: none;
-			margin: 0;
+			@extend .red-dot-ul;
 
 			li{
-				position: relative;
-				padding-left: rem(18);
-				&:before{
-					content: '';
-					position: absolute;
-					top: rem(10);
-					left: 0;
-
-					width: rem(6);
-					height: rem(6);
-					border-radius: 50%;
-					background-color: $danger;
-				}
-
 				line-height: 1.75;
 			}
 		}

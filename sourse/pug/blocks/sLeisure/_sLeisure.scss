@@ -18,9 +18,9 @@
 		@extend .default-row;
 	}
 	&__item{
-		min-height: rem(251);
+		min-height: #{'max(100%, #{rem(251)})'};
 		@include media-breakpoint-up(xl){
-			min-height: rem(314);
+			min-height: #{'max(100%, #{rem(314)})'};
 		}
 
 		background: $dark;
@@ -31,7 +31,7 @@
 		position: relative;
 		z-index: 1;
 
-		padding: rem(48);
+		padding: rem(48) rem(24);
 	}
 	&__bg{
 		position: absolute;
@@ -51,6 +51,7 @@
 	&__ball{
 		width: rem(120);
 		height: rem(120);
+		margin: 0 auto rem(52) auto;
 		border-radius: 50%;
 		background: $white;
 
@@ -64,12 +65,14 @@
 			max-width: 90%;
 			max-height: 90%;
 		}
-
-		margin-bottom: rem(52);
 	}
 	&__txt{
 		font-weight: 600;
-		font-size: rem(26);
+
+		font-size: rem(20);
+		@include media-breakpoint-up(lg){
+			font-size: rem(26);
+		}
 		line-height: 1.75;
 		color: $white;
 	}
