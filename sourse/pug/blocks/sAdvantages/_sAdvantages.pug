@@ -18,7 +18,7 @@ mixin sAdvantages(data)
 			mixin li(i, t)
 				+e.li
 					+e.icon-wrap 
-						img(src=`img/svg/advantages-i-${i}.svg`, alt="")
+						img(src=`img/svg/advantages-i-${i}.svg` loading="lazy", alt="")
 					+e.text!= t
 			+item(`1`,`Безопасность`)
 				+li(`1`,`<strong>Просторная мелководная и чистая кайт</strong> лагуна без волн.`)

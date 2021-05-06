@@ -1,8 +1,33 @@
 mixin sInstructors(data)
 	// start sInstructors
 	+b.SECTION.sInstructors.section#sInstructors&attributes(attributes)
+		//- img(src="img/svg/gagarin_team.svg", alt="")
+		img.res-i(src="img/svg/gagarin_team.svg", alt="").text.d-none.d-sm-block
 		.container
 			+b.section-title.text-center
 				h2 Профессиональные инструкторы
-			.row
+		.container-fluid
+			+b.carusel
+				+e.slider--js.swiper-container 
+					.swiper-wrapper 
+						mixin slide(i,t)
+							+e.slide.swiper-slide
+								+b.rew-item
+									+e.block
+										+e.head
+											
+											+pic(`in-${i}.jpg`,'bg',0)
+											.h5!= t
+											.h6.fw-400.text-dark.mb-4!= d
+										p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют
+										.h5.mb-4 2 000 ₽ в час 
+										a.btn.btn-outline-danger.btn-sm.w-100(href="#") Подробнее
+						+slide(`1`,`Ольга Ковязина`)
+						+slide(`2`,`Христина Стрельцова`)
+						+slide(`3`,`Александр Щербатенко`)
+						+slide(`4`,`Тарас Зимин`)
+						+slide(`5`,`Ник Роговенко`) 
+					+e.control-wrap
+						+arrow
+			a.btn-center(href="#") Подобрать программу
 	// end sInstructors

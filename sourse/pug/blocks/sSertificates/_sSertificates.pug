@@ -1,9 +1,39 @@
 mixin sSertificates(data)
 	// start sSertificates
-	+b.SECTION.sSertificates.section#sSertificates&attributes(attributes)
+	+b.SECTION.sSertificates.section.bg-wrap#sSertificates&attributes(attributes)
+		+pic("sert-bg.jpg",'bg',0).picture-bg
 		.container
-			+b.section-title.text-center
-				h2 sSertificates
-				
-			.row
+			+e.row.row.default-row
+				+e.col.col-lg-12
+					+b.section-title.text-white
+						h2 Выдаем сертификаты IKO тем, кто прошел обучение в&nbsp;нашей кайт школе
+				+e.col.col-lg-12
+					+e.block 
+						+e.block-head
+							+e.block-title.h4 Учим по методике
+							+pic('logo-sert.png','',0)
+						+e.block-body
+							mixin li(i, t, a='#')
+								+e.li
+									+e.icon-wrap 
+										img(src=`img/svg/sert-i-${i}.svg` loading="lazy", alt="")
+									div
+										+e.text!= t
+										a(href= a data-fancybox) Открыть сертификат 
+							+li(`1`,`<strong>Единственный официально сертифицированный кайт центр</strong> международной организации кайтбординга IKO <strong>в&nbsp;Межводном.</strong>`)
+
+							+li(`2`,`<strong>Единственный IKO кайт центр в&nbsp;России, где инструкторы могут повысить свою квалификацию</strong> и&nbsp;получить международный диплом.`)
+
+							+li(`3`,`<strong>Единственная школа кайтсерфинга в&nbsp;Крыму</strong>, в&nbsp;которой все <strong>инструкторы сертифицированы</strong> международной организацией по&nbsp;кайтбодингу IKO.`)
+
+							+li(`4`,`<strong>Единственные в&nbsp;России, кто проводит курсы повышения квалификации инструкторов</strong>, за&nbsp;прошлое лето проведено 4&nbsp;курса, повышена квалификация более 20&nbsp;инструкторов.`)
+				+e.col--end.col-lg-12
+					mixin item(i,t,p)
+						+b.sert-card
+							+pic(`in-${i}.jpg`,'bg',0)
+							div
+								.h5!= t
+								p!= p
+					+item(`3`,`Александр Щербатенко`,`<strong> Основатель и&nbsp;главный инструктор кайт школы GagarinKite</strong>&nbsp;&mdash; профессиональный спортсмен, призер многочисленных соревнований`)
+					+item(`2`,`Христина Стрельцова`,`<strong>Сооснователь кайт школы GagarinKite </strong> &nbsp;&mdash; инструктор Международной организации кайтбординга IKO 3-го уровня`)
 	// end sSertificates

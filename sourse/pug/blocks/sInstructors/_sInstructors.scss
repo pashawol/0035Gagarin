@@ -1,5 +1,27 @@
 // start .sInstructors
 .sInstructors {
+	.text{
+		position: absolute;
+		left: 0;
+		width: 100%;
+		top: rem(212);
+	}
+	background: #F6F8FB;
+
+	text-align: center;
+	picture{
+		width: rem(248);
+		height: rem(248);
+
+		border-radius: 50%;
+		overflow: hidden;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: $grid-gutter-width;
+	}
+ p{
+		margin-bottom: rem(20) !important;
+	}
 		// --sPT: ;
 		// --sPB: ;
 		// --sTPB: ;
