@@ -1293,8 +1293,14 @@
 			<!-- end sLeisure-->
 			<!-- start sCuisine-->
 			<section class="sCuisine section" id="sCuisine">
-				<div class="sCuisine__bg"><img loading="lazy" src="img/@2x/kitchen-bg.jpg" alt=""/>
-				</div>
+				<!-- picture-->
+				<picture class="sCuisine__bg"> 
+					<source type="image/webp" srcset="img/@2x/webp/kitchen-bg.webp" media="(min-width:576px)"/>
+					<source type="image/webp" srcset="img/@1x/webp/kitchen-bg.webp"/>
+					<source type="image/jpg" srcset="img/@2x/kitchen-bg.jpg" media="(min-width:576px)"/>
+					<source type="image/jpg" srcset="img/@1x/kitchen-bg.jpg"/><img src="img/@2x/kitchen-bg.jpg" alt="" loading="lazy"/>
+				</picture>
+				<!-- /picture-->
 				<div class="container">
 					<div class="section-title text-white text-center wow animate__fadeIn">
 						<h2>Вкуснейшая кухня на кайт станции</h2>
@@ -2789,7 +2795,324 @@
 			</div>
 		</div>
 		<!-- #modal-order-->
-		<!-- end modals-->
+		<div class="modal-win modal-win--lg modal-win--text" id="modal-hotel" style="display: none">
+			<div class="form-wrap__title pb-3">Гостиница «Караван Сарай»</div>
+			<div class="modal-hotel">
+				<div class="modal-hotel__descr text-center">Мы предлагаем поселиться в гостинице КАРАВАН-САРАЙ. Это самый ближайший отель к кайт споту. Он находится всего в 1 км от кайт-школы GAGARIN KITE прямо на берегу Черного моря. При бронировании через нас вы получите скидку.<br/><br/>На территории гостиницы есть свой собственный мини пляж, детская площадка, столовая, кухня для пользования постояльцев и парковка.
+				</div>
+				<div class="modal-hotel__items">
+					<div class="modal-hotel__item">
+						<div class="text-center d-xl-none d-xl-none">
+							<div class="modal-hotel__name">Однакомнатные апартаменты «ЛЮКС»
+							</div>
+							<div class="modal-hotel__price">2 800 ₽ в сутки
+							</div>
+						</div>
+						<div class="modal-hotel__row row align-items-center">
+							<div class="col-xl-6">
+								<div class="modal-hotel__slider-wrap">
+									<div class="swiper-container sPlace-slider-js">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide"><a class="modal-hotel__slide-img" href="img/@2x/sPlace-1.jpg" data-fancybox="sPlaceGalery1"><img loading="lazy" src="img/@2x/sPlace-1.jpg" alt=""/></a>
+											</div>
+											<div class="swiper-slide"><a class="modal-hotel__slide-img" href="img/@2x/sPlace-2.jpg" data-fancybox="sPlaceGalery1"><img loading="lazy" src="img/@2x/sPlace-2.jpg" alt=""/></a>
+											</div>
+											<div class="swiper-slide"><a class="modal-hotel__slide-img" href="img/@2x/sPlace-3.jpg" data-fancybox="sPlaceGalery1"><img loading="lazy" src="img/@2x/sPlace-3.jpg" alt=""/></a>
+											</div>
+										</div>
+										<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
+											<svg class="icon icon-chevron-left ">
+												<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+											</svg>
+										</div>
+										<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
+											<svg class="icon icon-chevron-right ">
+												<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+											</svg>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="modal-hotel__txt-col col-xl-6">
+								<div class="modal-hotel__name d-none d-xl-block">Однакомнатные апартаменты «ЛЮКС»
+								</div>
+								<div class="modal-hotel__price d-none d-xl-block">2 800 ₽ в сутки
+								</div>
+								<div class="modal-hotel__list-wrap one-columned">
+									<ul>
+										<li>Телевизор</li>
+										<li>Диван, стол, стулья</li>
+										<li>Двуспальная кровать</li>
+										<li>Балкон</li>
+										<li>Кухня со всем необходимым</li>
+										<li>Интернет</li>
+									</ul>
+								</div>
+								<div class="modal-hotel__btn-cont text-center text-xl-start"><a class="modal-hotel__armor-btn" href="#">Забронировать</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end modals-->
+					<div class="modal-hotel__item">
+						<div class="text-center d-xl-none d-xl-none">
+							<div class="modal-hotel__name">Двухкомнатные апартаменты «ЛЮКС»
+							</div>
+							<div class="modal-hotel__price">4 000 ₽ в сутки
+							</div>
+						</div>
+						<div class="modal-hotel__row row align-items-center">
+							<div class="col-xl-6">
+								<div class="modal-hotel__slider-wrap">
+									<div class="swiper-container sPlace-slider-js">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide"><a class="modal-hotel__slide-img" href="img/@2x/sPlace-1.jpg" data-fancybox="sPlaceGalery1"><img loading="lazy" src="img/@2x/sPlace-1.jpg" alt=""/></a>
+											</div>
+											<div class="swiper-slide"><a class="modal-hotel__slide-img" href="img/@2x/sPlace-2.jpg" data-fancybox="sPlaceGalery1"><img loading="lazy" src="img/@2x/sPlace-2.jpg" alt=""/></a>
+											</div>
+											<div class="swiper-slide"><a class="modal-hotel__slide-img" href="img/@2x/sPlace-3.jpg" data-fancybox="sPlaceGalery1"><img loading="lazy" src="img/@2x/sPlace-3.jpg" alt=""/></a>
+											</div>
+										</div>
+										<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
+											<svg class="icon icon-chevron-left ">
+												<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+											</svg>
+										</div>
+										<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
+											<svg class="icon icon-chevron-right ">
+												<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+											</svg>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="modal-hotel__txt-col col-xl-6">
+								<div class="modal-hotel__name d-none d-xl-block">Двухкомнатные апартаменты «ЛЮКС»
+								</div>
+								<div class="modal-hotel__price d-none d-xl-block">4 000 ₽ в сутки
+								</div>
+								<div class="modal-hotel__list-wrap two-columned">
+									<ul>
+										<li>Терраса</li>
+										<li>Кухня</li>
+										<li>Две спальни</li>
+										<li>Гостиная</li>
+										<li>Туалет</li>
+										<li>Душ</li>
+										<li>Телевизор</li>
+										<li>Wi-Fi</li>
+									</ul>
+								</div>
+								<div class="modal-hotel__btn-cont text-center text-xl-start"><a class="modal-hotel__armor-btn" href="#">Забронировать</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end modals-->
+					<div class="modal-hotel__item">
+						<div class="text-center d-xl-none d-xl-none">
+							<div class="modal-hotel__name">Номер «СТАНДАРТ»
+							</div>
+							<div class="modal-hotel__price">1 800 ₽ в сутки
+							</div>
+						</div>
+						<div class="modal-hotel__row row align-items-center">
+							<div class="col-xl-6">
+								<div class="modal-hotel__slider-wrap">
+									<div class="swiper-container sPlace-slider-js">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide"><a class="modal-hotel__slide-img" href="img/@2x/sPlace-1.jpg" data-fancybox="sPlaceGalery1"><img loading="lazy" src="img/@2x/sPlace-1.jpg" alt=""/></a>
+											</div>
+											<div class="swiper-slide"><a class="modal-hotel__slide-img" href="img/@2x/sPlace-2.jpg" data-fancybox="sPlaceGalery1"><img loading="lazy" src="img/@2x/sPlace-2.jpg" alt=""/></a>
+											</div>
+											<div class="swiper-slide"><a class="modal-hotel__slide-img" href="img/@2x/sPlace-3.jpg" data-fancybox="sPlaceGalery1"><img loading="lazy" src="img/@2x/sPlace-3.jpg" alt=""/></a>
+											</div>
+										</div>
+										<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
+											<svg class="icon icon-chevron-left ">
+												<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+											</svg>
+										</div>
+										<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
+											<svg class="icon icon-chevron-right ">
+												<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+											</svg>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="modal-hotel__txt-col col-xl-6">
+								<div class="modal-hotel__name d-none d-xl-block">Номер «СТАНДАРТ»
+								</div>
+								<div class="modal-hotel__price d-none d-xl-block">1 800 ₽ в сутки
+								</div>
+								<div class="modal-hotel__list-wrap two-columned">
+									<ul>
+										<li>2 отдельные кровати</li>
+										<li>Телевизор</li>
+										<li>Шкаф, стол, стулья</li>
+										<li>Холодильник</li>
+										<li>Туалет</li>
+										<li>Душ</li>
+										<li>Чайник</li>
+										<li>Интернет</li>
+									</ul>
+								</div>
+								<div class="modal-hotel__btn-cont text-center text-xl-start"><a class="modal-hotel__armor-btn" href="#">Забронировать</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end modals-->
+				</div>
+			</div>
+		</div>
+		<div class="modal-win" id="modal-reserve" style="display: none">
+			<div class="form-wrap">
+				<form>
+					<div class="form-wrap__title"><span>
+							Забронировать Гостиница
+							</span><span class="text-primary">«Караван Сарай»</span>
+					</div>
+					<p class="text-center">Выберите период, на который хотите забронировать:</p>
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="date" type="date" placeholder="__.__.____"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="date" type="date" placeholder="__.__.____"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Ваш телефон"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<button class="form-wrap__btn btn" type="submit">Забронировать
+					</button>
+					<div class="form-wrap__polite">Я&nbsp;согласен(а) на&nbsp;обработку и&nbsp;хранение моих персональных данных в&nbsp;соответствии с&nbsp;условиями.
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="modal-win" id="modal-transfer" style="display: none">
+			<div class="form-wrap">
+				<form>
+					<div class="form-wrap__title">Забронировать трансфер
+					</div>
+					<p class="text-center">
+						Мы заберем вас из Симферополя и довезем в Межводное.
+						<br/>Укажите дату и время приезда:
+					</p>
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="date" type="date" placeholder="__.__.____"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group">
+						<select class="form-wrap__input form-select" name="select">
+							<option value="10:00">10:00</option>
+							<option value=" placeholder 1">placeholder 1</option>
+							<option value=" placeholder 2">placeholder 2</option>
+							<option value=" placeholder 3">placeholder 3</option>
+							<option value=" placeholder 4">placeholder 4</option>
+						</select>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Ваш телефон"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<button class="form-wrap__btn btn" type="submit">Забронировать
+					</button>
+					<div class="form-wrap__polite">Я&nbsp;согласен(а) на&nbsp;обработку и&nbsp;хранение моих персональных данных в&nbsp;соответствии с&nbsp;условиями.
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="modal-win modal-win--lg modal-win--text" id="modal-map" style="display: none">
+			<div class="form-wrap__title pb-3">Карта проезда</div>
+			<div class="map-cont">
+				<div id="map"></div>
+			</div>
+		</div>
+		<div class="modal-win modal-win--lg modal-win--text" id="modal-shedule" style="display: none">
+			<div class="form-wrap__title pb-3">Расписание проезда</div>
+			<div class="mw-shdeule">
+				<div class="mw-shdeule__items">
+					<div class="mw-shdeule__item">
+						<div class="mw-shdeule__row row align-items-center">
+							<div class="mw-shdeule__time-col col-auto">10:00
+							</div>
+							<div class="mw-shdeule__name-col col">Наименование маршрута
+							</div>
+							<div class="mw-shdeule__number-col col-auto">Номер автобуса
+							</div>
+						</div>
+					</div>
+					<div class="mw-shdeule__item">
+						<div class="mw-shdeule__row row align-items-center">
+							<div class="mw-shdeule__time-col col-auto">10:00
+							</div>
+							<div class="mw-shdeule__name-col col">Наименование маршрута
+							</div>
+							<div class="mw-shdeule__number-col col-auto">Номер автобуса
+							</div>
+						</div>
+					</div>
+					<div class="mw-shdeule__item">
+						<div class="mw-shdeule__row row align-items-center">
+							<div class="mw-shdeule__time-col col-auto">10:00
+							</div>
+							<div class="mw-shdeule__name-col col">Наименование маршрута
+							</div>
+							<div class="mw-shdeule__number-col col-auto">Номер автобуса
+							</div>
+						</div>
+					</div>
+					<div class="mw-shdeule__item">
+						<div class="mw-shdeule__row row align-items-center">
+							<div class="mw-shdeule__time-col col-auto">10:00
+							</div>
+							<div class="mw-shdeule__name-col col">Наименование маршрута
+							</div>
+							<div class="mw-shdeule__number-col col-auto">Номер автобуса
+							</div>
+						</div>
+					</div>
+					<div class="mw-shdeule__item">
+						<div class="mw-shdeule__row row align-items-center">
+							<div class="mw-shdeule__time-col col-auto">10:00
+							</div>
+							<div class="mw-shdeule__name-col col">Наименование маршрута
+							</div>
+							<div class="mw-shdeule__number-col col-auto">Номер автобуса
+							</div>
+						</div>
+					</div>
+					<div class="mw-shdeule__item">
+						<div class="mw-shdeule__row row align-items-center">
+							<div class="mw-shdeule__time-col col-auto">10:00
+							</div>
+							<div class="mw-shdeule__name-col col">Наименование маршрута
+							</div>
+							<div class="mw-shdeule__number-col col-auto">Номер автобуса
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-win" id="modal-thanks" style="display: none">
+			<div class="form-wrap">
+				<form>
+					<div class="form-wrap__title">Забронировать трансфер
+					</div>
+					<p class="text-center">Мы свяжемся с Вами в ближайшее время для уточнения деталей</p>
+					<button class="form-wrap__btn modal-close-js" type="button">Закрыть
+					</button>
+				</form>
+			</div>
+		</div>
 		<!-- modal libs-->
 		<script src="libs/jquery/jquery.min.js"></script>
 		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
