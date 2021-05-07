@@ -1,5 +1,9 @@
 // start .sRews
 .sRews {
+	.section-title{
+		position: relative;
+		z-index: 5;
+	}
 	// --sPT: ;
 	@include media-breakpoint-up(md) {
 

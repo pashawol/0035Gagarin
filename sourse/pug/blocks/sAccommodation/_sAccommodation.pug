@@ -4,9 +4,9 @@ mixin sAccommodation(data)
 		+b.bg-txt.d-none.d-lg-block
 			img(loading="lazy" src=`img/svg/sAccomondation-txt.svg` alt="")
 		.container
-			+b.section-title.text-center
+			+b.section-title.text-center(class="wow  animate__fadeIn  " )
 				h2 Проживание
-			+e.descr У нас вы можете разместиться на длительный и на короткий срок. Вы можете выбрать бюджетный вариант — жизнь на берегу, комфортное размещение в мини-отеле в стандартном номере, в номере “люкс” или в шикарных двухкомнатных апартаментах на берегу Черного моря.
+			+e.descr(class="wow  animate__fadeIn  " ) У нас вы можете разместиться на длительный и на короткий срок. Вы можете выбрать бюджетный вариант — жизнь на берегу, комфортное размещение в мини-отеле в стандартном номере, в номере “люкс” или в шикарных двухкомнатных апартаментах на берегу Черного моря.
 			+e.row.row
 				+sAccommodationItem(1)
 					| Кемпинг кайт-станции
@@ -40,7 +40,7 @@ mixin sAccommodation(data)
 	// end sAccommodation
 
 mixin sAccommodationItem(imgNum='1')
-	.col-6.col-lg-3
+	.col-6.col-lg-3(class="wow  animate__fadeIn  " )
 		+e.item
 			+e.img
 				img(loading="lazy" src=`img/@2x/sAccomd-${imgNum}.jpg` alt="")

@@ -4,18 +4,18 @@ mixin sCuisine(data)
 		+e.bg
 			img(loading="lazy" src="img/@2x/kitchen-bg.jpg" alt="")
 		.container
-			+b.section-title.text-white.text-center
+			+b.section-title.text-white.text-center(class="wow  animate__fadeIn  " )
 				h2 Вкуснейшая кухня на кайт станции
 			+e.row.row
 				+sCuisineItem(1,'Завтрак', 'Заварной кофе, омлет, тосты', '250 ₽')
 				+sCuisineItem(2,'Обед', 'уха, пюре с куриной отбивной', '350 ₽')
 				+sCuisineItem(3,'Ужин', 'кефаль на мангале, рис, овощи', '300 ₽')
-			+e.btn-cont.text-center
+			+e.btn-cont.text-center(class="wow  animate__fadeIn  " )
 				+e.btn(href="#") Открыть меню кухни
 	// end sCuisine
 
 mixin sCuisineItem(imgNum, name, descr, price)
-	.col-lg-4
+	.col-lg-4(class="wow  animate__fadeIn  " )
 		+e.item.text-center
 			+e.img
 				img(loading="lazy" src=`img/@2x/sCuisine-${imgNum}.png` alt="")

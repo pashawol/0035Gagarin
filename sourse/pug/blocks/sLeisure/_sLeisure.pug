@@ -4,7 +4,7 @@ mixin sLeisure(data)
 		+b.bg-txt.d-none.d-lg-block
 			img(loading="lazy" src=`img/svg/sBlog-txt.svg` alt="")
 		.container
-			+b.section-title.text-center
+			+b.section-title.text-center(class="wow  animate__fadeIn  " )
 				h2 Досуг в лагере
 			+e.row.row
 				+sLeisureItem(1, 'Йога')
@@ -16,7 +16,7 @@ mixin sLeisure(data)
 	// end sLeisure
 
 mixin sLeisureItem(imgNum, txt)
-	.col-6.col-lg-4
+	.col-6.col-lg-4(class="wow  animate__fadeIn  " )
 		+e.item
 			+e.bg
 				img(loading="lazy" src=`img/@2x/sLeisure-bg-${imgNum}.jpg` alt="")

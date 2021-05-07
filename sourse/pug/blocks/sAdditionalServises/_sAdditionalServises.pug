@@ -2,7 +2,7 @@ mixin sAdditionalServises(data)
 	// start sAdditionalServises
 	+b.SECTION.sAdditionalServises.section#sAdditionalServises&attributes(attributes)
 		.container
-			+b.section-title.text-center
+			+b.section-title.text-center(class="wow  animate__fadeIn  " )
 				h2 Дополнительные услуги
 			+e.items
 				+sAddItem(1, 'Бесплатно')
@@ -31,7 +31,7 @@ mixin sAdditionalServises(data)
 					| Велосипед в аренду на кайт споте Межводное
 				+sAddItem(13, '500 ₽ за час')
 					| Сап в аренду
-			+e.title
+			+e.title(class="wow  animate__fadeIn  " )
 				| Цены на отдельные услуги станции
 				br
 				| (если вы не пользуетесь всеми услугами станции):
@@ -54,13 +54,13 @@ mixin sAdditionalServises(data)
 					| Автомобиль
 				+sAddItem(22, 'от 600 ₽ за сутки')
 					| Мопед
-			+e.btn-cont.text-center
+			+e.btn-cont.text-center(class="wow  animate__fadeIn  " )
 				+e.btn(href='#') Свернуть информацию
 				//
 	// end sAdditionalServises
 
 mixin sAddItem(imgNum, price)
-	+e.item
+	+e.item(class="wow  animate__fadeIn  " )
 		+e.row.row.align-items-center
 			.col-auto
 				+e.img

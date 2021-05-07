@@ -4,9 +4,9 @@ mixin sRent(data)
 		+b.bg-txt.d-none.d-lg-block
 			img(loading="lazy" src=`img/svg/sRent-txt.svg` alt="")
 		.container
-			+b.section-title.text-center
+			+b.section-title.text-center(class="wow  animate__fadeIn  " )
 				h2 Аренда кайт снаряжения
-			+e.t-head.d-none.d-xl-block
+			+e.t-head.d-none.d-xl-block(class="wow  animate__fadeIn  " )
 				+e.row.row.align-items-center
 					+e.img-col.col-auto
 						+e.th-txt--img-title Снаряжение
@@ -32,7 +32,7 @@ mixin sRent(data)
 					pDay: '4 500 ₽',
 					pWeek: '18 000 ₽',
 					pMonth: '43 000 ₽',
-				})
+				})(class="wow  animate__fadeIn  " )
 				+sRentItem({
 					imgNum: 2,
 					name: 'Кайт с планкой',
@@ -40,7 +40,7 @@ mixin sRent(data)
 					pDay: '3 500 ₽',
 					pWeek: '16 000 ₽',
 					pMonth: '35 000 ₽',
-				})
+				})(class="wow  animate__fadeIn  " )
 				+sRentItem({
 					imgNum: 3,
 					name: 'Доска',
@@ -48,7 +48,7 @@ mixin sRent(data)
 					pDay: '2 000 ₽',
 					pWeek: '10 000 ₽',
 					pMonth: '25 000 ₽',
-				})
+				})(class="wow  animate__fadeIn  " )
 				+sRentItem({
 					imgNum: 4,
 					name: 'Трапеция',
@@ -56,7 +56,7 @@ mixin sRent(data)
 					pDay: '2 000 ₽',
 					pWeek: '9 000 ₽',
 					pMonth: '–',
-				})
+				})(class="wow  animate__fadeIn  " )
 				+sRentItem({
 					imgNum: 5,
 					name: 'Гидрокостюм',
@@ -64,13 +64,13 @@ mixin sRent(data)
 					pDay: '1 000 ₽',
 					pWeek: '4 000 ₽',
 					pMonth: '–',
-				})
-			+e.btn-cont.text-center
+				})(class="wow  animate__fadeIn  " )
+			+e.btn-cont.text-center(class="wow  animate__fadeIn  " )
 				+e.read-btn(href='#modal-rules').link-modal-js Читать правила и условия аренды
 	// end sRent
 
 mixin sRentItem(data)
-	+e.item
+	+e.item&attributes(attributes)
 		+e.row.row.align-items-center
 			//-1
 			+e.img-col.col-lg-auto

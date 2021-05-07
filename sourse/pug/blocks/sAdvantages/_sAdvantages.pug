@@ -5,9 +5,9 @@ mixin sAdvantages(data)
 			+b.section-title.text-center(class="wow  animate__fadeIn  " )
 				h2  Преимущества школы кайтсерфинга GAGARINKITE
 		.container-fluid.px-0
-			mixin item(i, t)
-				+e.item.row.gx-0(class="wow  animate__fadeIn  " )
-					+e.before.d-none.d-md-block(data-title= t) 
+			mixin item(i, t, id)
+				+e.item.row.gx-0(class="wow  animate__fadeIn  " id=`block-id-${i}`)
+					+e.before.d-none.d-md-block(data-title= t id=`text-id-${i}`)
 					.col-md-6
 						+e.img-wrap.bg-wrap
 							+pic(`advanteges-${i}.jpg`,'bg').picture-bg
@@ -20,18 +20,18 @@ mixin sAdvantages(data)
 					+e.icon-wrap 
 						img(src=`img/svg/advantages-i-${i}.svg` loading="lazy", alt="")
 					+e.text!= t
-			+item(`1`,`Безопасность`)
+			+item(`1`,`Безопасность`)#text1
 				+li(`1`,`<strong>Просторная мелководная и чистая кайт</strong> лагуна без волн.`)
 				+li(`2`,`<strong>Отличная ветровая статистика:</strong> 80% ветреных дней за летний кайт сезон`)
 				+li(`3`,`<strong>Ни одного несчастного случая </strong> за всю историю обучения`)
 				+li(`4`,`<strong>Безопасное обучение кайтсерфингу</strong>. Мы используем шлемы, жилеты и радиосвязь в процессе обучения кайтсерфингу`)
 
-			+item(`2`,`Профессионализм`)
+			+item(`2`,`Профессионализм`)#text2
 				+li(`5`,`<strong>Единственный Аффилированый IKO центр</strong>, проводим курсы повышения квалификации инструкторов IKO`)
 				+li(`6`,`<strong>Опытные и профессиональные кайт инструкторы</strong> с высшим педагогическим и спортивным образованием. Лучшие в своем деле`)
 				+li(`7`,`<strong>Работаем с детьми</strong>, проводим кайт лагеря, обучаем любым трюкам`)
 
-			+item(`3`,`Сервис`)
+			+item(`3`,`Сервис`)#text3
 				+li(`8`,`<strong>Комфортная и прекрасно оборудованная кайт станция </strong> на берегу Черного моря`)
 				+li(`9`,`<strong>Обучаем на 5 языках</strong>: на русском, украинском, английском, французском и немецком`)
 				+li(`10`,`<strong>Душевная и теплаяя атмосфера на кайт станции</strong>, приветливый персонал кайт школы`)

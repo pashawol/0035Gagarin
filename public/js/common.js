@@ -392,6 +392,34 @@ function eventHandler() {
 	setTimeout(() => {
 		$('.header').removeClass("op");
 	}, 500);
+	var controller = new ScrollMagic.Controller();
+
+	function animateText(text, parent, y = "-=200%") {
+		var tween = TweenMax.to("".concat(parent, " ").concat(text), 0.1, {
+			y: y
+		}); // build scene
+
+		var scene = new ScrollMagic.Scene({
+			triggerElement: parent,
+			duration: 1000
+		}).setTween(tween) // .addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
+	}
+
+	animateText('#text-id-1', '#block-id-1', "-=50%");
+	animateText('#text-id-2', '#block-id-2', "-=50%");
+	animateText('#text-id-3', '#block-id-3', "-=50%");
+	animateText('.text', '#sRews');
+	animateText('.text', '#sSteps', "-=50%");
+	animateText('.bg-txt', '#sKiteStation');
+	animateText('.bg-txt', '#sLeisure');
+	animateText('.bg-txt', '#sPlace');
+	animateText('.bg-txt', '#sRent');
+	animateText('.bg-txt', '#sShop');
+	animateText('.bg-txt', '#sHowToGetThere');
+	animateText('.bg-txt', '#sAccommodation');
+	animateText('.bg-txt', '#sBlog');
+	animateText('.bg-txt', '.footer'); // animateText('.sAdvantages__before', '.sAdvantages');
 }
 
 ;

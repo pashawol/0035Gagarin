@@ -5,13 +5,13 @@ mixin sKiteStation(data)
 			img(loading="lazy" src=`img/svg/sKyte-img.svg` alt="")
 		.container
 			+e.top-row.row.align-items-lg-center
-				+e.txt-col.col.text-center.text-lg-start
+				+e.txt-col.col.text-center.text-lg-start(class="wow  animate__fadeIn  " )
 					+b.section-title
 						h2 Кайт-станция
 					+e.descr Нам совсем не жалко вкладывать средства, чтобы сделать нашу кайт школу еще лучше, еще комфортней для наших гостей, да и для себя. Ведь это и наш дом тоже, вся команда Гагарин кайт живет на споте: кто в палатке, кто в вагончике. Мы постарались сделать кайт станцию максимально уютной и оборудованной всеми благами цивилизации. Мы очень гордимся тем, что у нас получилось, ведь в нашу школу мы вложили самое ценное что у нас есть — душу.
-				+e.img-col.col-auto
+				+e.img-col.col-auto(class="wow  animate__fadeIn  " )
 					+sPlaceSlider()
-			+e.sub-title.text-center Что есть на кайт-станции Гагарин Кайт:
+			+e.sub-title.text-center(class="wow  animate__fadeIn  " ) Что есть на кайт-станции Гагарин Кайт:
 			+e.pills-row.row
 				.col-lg-6
 					ul

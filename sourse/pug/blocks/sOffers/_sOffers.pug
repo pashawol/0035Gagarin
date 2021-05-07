@@ -2,9 +2,9 @@ mixin sOffers(data)
 	// start sOffers
 	+b.SECTION.sOffers.section#sOffers&attributes(attributes)
 		.container
-			+b.section-title.text-center
+			+b.section-title.text-center(class="wow  animate__fadeIn  " )
 				h2 Актуальные предложения
-			+e.slider-wrap
+			+e.slider-wrap(class="wow  animate__fadeIn  " )
 				.swiper-container.sOffers-slider-js
 					.swiper-wrapper
 						- for(var i = 0; i < 3; i++)

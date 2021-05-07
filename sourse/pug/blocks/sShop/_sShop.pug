@@ -4,30 +4,30 @@ mixin sShop(data)
 		+b.bg-txt.d-none.d-lg-block
 			img(loading="lazy" src=`img/svg/sShop-txt.svg` alt="")
 		.container
-			+b.section-title.text-center
+			+b.section-title.text-center(class="wow  animate__fadeIn  " )
 				h2 Интернет-магазин кайт оборудования
-			+e.brands-row.row
+			+e.brands-row.row(class="wow  animate__fadeIn  " )
 				+sShopBrand()(checked)
 				+sShopBrand(1)
 				+sShopBrand(2)
 				+sShopBrand(3)
 				+sShopBrand(4)
 				+sShopBrand(5)
-			+e.tr-cont
+			+e.tr-cont(class="wow  animate__fadeIn  " )
 				+e.type-row.row.justify-content-center
 					+sShopType('Все', 30)(class="active")
 					+sShopType('Кайты', 8)
 					+sShopType('Доски', 16)
 					+sShopType('Трапеции', 4)
 					+sShopType('Гидрокостюмы', 2)
-			+e.slider-wrap
+			+e.slider-wrap(class="wow  animate__fadeIn  " )
 				.swiper-container.sOffers-slider-js
 					.swiper-wrapper
 						- for(var i = 0; i < 4; i++)
 							+sShopSlide()
 					+e.arrow-cont.d-sm-none
 						+arrow()
-			+e.btn-cont.text-center
+			+e.btn-cont.text-center(class="wow  animate__fadeIn  " )
 				+e.btn(href="#") Перейти в интернет-магазин
 	// end sShop
 

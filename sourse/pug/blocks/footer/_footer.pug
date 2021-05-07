@@ -3,12 +3,12 @@ mixin footer()
     +b.bg-txt.d-none.d-lg-block
       img(loading="lazy" src=`img/svg/footer-txt.svg` alt="")
     .container
-      +e.numbers
+      +e.numbers(class="wow  animate__fadeIn  " )
         +e.number(href='tel:+79525434470') +7 (952) 543-44-70
         br
         +e.number(href='tel:+79523621145') +7 (952) 362-11-45
-      +e.connect-txt или свяжитесь с нами в мессенджерах:
-      +e.btns-row.row.text-center
+      +e.connect-txt(class="wow  animate__fadeIn  " ) или свяжитесь с нами в мессенджерах:
+      +e.btns-row.row.text-center(class="wow  animate__fadeIn  " )
         +e.btn-col.col-md-auto
           +e.btn--wa(href='#')
             +icon('whatsapp')
@@ -21,7 +21,7 @@ mixin footer()
           +e.btn--tg(href='#')
             +icon('telegram')
             span Telegram
-      +e.bot-row.row.justify-content-center
+      +e.bot-row.row.justify-content-center(class="wow  animate__fadeIn  " )
         .col-auto
           +e.link(href='#')
             +e.img
@@ -32,7 +32,7 @@ mixin footer()
             +e.img
               img(loading="lazy" src='img/svg/email.svg' alt="")
             +e.l-txt GagarinKite@gmail.com
-      +e.lowest-row.row.align-items-center
+      +e.lowest-row.row.align-items-center(class="wow  animate__fadeIn  " )
         .col-6.col-md
           +e.policy(href="#") Политика конфиденциальности
         .col-md-auto.order-first.order-md-0
