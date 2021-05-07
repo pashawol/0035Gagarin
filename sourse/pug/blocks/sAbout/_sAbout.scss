@@ -39,7 +39,7 @@
 	&__row{
 		flex-wrap: nowrap;
 		@include roww(24px, m);
-		transform: translateX(-380px);
+		// transform: translateX(-380px);
 		picture{
 			@include block(648,500);
 			
