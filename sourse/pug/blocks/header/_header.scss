@@ -1,7 +1,8 @@
 
 	// start .header
 	.header {
-	@include mt;
+	// @include mt;
+	transition: opacity .3s;
 		.container-fluid{
 			margin-left: auto;
 			margin-right: auto;

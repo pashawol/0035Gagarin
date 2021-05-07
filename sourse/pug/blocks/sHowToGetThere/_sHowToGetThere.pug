@@ -12,12 +12,14 @@ mixin sHowToGetThere(data)
 					title: 'Карта проезда на машине',
 					descr: 'Из Симферополя до Межводного',
 					btnTxt: 'Открыть карту проезда',
+					link: '#modal-map',
 				})
 				+sHowToGetThereItem({
 					imgNum: 2,
 					title: 'Трансфер',
 					descr: 'Мы заберем ваз из Симферополя и довезем до Межводного',
 					btnTxt: 'Заказать трансфер',
+					link: '#modal-transfer',
 				})
 				+sHowToGetThereItem({
 					imgNum: 3,
@@ -30,6 +32,7 @@ mixin sHowToGetThere(data)
 					title: 'Расписание автобусов от Симферополя',
 					descr: '3 автобуса - утром, днем и вечером',
 					btnTxt: 'Открыть расписание',
+					link: '#modal-shedule',
 				})
 	// end sHowToGetThere
 
@@ -44,6 +47,6 @@ mixin sHowToGetThereItem(data)
 						+e.title=data.title
 						+e.descr=data.descr
 						// 'Открыть расписание' replace with 'Подробнее'
-						+e.btn(href="#")
+						+e.btn(href= data.link).link-modal-js
 							span.d-none.d-xxl-inline=data.btnTxt
 							span.d-xxl-none Открыть расписание
