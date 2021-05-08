@@ -163,32 +163,9 @@ mixin modal()
 			+e.title Забронировать трансфер
 			p.text-center Мы свяжемся с Вами в ближайшее время для уточнения деталей
 			+e.btn.modal-close-js(type='button') Закрыть
+	
 
-
-mixin mwShedule()
-	+e.item
-		+e.row.row.align-items-center
-			+e.time-col.col-auto 10:00
-			+e.name-col.col Наименование маршрута
-			+e.number-col.col-auto Номер автобуса
-
-mixin modHotelItem(data)
-	+e.item
-		.text-center.d-xl-none.d-xl-none
-			+e.name=data.name
-			+e.price=data.price
-		+e.row.row.align-items-center
-			.col-xl-6
-				+sPlaceSlider()
-			+e.txt-col.col-xl-6
-				+e.name.d-none.d-xl-block=data.name
-				+e.price.d-none.d-xl-block=data.price
-				+e.list-wrap(class=`${data.listClasses}`)
-					ul
-						block
-				+e.btn-cont.text-center.text-xl-start
-					+e.armor-btn(href='#') Забронировать
-		+b.modal-win--lg.--qwiz(class=" " id="modal-qwiz" style="display: none")
+	+b.modal-win--lg.--qwiz(class=" " id="modal-qwiz" style="display: none")
 			+form-wrap
 				+e.head
 					+e.title Подобрать программу
@@ -239,5 +216,29 @@ mixin modHotelItem(data)
 					+step(`Укажите ваши контактные данные, мы&nbsp;свяжемся с&nbsp;вами и&nbsp;предложим подходяющую под вас программу обучения:`,'f')
 						+input('Ваше имя')
 						+input('Ваш телефон','tel')
-					
+
+mixin mwShedule()
+	+e.item
+		+e.row.row.align-items-center
+			+e.time-col.col-auto 10:00
+			+e.name-col.col Наименование маршрута
+			+e.number-col.col-auto Номер автобуса
+
+mixin modHotelItem(data)
+	+e.item
+		.text-center.d-xl-none.d-xl-none
+			+e.name=data.name
+			+e.price=data.price
+		+e.row.row.align-items-center
+			.col-xl-6
+				+sPlaceSlider()
+			+e.txt-col.col-xl-6
+				+e.name.d-none.d-xl-block=data.name
+				+e.price.d-none.d-xl-block=data.price
+				+e.list-wrap(class=`${data.listClasses}`)
+					ul
+						block
+				+e.btn-cont.text-center.text-xl-start
+					+e.armor-btn.link-modal-js(href='#modal-reserve') Забронировать
+			
 	// end modals
