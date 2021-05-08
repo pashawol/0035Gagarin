@@ -132,7 +132,7 @@ const JSCCommon = {
 		this.toggleMenu();
 		document.addEventListener('mouseup', (event) => {
 			let container = event.target.closest(".menu-mobile--js.active"); // (1)
-			let link = event.target.closest(".navMenu__link"); // (1)
+			let link = event.target.closest(".menu-mobile .menu a"); // (1)
 			if (!container || link) this.closeMenu();
 		}, { passive: true });
 
@@ -218,7 +218,7 @@ const JSCCommon = {
 	},
 	animateScroll() {
 
-		$(document).on('click', " .scroll-link", function () {
+		$(document).on('click', " .scroll-link , .menu-item a", function () {
 			const headerHeight = document.querySelector(".header").offsetHeight;
 			// console.log(headerHeight);
 			const elementClick = $(this).attr("href");
@@ -259,27 +259,27 @@ function eventHandler() {
 	}
 
 
-	function setFixedNav() {
-		let topNav = document.querySelector('.top-nav  ');
-		if (!topNav) return;
-		window.scrollY > 0
-			? topNav.classList.add('fixed')
-			: topNav.classList.remove('fixed');
-	}
+	// function setFixedNav() {
+	// 	let topNav = document.querySelector('.top-nav  ');
+	// 	if (!topNav) return;
+	// 	window.scrollY > 0
+	// 		? topNav.classList.add('fixed')
+	// 		: topNav.classList.remove('fixed');
+	// }
 
-	function whenResize() {
-		setFixedNav();
-	}
+	// function whenResize() {
+	// 	setFixedNav();
+	// }
 
-	window.addEventListener('scroll', () => {
-		setFixedNav();
+	// window.addEventListener('scroll', () => {
+	// 	setFixedNav();
 
-	}, { passive: true })
-	window.addEventListener('resize', () => {
-		whenResize();
-	}, { passive: true });
+	// }, { passive: true })
+	// window.addEventListener('resize', () => {
+	// 	whenResize();
+	// }, { passive: true });
 
-	whenResize();
+	// whenResize();
 
 
 	let defaultSl = {
@@ -305,8 +305,7 @@ function eventHandler() {
 
 
 
-	var wrapper = document.querySelector(".top-nav");
-	if (wrapper) {
+	var wrapper = document.querySelector(".top-nav"); 
 		var nav = priorityNav.init({
 			mainNavWrapper: ".top-nav__body", // mainnav wrapper selector (must be direct parent from mainNav)
 			mainNav: ".menu", // mainnav selector. (must be inline-block)
@@ -317,8 +316,7 @@ function eventHandler() {
 			breakPoint: 0,
 			// moved: function () { scrolldrop()}, // executed when item is moved to dropdown
 			// movedBack: function () { scrolldrop()} // executed when item is moved back to main menu
-		});
-	};
+		}); 
 
 	//luckyone js
 	let sBlogSlider = new Swiper('.sBlog-slider-js', {
@@ -426,10 +424,10 @@ function eventHandler() {
 	var controller = new ScrollMagic.Controller();
 
 
-	function animateText(text, parent, y = "-=200%") {
+	function animateText(text, parent, y = "-=200%", d=1000) {
 		var tween = TweenMax.to(`${parent} ${text}`, 0.1, { y: y });
 		// build scene
-		var scene = new ScrollMagic.Scene({ triggerElement: parent, duration: 1000 })
+		var scene = new ScrollMagic.Scene({ triggerElement: parent, duration: d })
 			.setTween(tween)
 			// .addIndicators() // add indicators (requires plugin)
 			.addTo(controller);
@@ -441,10 +439,10 @@ function eventHandler() {
 			// .addIndicators() // add indicators (requires plugin)
 			.addTo(controller);
 	}
-	animateTextVertical('#text-id-1', '#block-id-1', "-=50%");
-	animateTextVertical('#text-id-2', '#block-id-2', "-=50%");
-	animateTextVertical('#text-id-3', '#block-id-3', "-=50%");
-	animateTextVertical('.text', '#sSteps', "-=50%");
+	animateText('#text-id-1', '#block-id-1', "-=100%", "2000");
+	animateText('#text-id-2', '#block-id-2', "-=100%", "2000");
+	animateText('#text-id-3', '#block-id-3', "-=50%");
+	animateText('.text', '#sSteps', "-=100%", 2000);
 	animateText('.text', '#sRews');
 	animateText('.bg-txt', '#sKiteStation');
 	animateText('.bg-txt', '#sLeisure');
@@ -590,13 +588,13 @@ function eventHandler() {
 	// })
 
 	let steps =5;
-	console.log(steps);
+	// console.log(steps);
 	let btnNav = $(".btn-nav");
 	let btnNext = $(".btn-next");
 	let progressCount = $(".progress-step");
 	let progressBar = document.querySelector(".progress__bar");
 	progressBar.style.width =  "10%"; 
-	console.log(progressBar);
+	// console.log(progressBar);
 	
 	btnNav.click(function(){
 		let step = $(this).parents(".form-wrap__step");
@@ -634,6 +632,13 @@ function eventHandler() {
 		$('.sQwiz').addClass('align-items-center justify-content-center');
 	});
 	
+	$(document).on("click", '.toggle-servises',	 function(){
+		$(this).hide();
+		$('.sAdditionalServises__items > *:nth-child(n + 11)').slideDown();
+		let position = window.pageYOffset;
+		$('html, body').animate({ scrollTop: position + 1 }, 0);
+	})
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
