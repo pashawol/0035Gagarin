@@ -112,10 +112,19 @@
 
 .sBlogitem{
 	background-color: $white;
-	box-shadow: 0px rem(5) rem(15) rgba(45, 55, 65, 0.1);
 	border-radius: rem(10);
 	overflow: hidden;
-	min-height: 100%;
+	min-height: 100%; 
+	color: $body-color;
+	&:hover{
+		color: $primary;
+	}
+	&:hover{
+			box-shadow: 0px rem(5) rem(15) rgba(45, 55, 65, 0.1);
+			  img{
+				transform: scale(1.2);
+			}
+		}
 
 
 	--descr-mb: #{rem(33)};
@@ -151,16 +160,14 @@
 		font-weight: 600;
 		font-size: rem(20px);
 		line-height: 1.5;
-		color: $body-color;
-		&:hover{
-			color: $primary;
-		}
+	
 
 		margin-bottom: rem(12);
 	}
 	&__descr{
 		line-height: 1.75;
 		margin-bottom: var(--descr-mb, #{rem(33)});
+			color: $body-color;
 	}
 	&__date{
 		margin-top: auto;

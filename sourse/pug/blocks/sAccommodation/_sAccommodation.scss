@@ -54,12 +54,18 @@
 
 		text-align: center;
 		background: $white;
-		box-shadow: 0 rem(5) rem(15) rgba(45, 55, 65, 0.1);
 		border-radius: rem(10);
 		overflow: hidden;
-
+		
 		position: relative;
 		z-index: 1;
+		@include mt;
+		&:hover{
+			box-shadow: 0 rem(5) rem(15) rgba(45, 55, 65, 0.1);
+			  img{
+				transform: scale(1.2);
+			}
+		}
 		&:before{
 			content: '';
 			position: absolute;
@@ -75,6 +81,20 @@
 	&__img{
 		width: 100%;
 		height: rem(176);
+		position: relative;
+		overflow: hidden;
+		display: block;
+			img{
+				position: absolute;
+				left: 0;
+				top: 0;
+			@include mt;
+		}
+		&:hover{
+			img{
+				transform: scale(1.2);
+			}
+		}  
 		@include media-breakpoint-up(xl){
 			height: rem(220);
 		}

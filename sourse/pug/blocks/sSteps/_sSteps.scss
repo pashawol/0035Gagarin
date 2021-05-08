@@ -64,6 +64,14 @@
 		img{
 			@include a-cent;
 		}
+		img{
+			@include mt;
+		}
+		&:hover{
+			img{
+				transform: scale(1.2);
+			}
+		}
 	}
 	text-align: center; 
 	span{

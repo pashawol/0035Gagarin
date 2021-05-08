@@ -65,6 +65,10 @@
 		}
 	}
 	&__item{
+		@include mt;
+		&:hover{
+				box-shadow: 0 rem(5) rem(15) rgba(45, 55, 65, 0.1);
+		}
 		margin-bottom: rem(12);
 		&:last-child{
 			margin-bottom: 0;

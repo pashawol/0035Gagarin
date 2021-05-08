@@ -23,6 +23,17 @@
 		--sTPB: #{rem(40)};
 	}
 
+		.swiper-slide {
+			img{
+			@include mt;
+		}
+		&:hover{
+			img{
+				transform: scale(1.2);
+			}
+		} 
+		}
+
 	position: relative;
 	z-index: 1;
 	.bg-txt{

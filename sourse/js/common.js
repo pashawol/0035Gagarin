@@ -219,10 +219,12 @@ const JSCCommon = {
 	animateScroll() {
 
 		$(document).on('click', " .scroll-link", function () {
+			const headerHeight = document.querySelector(".header").offsetHeight;
+			// console.log(headerHeight);
 			const elementClick = $(this).attr("href");
-			const destination = $(elementClick).offset().top;
+			const destination = $(elementClick).offset().top- headerHeight;
 
-			$('html, body').animate({ scrollTop: destination }, 1100);
+			$('html, body').animate({ scrollTop: destination  }, 1100);
 
 			return false;
 		});
@@ -236,6 +238,11 @@ const JSCCommon = {
 const $ = jQuery;
 
 function eventHandler() {
+
+
+	var isMobile = (function (a) { return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4)); })(navigator.userAgent || navigator.vendor || window.opera);
+
+
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('.tabs--js');
 	JSCCommon.mobileMenu();
@@ -350,16 +357,19 @@ function eventHandler() {
 			prevEl: '.swiper-button-prev',
 		},
 	});
-	let caruselSlider = new Swiper('.carusel__slider--not-center-js', {
-		...defaultSl,
-		slidesPerView: 'auto',
-		loopedSlides: 6,
-		loop: false,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-	});
+	if (isMobile) {
+
+		let caruselSlider = new Swiper('.carusel__slider--not-center-js', {
+			...defaultSl,
+			slidesPerView: 'auto',
+			loopedSlides: 6,
+			loop: false,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+		});
+	}
 
 	let sOffersSlider = new Swiper('.sOffers-slider-js', {
 		//...defaultSl,
@@ -392,69 +402,7 @@ function eventHandler() {
 			prevEl: '.swiper-button-prev',
 		},
 	});
-
-	//yandex lazy
-	// window.setTimeout(function () {
-	// 	let yandexScript = document.createElement('script');
-	// 	yandexScript.setAttribute('src', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=ef0b1dde-1d01-4d5b-9636-c00e2adbee98');
-	// 	yandexScript.setAttribute('type', 'text/javascript');
-
-	// 	document.body.appendChild(yandexScript);
-	// 	console.log(yandexScript);
-	// 	window.setTimeout(function () {
-	// 		ymaps.ready(function () {
-	// 			var myMap = new ymaps.Map('map', {
-	// 				center: [44.95308614480347, 34.109081034312545],
-	// 				zoom: 9,
-	// 				// Добавим панель маршрутизации.
-	// 				controls: ['routePanelControl']
-	// 			});
-
-	// 			var control = myMap.controls.get('routePanelControl');
-
-	// 			// Зададим состояние панели для построения машрутов.
-	// 			control.routePanel.state.set({
-	// 				// Тип маршрутизации.
-	// 				type: 'masstransit',
-	// 				// Выключим возможность задавать пункт отправления в поле ввода.
-	// 				fromEnabled: false,
-	// 				// Адрес или координаты пункта отправления.
-	// 				from: 'Россия, Республика Крым, Симферополь',
-
-	// 				// Включим возможность задавать пункт назначения в поле ввода.
-	// 				//toEnabled: true
-	// 				// Адрес или координаты пункта назначения.
-	// 				to: 'Россия, Республика Крым, Черноморский район, село Межводное'
-	// 			});
-
-	// 			// Зададим опции панели для построения машрутов.
-	// 			control.routePanel.options.set({
-	// 				// Запрещаем показ кнопки, позволяющей менять местами начальную и конечную точки маршрута.
-	// 				allowSwitch: false,
-	// 				// Включим определение адреса по координатам клика.
-	// 				// Адрес будет автоматически подставляться в поле ввода на панели, а также в подпись метки маршрута.
-	// 				reverseGeocoding: true,
-	// 				// Зададим виды маршрутизации, которые будут доступны пользователям для выбора.
-	// 				types: { masstransit: true, pedestrian: true, taxi: true }
-	// 			});
-
-	// 			// Создаем кнопку, с помощью которой пользователи смогут менять местами начальную и конечную точки маршрута.
-	// 			var switchPointsButton = new ymaps.control.Button({
-	// 				data: { content: "Поменять местами", title: "Поменять точки местами" },
-	// 				options: { selectOnClick: false, maxWidth: 160 }
-	// 			});
-	// 			// Объявляем обработчик для кнопки.
-	// 			switchPointsButton.events.add('click', function () {
-	// 				// Меняет местами начальную и конечную точки маршрута.
-	// 				control.routePanel.switchPoints();
-	// 			});
-	// 			myMap.controls.add(switchPointsButton);
-	// 		});
-
-	// 	}, 1000);
-
-	// }, 2000);
-
+ 
 
 	//end luckyone js
 
@@ -519,8 +467,6 @@ function eventHandler() {
 		.addTo(controller);
 	// animateText('.sAdvantages__before', '.sAdvantages');
 
-	var isMobile = (function (a) { return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4)); })(navigator.userAgent || navigator.vendor || window.opera);
-
 	// we'd only like to use iScroll for mobile...
 	if (!isMobile) {
 
@@ -533,7 +479,7 @@ function eventHandler() {
 		new ScrollMagic.Scene({
 			triggerElement: "#sSteps ",
 			triggerHook: "onLeave",
-			duration: "400%"
+			duration: "300%"
 		})
 			.setPin("#sSteps ")
 			.setTween(wipeAnimation)
@@ -541,6 +487,151 @@ function eventHandler() {
 			.addTo(controller);
 
 	};
+
+
+	let placeblock = document.querySelectorAll('.place-block');
+	placeblock.forEach(el=>{
+		const toggle = el.querySelector(".place-block__toggle"); 
+		const toggleTitle = toggle.querySelector(".place-block__title");
+		const toggleText = toggle.querySelector(".place-block__text"); 
+		
+		el.addEventListener("click", event => {
+			const toggleTarget = event.target.closest(".place-block__toggle");
+			let itemTarget = event.target.closest(".place-block__item");
+			if (toggleTarget) el.classList.toggle("show")  
+			if (itemTarget) { 
+				let title = itemTarget.querySelector(".place-block__title").textContent;
+				let text = itemTarget.querySelector(".place-block__text").textContent;  
+				toggleTitle.textContent = title
+				toggleText.textContent = text
+				el.classList.remove("show") 
+			}
+		})
+		document.documentElement.addEventListener("click", event => {
+			let placeBlock = event.target.closest(".place-block.show"); 
+			if (!placeBlock)  	el.classList.remove("show")  
+		})
+	})
+
+	// document.addEventListener('click', (event) => {
+	// 	let placeBlock = event.target.closest(".place-block.show");
+	// 	if (!placeBlock) {
+	// 		placeBlock.classList.remove("show");
+	// 		$('.place-block__dropdown').slideUp();
+	// 	}
+	// }, { passive: true });
+
+	$('input.date').daterangepicker({
+		opens: 'left',
+		showDropdowns: true,
+		"locale": {
+			"format": "DD.MM.YYYY",
+			"separator": " - ",
+			"applyLabel": "Применить",
+			"cancelLabel": "Сбросить",
+			"fromLabel": "От",
+			"toLabel": "До",
+			"customRangeLabel": "Произвольный",
+			"daysOfWeek": [
+				"Вс.",
+				"Пн.",
+				"Вт.",
+				"Ср.",
+				"Чт.",
+				"Пт.",
+				"Сб."
+			],
+			"monthNames": [
+				"Январь", // заменяем на Январь
+				"Февраль", // Февраль и т д
+				"Март",
+				"Апрель",
+				"Май",
+				"Июнь",
+				"Июль",
+				"Август",
+				"Сентябрь",
+				"Октябрь",
+				"Ноябрь",
+				"Декабрь"
+			],
+			"firstDay": 1
+		}
+	});
+
+
+
+	$(" .qwiz-radio-btn").each(function () {
+		let parent = $(this).parents(".form-wrap__step");
+		let btnNext = parent.find(".btn-next");
+		parent.find(".sQwiz__toggle-block").on('input change copy paste', 'input', function () {
+		if(	$(this).val() != '') {
+			btnNext.removeClass("disabled") 
+		}
+		else{
+			btnNext.addClass("disabled") 
+		}
+		})
+		$(this).change(function () {
+			if (!$(this).hasClass("toggle-input-js")) {
+				btnNext.removeClass("disabled")
+			}
+
+			else if (parent.find(".sQwiz__toggle-block").find('input').val() != '') {
+				console.log('1')
+				btnNext.removeClass("disabled")
+			}
+			else {
+				console.log('2')
+				btnNext.addClass("disabled")
+
+			}
+		})
+	})
+
+	let steps =5;
+	console.log(steps);
+	let btnNav = $(".btn-nav");
+	let btnNext = $(".btn-next");
+	let progressCount = $(".progress-step");
+	let progressBar = document.querySelector(".progress__bar");
+	progressBar.style.width =  "10%"; 
+	console.log(progressBar);
+	
+	btnNav.click(function(){
+		let step = $(this).parents(".form-wrap__step");
+		let index = step.next().index() + 1;
+		if ($(this).hasClass("btn-next")) {
+
+			step.removeClass("active").next().addClass("active");
+			progressBar.style.width = (index < 5 ? ((index - 1) * 100 / steps + "%") : "90%");
+		}
+		else{
+			step.removeClass("active").prev().addClass("active");
+			progressBar.style.width = index = 2 ? "10%" : ((index - 1) * 100 / steps + "%");
+		}
+		// console.log(progressBar);
+		progressCount.text(index );
+
+	})
+	// btnNext.click(function(){
+	// })
+	
+	// let btnBack = $(".btn-back");
+	// btnBack.click(function(){
+	// 	let step = $(this).parents(".form-wrap__step");
+	// 	let index = step.prev().index() + 1;
+	// 	progressCount.text(index );
+	// 	// console.log(index);
+	// 	console.log(progressBar);
+	// })
+
+
+	$('.btn-last-js').click(function () {
+		$('.sQwiz__top').hide();
+		$('.sQwiz').addClass('align-items-center justify-content-center');
+	});
+	
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

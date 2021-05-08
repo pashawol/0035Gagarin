@@ -42,8 +42,9 @@ mixin sAccommodation(data)
 mixin sAccommodationItem(imgNum='1')
 	.col-6.col-lg-3(class="wow  animate__fadeIn  " )
 		+e.item
-			+e.img
-				img(loading="lazy" src=`img/@2x/sAccomd-${imgNum}.jpg` alt="")
+			+e.img(href=`img/@2x/sAccomd-${imgNum}.jpg` data-fancybox="accod")
+				+pic(`sAccomd-${imgNum}.jpg`)
+				//- img(loading="lazy" src=`img/@2x/sAccomd-${imgNum}.jpg` alt="")
 			+e.content
 				+e.name(href='#')
 					block

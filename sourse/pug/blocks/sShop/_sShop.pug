@@ -33,12 +33,12 @@ mixin sShop(data)
 
 mixin sShopSlide(name='NORTH REACH KITE 2020')
 	.swiper-slide
-		+e.item
-			+e.name(href="#")=name
-			+e.img(href="#")
+		+e.item(href="#")
+			+e.DIV.name()=name
+			+e.DIV.img()
 				img(loading="lazy" src='img/@2x/sShop-img.png' alt="")
-			+e.price 72 900 ₽
-			+e.buy-btn(href="#") Купить
+			+e.DIV.price 72 900 ₽
+			+e.buy-btn(type="button") Купить
 
 mixin sShopType(txt, number)
 	.col-auto
@@ -50,7 +50,7 @@ mixin sShopBrand(imgNum)
 	.col-4.col-lg-2
 		+e.LABEL.brand-label
 			input(type="checkbox" name=`brand${number}` class='invisible')&attributes(attributes)
-			span.brand(href='#')
+			span.brand
 				if imgNum
 					img(loading="lazy" src=`img/svg/brand-${imgNum}.svg` alt="")
 				else

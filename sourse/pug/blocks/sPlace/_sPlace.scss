@@ -116,6 +116,14 @@
 		@extend .accept-ratio-frame-nh;
 		padding-top: var(--img-ar, #{(9/16) * 100%});
 		border-radius: rem(10);
+			img{
+			@include mt;
+		}
+		&:hover{
+			img{
+				transform: scale(1.2);
+			}
+		}  
 	}
 	&__txt-col{
 		line-height: 1.75;

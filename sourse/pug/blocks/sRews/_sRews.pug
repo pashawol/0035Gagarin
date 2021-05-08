@@ -5,13 +5,14 @@ mixin sRews(data)
 			+b.section-title.text-center(class="wow  animate__fadeIn  " )
 				h2 Отзывы
 		.container-fluid
-			img.res-i(src="img/svg/rew-text.svg", alt="").text.d-none.d-sm-block
+			.text.d-none.d-sm-block.text-center
+				img.res-i(src="img/svg/rew-text.svg", alt="").res-i
 			+b.carusel(class="wow  animate__fadeIn  " )
 				+e.slider--js.swiper-container 
 					.swiper-wrapper 
 						+e.slide.swiper-slide
 							+b.rew-item
-								+e.video(href="" data-fancybox="rew").bg-wrap
+								+e.video(href="https://www.youtube.com/watch?v=KS2ngnRAKlg&list=PLqKQF2ojwm3llpxoP1rzoz7TE2Fpo4Zhp&index=3" data-fancybox="rew").bg-wrap
 									+pic('gal-3.jpg','bg',0).picture-bg
 									+e.play
 							//- +b.rew-item

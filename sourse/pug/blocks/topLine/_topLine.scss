@@ -19,6 +19,7 @@
 		&__tel{
 			font-weight: 600;
 			@extend .text-body;
+			@extend .blesk;
 			&--mobile {
 				@extend .btn;
 				@extend .btn-primary;
@@ -105,8 +106,13 @@
 		max-width: rem(236);
 	&__toggle{
 		cursor: pointer;
-		background: #F4F6FA;
+		background: #F4F6FA; 
+		border: 1px solid #F4F6FA; 
+		@include mt;
+		box-sizing: border-box;
+	
 		border-radius: 5px;
+		overflow: hidden;
 			@include media-breakpoint-up(xl){
 
 				padding: rem(8);
@@ -117,9 +123,12 @@
 		position: relative;
 		padding-left: rem(50);
 		padding-right: rem(45);
-		white-space: nowrap;
-		overflow: hidden;
+		*{
+
+			white-space: nowrap;
+			overflow: hidden;
 			text-overflow: ellipsis;
+		}
 			&::after{
 			content: var(--chevron-down);
 			position: absolute;
@@ -154,35 +163,72 @@
 	&__item{
 		padding: rem(8);
 		cursor: pointer;
-		@include mt;
-		&:hover{
-			background-color: $secondary;
-		}
+			padding-left: rem(50);
+			&:last-child{
+				border-radius: 0  5px 5px  0 ;
+			}
+			@include mt;
+			position: relative;
+		
+			&::before{
+				// content: var(--check-gray);
+				content: var(--check--gray);
+				background-color: #DFE7EE;
+				width: rem(30);
+				height: rem(30);
+				border-radius: 50%; 
+				left: rem(10);
+				@include a-cent1(y);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding-top: rem(4);
 
+		}
+		&:hover{
+			background: #F4F6FA;
+		}
+		&:not(:last-child) {
+			border-bottom: 1px solid #DBE4EC;
+		}
 	}
 	&__dropdown{
 		position: absolute;
-		background: #F4F6FA;
+		background: #fff;
 		overflow: hidden;
-		border-radius: 0 5px 5px 0;
+		border: 1px solid #D6E0EA;
+		margin-top: -1px;
+		// border-radius: 0 5px 5px 0;
 		top: 100%;
 		left: 0;
 		width: 100%;
 		@include mt();
-		transform-origin: 0 0;
+		border-radius: 0 0  5px 5px   ;
+				box-shadow: 0px 5px 15px rgba(45, 55, 65, 0.1);
+		// transform-origin: 0 0;
 		transform: scaleY(0);
 		opacity: 0;
 		visibility: hidden;
-		// transform: translateY();
+		// transform: translateY(-10%);
+		// display: none;
 	}
 	&:hover &__toggle{
-		border-radius: 5px 5px 0  0;
-	
+		
+		border-color: #D6E0EA;
+		background-color: #fff;
 	}
-	&:hover &__dropdown{
+	&.show &__toggle{
+		border-radius: 5px 5px 0  0;
+		background-color: #fff;
+		box-shadow: 0px 5px 15px rgba(45, 55, 65, 0.1);
+		border-color: #D6E0EA;
+	}
+	&.show &__dropdown{
 		transform: scaleY(1);
+		transform: translateY(0);
 		opacity: 1;
 		visibility: visible;
+			box-shadow: 0px 5px 15px rgba(45, 55, 65, 0.1);
 
 	}
 	&__toggle {

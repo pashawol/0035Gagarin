@@ -68,6 +68,9 @@
 				}
 			}
 		}
+		&:hover .brand{
+			background-color: #fff;
+		}
 	}
 	&__b-txt{
 		font-weight: 600;
@@ -97,8 +100,9 @@
 			--ball-bg: #{$blue} !important;
 			--ball-color: #{$white};
 		}
-
+		
 		&:hover{
+			--txt-color: #{$blue};
 			--ball-bg: #{$gray-200};
 		}
 	}
@@ -201,7 +205,11 @@
 	&__item{
 		min-height: 100%;
 		text-align: center;
-
+		color: $body-color;
+		@include mt;
+		&:hover{
+			box-shadow: 0 rem(5) rem(15) rgba(45, 55, 65, 0.1);
+		}
 		@include media-breakpoint-up(sm){
 			background: $white;
 			border: 1px solid $gray-100;

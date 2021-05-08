@@ -18,6 +18,10 @@
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: $grid-gutter-width;
+		img{
+			@include mt;
+		}
+		
 	}
  p{
 		margin-bottom: rem(20) !important;

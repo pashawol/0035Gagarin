@@ -25,7 +25,7 @@
 		content: '';
 		position: absolute;
 		@include a-cent;
-		background: linear-gradient(0deg, rgba(96, 114, 134, 0.8), rgba(96, 114, 134, 0.8));
+		background: linear-gradient(0deg, rgba(96, 114, 134, 0.3), rgba(96, 114, 134, 0.3));
 		z-index: -1;
 	}
 	h1{
@@ -86,14 +86,6 @@
 		margin-bottom: rem(50);
 	}
 
-	&__bottom{
-		cursor: pointer;
-		font-weight: 600;
-		.icon{
-				font-size: 1rem;
-				margin-top: rem(30);
-		}
-	}
 	.container{
 	@include media-breakpoint-up(xl) {
 			max-width: calc(980px );
@@ -109,6 +101,26 @@
 	}
 
 	
+	&__bottom{
+		cursor: pointer;
+		color: #fff !important;
+		font-weight: 600;
+		display: inline-block;
+		.icon{
+				font-size: 1rem;
+				margin-top: rem(30);
+				@include mt;
+				position: relative;
+			}
+			&:hover{
+				.icon{
+					animation: 2s infinite  bubble;
+				}
+			}
+
+	}
+
+	
 
 	@include media-breakpoint-up(lg) {}
 
@@ -121,29 +133,19 @@
 	//
 	@include media-breakpoint-between(md, xl) {}
 
-
-	//
-	@include media-breakpoint-only(xs) {}
-
-	@include media-breakpoint-only(sm) {}
-
-	@include media-breakpoint-only(md) {}
-
-	@include media-breakpoint-only(lg) {}
-
 	@include media-breakpoint-only(xl) {}
-
-	//
-	@include media-breakpoint-down(xl) {}
-
-	@include media-breakpoint-down(lg) {}
-
-	@include media-breakpoint-down(md) {}
-
-	@include media-breakpoint-down(sm) {}
-
 	@include media-breakpoint-down(xs) {}
 
 }
 
 // end.headerBlock
+
+
+@keyframes bubble {
+ 0, 100%{
+		transform: translateY(0);
+	}
+	50%{
+		transform: translateY(10px);
+	}
+}

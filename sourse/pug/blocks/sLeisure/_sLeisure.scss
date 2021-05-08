@@ -18,13 +18,20 @@
 		@extend .default-row;
 	}
 	&__item{
+		@include mt;
+		&:hover{
+			box-shadow: 0 rem(5) rem(15) rgba(45, 55, 65, 0.1);
+			.sLeisure__bg img{
+				transform: scale(1.2);
+			}
+		}
 		min-height: #{'max(100%, #{rem(251)})'};
 		@include media-breakpoint-up(xl){
 			min-height: #{'max(100%, #{rem(314)})'};
 		}
 
 		background: $dark;
-		box-shadow: 0 rem(5) rem(15) rgba(45, 55, 65, 0.1);
+		// box-shadow: 0 rem(5) rem(15) rgba(45, 55, 65, 0.1);
 		border-radius: rem(10);
 		overflow: hidden;
 
@@ -40,8 +47,15 @@
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100%;
-
+		height: 100%; 
+			img{
+			@include mt;
+		}
+		&:hover{
+			img{
+				transform: scale(1.2);
+			}
+		}  
 		img{
 			width: 100%;
 			height: 100%;

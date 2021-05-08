@@ -49,6 +49,13 @@
 
 		position: relative;
 		z-index: 1;
+			@include mt;
+		&:hover{
+			box-shadow: 0 rem(5) rem(15) rgba(45, 55, 65, 0.1);
+			img{
+				transform: scale(1.2);
+			}
+		}
 		&:before{
 			content: '';
 			position: absolute;
@@ -80,6 +87,16 @@
 			height: rem(308);
 			width: (312/648) * 100%;
 		}
+		position: relative;
+		overflow: hidden;
+			img{
+			@include mt;
+		}
+		&:hover{
+			img{
+				transform: scale(1.2);
+			}
+		}  
 
 		img{
 			width: 100%;

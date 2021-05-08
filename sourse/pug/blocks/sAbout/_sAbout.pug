@@ -10,9 +10,20 @@ mixin sAbout(data)
 					p GagarinKite&nbsp;&mdash; единственная кайт школа в&nbsp;Межводном, имеющая официальный статус аффилированного центра международной организации кайтбординга IKO International Kiteboarding Organization (IKO)&nbsp;&mdash; самая большая и&nbsp;уважаемая в&nbsp;мировом кайт сообществе организация. Методика обучения IKO признана всеми странами мира как лучшая.
 
 					p Принцип методики&nbsp;&mdash; от&nbsp;простого к&nbsp;сложному. Шаг за&nbsp;шагом, урок за&nbsp;уроком студент осваивает кайт, постепенно усложняя упражнения: сначала учится управлять кайтом, удерживать его в&nbsp;разных позициях, затем учится создавать тягу, а&nbsp;только после того, как приходит уверенность при управлении парусом, добавляется доска. Таким образом, студент плавно и&nbsp;безопасно доходит до&nbsp;водного старта.
-		+e.row.row(class="wow  animate__fadeIn  " )
-			- for (var x = 1; x < 5; x++)
-				+pic(`gal-${x}.jpg`,'bg')
-			+pic(`gal-4.jpg`,'bg')
-			+pic(`gal-2.jpg`,'bg')
+		+e.slider
+			.d-none.d-sm-block
+				+e.row.row(class="wow  animate__fadeIn  " )
+					- for (var x = 1; x < 5; x++)
+						+pic(`gal-${x}.jpg`,'bg')
+					+pic(`gal-4.jpg`,'bg')
+					+pic(`gal-2.jpg`,'bg')
+			.d-sm-none 
+				+b.carusel(class="wow  animate__fadeIn  " )
+					+e.slider--js.swiper-container 
+						.swiper-wrapper 
+							- for (var x = 1; x < 5; x++)
+								+e.slide.swiper-slide
+									+pic(`gal-${x}.jpg`,'bg')
+						+e.control-wrap
+							+arrow
 	// end sAbout

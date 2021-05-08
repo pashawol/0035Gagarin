@@ -21,6 +21,16 @@
 				// --bs-gutter-x: 0;
 			}
 		}
+		// picture{
+		// 	img{
+		// 	@include mt;
+		// }
+		// &:hover{
+		// 	img{
+		// 		transform: scale(1.2);
+		// 	}
+		// } 
+		// }
 		&__col{
 			margin-top: 0;
 			&--end{
@@ -118,6 +128,14 @@
 	// align-items: center;
 	padding:  $grid-gutter-width;
 	background-color: #fff;
+	img{
+		@include mt;
+	}
+	&:hover{
+			img{
+				transform: scale(1.2);
+			}
+		}
 	&:nth-child(1){
 
 		margin-bottom: $grid-gutter-width;

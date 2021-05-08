@@ -14,7 +14,7 @@ mixin modal()
 	+b.modal-win--lg.--order(id="modal-order" class=" " style="display: none" )
 		+form-wrap
 			+e.title Забронировать #[span.text-primary «Полный комплект»]
-			+b.SECTION.sRent
+			+b.sRent
 				+e.t-head.d-none.d-xl-block
 					+e.row.row.align-items-center
 						+e.img-col.col-auto
@@ -46,10 +46,10 @@ mixin modal()
 			p.text-center Заполните форму, и мы свяжемся с Вами в ближайшее время
 			.container
 				.row 
-					.col-lg-6 
-						+input("__.__.____",'date')(required)  
-					.col-lg-6 
-						+input("__.__.____",'date')(required)  
+					.col-lg-12
+						+input("__.__.____")(required class="date")  
+					//- .col-lg-6 
+					//- 	+input("__.__.____")(required class="date") 
 					.col-lg-6 
 						+input("Ваше Имя")(required)  
 					.col-lg-6 
@@ -188,4 +188,56 @@ mixin modHotelItem(data)
 						block
 				+e.btn-cont.text-center.text-xl-start
 					+e.armor-btn(href='#') Забронировать
+		+b.modal-win--lg.--qwiz(class=" " id="modal-qwiz" style="display: none")
+			+form-wrap
+				+e.head
+					+e.title Подобрать программу
+					p.text-center Пройдите опрос и&nbsp;узнайте какая программа обучения вам подходит и&nbsp;сколько она будет стоить 
+					+b.progress
+						p.fw-600 Вопрос #[span.progress-step 1] из 5
+						+e.line
+							+e.bar
+				+e.body
+					mixin step(t, f)
+						+e.step.text-center&attributes(attributes)
+							.h5!= t
+							block
+							if !f
+								+e.footer.mt-a
+									button.btn-center.disabled.btn-nav.btn-next(type="button") Продолжить
+									+e.back.btn-nav.btn-back
+										+icon("chevron-left")
+										| Вернуться назад
+							else
+								button.btn-center(type="submit") Отправить
+								+polite
+					+step('1. Укажите ваш пол:').active
+						+e.row.row.justify-content-center
+							+e.col.col-lg-3.col-6
+								+radioT('Мужской','st-1')(checked)
+							+e.col.col-lg-3.col-6
+								+radioT('Женский','st-1')
+					+step('2. Укажите ваш рост и вес:')
+						+input('180 см').qwiz-radio-btn
+						+input('80 кг').qwiz-radio-btn
+					+step('3. Укажите уровень вашего катания:')
+						+e.row.row.justify-content-center
+							+e.col.col-lg-3.col-6
+								+radioT('Нулевой','st-3')(checked)
+							+e.col.col-lg-3.col-6
+								+radioT('Начальный','st-3')
+							+e.col.col-lg-3.col-6
+								+radioT('Продвинутый','st-3')
+							+e.col.col-lg-3.col-6
+								+radioT('Профессиональный','st-3')
+					+step('4. Нужна ли аренда оборудования?')
+						+e.row.row.justify-content-center
+							+e.col.col-lg-3.col-6
+								+radioT('Да','st-1')(checked)
+							+e.col.col-lg-3.col-6
+								+radioT('Нет','st-1')
+					+step(`Укажите ваши контактные данные, мы&nbsp;свяжемся с&nbsp;вами и&nbsp;предложим подходяющую под вас программу обучения:`,'f')
+						+input('Ваше имя')
+						+input('Ваш телефон','tel')
+					
 	// end modals
