@@ -690,124 +690,126 @@
 				</form>
 			</div>
 		</div>
-		<div class="modal-win modal-win--lg modal-win--qwiz" id="modal-qwiz" style="display: none">
-			<div class="form-wrap">
-				<form>
-					<div class="form-wrap__head">
-						<div class="form-wrap__title">Подобрать программу
-						</div>
-						<p class="text-center">Пройдите опрос и&nbsp;узнайте какая программа обучения вам подходит и&nbsp;сколько она будет стоить </p>
-						<div class="progress">
-							<p class="fw-600">Вопрос <span class="progress-step">1</span> из 5</p>
-							<div class="progress__line">
-								<div class="progress__bar">
+		<div class="d-none">
+			<div class="modal-win modal-win--lg modal-win--qwiz" id="modal-qwiz">
+				<div class="form-wrap">
+					<form>
+						<div class="form-wrap__head">
+							<div class="form-wrap__title">Подобрать программу
+							</div>
+							<p class="text-center">Пройдите опрос и&nbsp;узнайте какая программа обучения вам подходит и&nbsp;сколько она будет стоить </p>
+							<div class="progress">
+								<p class="fw-600">Вопрос <span class="progress-step">1</span> из 5</p>
+								<div class="progress__line">
+									<div class="progress__bar">
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="form-wrap__body">
-						<div class="form-wrap__step text-center active">
-							<div class="h5">1. Укажите ваш пол:</div>
-							<div class="form-wrap__row row justify-content-center">
-								<div class="form-wrap__col col-lg-3 col-6">
-									<label class="radio-text"><input class="radio-text__input qwiz-radio-btn toggle-input-js" name="st-1" type="radio"/><span class="radio-text__title">Мужской</span>
-									</label>
+						<div class="form-wrap__body">
+							<div class="form-wrap__step text-center active">
+								<div class="h5">1. Укажите ваш пол:</div>
+								<div class="form-wrap__row row justify-content-center">
+									<div class="form-wrap__col col-lg-3 col-6">
+										<label class="radio-text"><input class="radio-text__input qwiz-radio-btn toggle-input-js" name="st-1" type="radio"/><span class="radio-text__title">Мужской</span>
+										</label>
+									</div>
+									<div class="form-wrap__col col-lg-3 col-6">
+										<label class="radio-text"><input class="radio-text__input qwiz-radio-btn toggle-input-js" name="st-1" type="radio"/><span class="radio-text__title">Женский</span>
+										</label>
+									</div>
 								</div>
-								<div class="form-wrap__col col-lg-3 col-6">
-									<label class="radio-text"><input class="radio-text__input qwiz-radio-btn toggle-input-js" name="st-1" type="radio"/><span class="radio-text__title">Женский</span>
-									</label>
+								<div class="form-wrap__footer mt-a">
+									<button class="btn-center btn-nav btn-next" type="button">Продолжить</button>
+									<div class="form-wrap__back btn-nav btn-back">
+										<svg class="icon icon-chevron-left ">
+											<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+										</svg>Вернуться назад
+									</div>
 								</div>
 							</div>
-							<div class="form-wrap__footer mt-a">
-								<button class="btn-center btn-nav btn-next" type="button">Продолжить</button>
-								<div class="form-wrap__back btn-nav btn-back">
-									<svg class="icon icon-chevron-left ">
-										<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
-									</svg>Вернуться назад
+							<div class="form-wrap__step text-center">
+								<div class="h5">2. Укажите ваш рост и вес:</div>
+								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control qwiz-radio-btn" name="text" type="text" placeholder="180 см"/>
+								</div>
+								<!-- +e.input-wrap-->
+								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control qwiz-radio-btn" name="text" type="text" placeholder="80 кг"/>
+								</div>
+								<!-- +e.input-wrap-->
+								<div class="form-wrap__footer mt-a">
+									<button class="btn-center btn-nav btn-next" type="button">Продолжить</button>
+									<div class="form-wrap__back btn-nav btn-back">
+										<svg class="icon icon-chevron-left ">
+											<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+										</svg>Вернуться назад
+									</div>
+								</div>
+							</div>
+							<div class="form-wrap__step text-center">
+								<div class="h5">3. Укажите уровень вашего катания:</div>
+								<div class="form-wrap__row row justify-content-center">
+									<div class="form-wrap__col col-lg-3 col-6">
+										<label class="radio-text"><input class="radio-text__input qwiz-radio-btn toggle-input-js" name="st-3" type="radio"/><span class="radio-text__title">Нулевой</span>
+										</label>
+									</div>
+									<div class="form-wrap__col col-lg-3 col-6">
+										<label class="radio-text"><input class="radio-text__input qwiz-radio-btn toggle-input-js" name="st-3" type="radio"/><span class="radio-text__title">Начальный</span>
+										</label>
+									</div>
+									<div class="form-wrap__col col-lg-3 col-6">
+										<label class="radio-text"><input class="radio-text__input qwiz-radio-btn toggle-input-js" name="st-3" type="radio"/><span class="radio-text__title">Продвинутый</span>
+										</label>
+									</div>
+									<div class="form-wrap__col col-lg-3 col-6">
+										<label class="radio-text"><input class="radio-text__input qwiz-radio-btn toggle-input-js" name="st-3" type="radio"/><span class="radio-text__title">Профессиональный</span>
+										</label>
+									</div>
+								</div>
+								<div class="form-wrap__footer mt-a">
+									<button class="btn-center btn-nav btn-next" type="button">Продолжить</button>
+									<div class="form-wrap__back btn-nav btn-back">
+										<svg class="icon icon-chevron-left ">
+											<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+										</svg>Вернуться назад
+									</div>
+								</div>
+							</div>
+							<div class="form-wrap__step text-center">
+								<div class="h5">4. Нужна ли аренда оборудования?</div>
+								<div class="form-wrap__row row justify-content-center">
+									<div class="form-wrap__col col-lg-3 col-6">
+										<label class="radio-text"><input class="radio-text__input qwiz-radio-btn toggle-input-js" name="st-1" type="radio"/><span class="radio-text__title">Да</span>
+										</label>
+									</div>
+									<div class="form-wrap__col col-lg-3 col-6">
+										<label class="radio-text"><input class="radio-text__input qwiz-radio-btn toggle-input-js" name="st-1" type="radio"/><span class="radio-text__title">Нет</span>
+										</label>
+									</div>
+								</div>
+								<div class="form-wrap__footer mt-a">
+									<button class="btn-center btn-nav btn-next" type="button">Продолжить</button>
+									<div class="form-wrap__back btn-nav btn-back">
+										<svg class="icon icon-chevron-left ">
+											<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+										</svg>Вернуться назад
+									</div>
+								</div>
+							</div>
+							<div class="form-wrap__step text-center">
+								<div class="h5">Укажите ваши контактные данные, мы&nbsp;свяжемся с&nbsp;вами и&nbsp;предложим подходяющую под вас программу обучения:</div>
+								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше имя"/>
+								</div>
+								<!-- +e.input-wrap-->
+								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Ваш телефон"/>
+								</div>
+								<!-- +e.input-wrap-->
+								<button class="btn-center" type="submit">Отправить</button>
+								<div class="form-wrap__polite">Я&nbsp;согласен(а) на&nbsp;обработку и&nbsp;хранение моих персональных данных в&nbsp;соответствии с&nbsp;условиями.
 								</div>
 							</div>
 						</div>
-						<div class="form-wrap__step text-center">
-							<div class="h5">2. Укажите ваш рост и вес:</div>
-							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control qwiz-radio-btn" name="text" type="text" placeholder="180 см"/>
-							</div>
-							<!-- +e.input-wrap-->
-							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control qwiz-radio-btn" name="text" type="text" placeholder="80 кг"/>
-							</div>
-							<!-- +e.input-wrap-->
-							<div class="form-wrap__footer mt-a">
-								<button class="btn-center btn-nav btn-next" type="button">Продолжить</button>
-								<div class="form-wrap__back btn-nav btn-back">
-									<svg class="icon icon-chevron-left ">
-										<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
-									</svg>Вернуться назад
-								</div>
-							</div>
-						</div>
-						<div class="form-wrap__step text-center">
-							<div class="h5">3. Укажите уровень вашего катания:</div>
-							<div class="form-wrap__row row justify-content-center">
-								<div class="form-wrap__col col-lg-3 col-6">
-									<label class="radio-text"><input class="radio-text__input qwiz-radio-btn toggle-input-js" name="st-3" type="radio"/><span class="radio-text__title">Нулевой</span>
-									</label>
-								</div>
-								<div class="form-wrap__col col-lg-3 col-6">
-									<label class="radio-text"><input class="radio-text__input qwiz-radio-btn toggle-input-js" name="st-3" type="radio"/><span class="radio-text__title">Начальный</span>
-									</label>
-								</div>
-								<div class="form-wrap__col col-lg-3 col-6">
-									<label class="radio-text"><input class="radio-text__input qwiz-radio-btn toggle-input-js" name="st-3" type="radio"/><span class="radio-text__title">Продвинутый</span>
-									</label>
-								</div>
-								<div class="form-wrap__col col-lg-3 col-6">
-									<label class="radio-text"><input class="radio-text__input qwiz-radio-btn toggle-input-js" name="st-3" type="radio"/><span class="radio-text__title">Профессиональный</span>
-									</label>
-								</div>
-							</div>
-							<div class="form-wrap__footer mt-a">
-								<button class="btn-center btn-nav btn-next" type="button">Продолжить</button>
-								<div class="form-wrap__back btn-nav btn-back">
-									<svg class="icon icon-chevron-left ">
-										<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
-									</svg>Вернуться назад
-								</div>
-							</div>
-						</div>
-						<div class="form-wrap__step text-center">
-							<div class="h5">4. Нужна ли аренда оборудования?</div>
-							<div class="form-wrap__row row justify-content-center">
-								<div class="form-wrap__col col-lg-3 col-6">
-									<label class="radio-text"><input class="radio-text__input qwiz-radio-btn toggle-input-js" name="st-1" type="radio"/><span class="radio-text__title">Да</span>
-									</label>
-								</div>
-								<div class="form-wrap__col col-lg-3 col-6">
-									<label class="radio-text"><input class="radio-text__input qwiz-radio-btn toggle-input-js" name="st-1" type="radio"/><span class="radio-text__title">Нет</span>
-									</label>
-								</div>
-							</div>
-							<div class="form-wrap__footer mt-a">
-								<button class="btn-center btn-nav btn-next" type="button">Продолжить</button>
-								<div class="form-wrap__back btn-nav btn-back">
-									<svg class="icon icon-chevron-left ">
-										<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
-									</svg>Вернуться назад
-								</div>
-							</div>
-						</div>
-						<div class="form-wrap__step text-center">
-							<div class="h5">Укажите ваши контактные данные, мы&nbsp;свяжемся с&nbsp;вами и&nbsp;предложим подходяющую под вас программу обучения:</div>
-							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше имя"/>
-							</div>
-							<!-- +e.input-wrap-->
-							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Ваш телефон"/>
-							</div>
-							<!-- +e.input-wrap-->
-							<button class="btn-center" type="submit">Отправить</button>
-							<div class="form-wrap__polite">Я&nbsp;согласен(а) на&nbsp;обработку и&nbsp;хранение моих персональных данных в&nbsp;соответствии с&nbsp;условиями.
-							</div>
-						</div>
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
 		</div>
 		<!-- end modals-->
