@@ -4,6 +4,7 @@ mixin sAdditionalServises(data)
 		.container
 			+b.section-title.text-center(class="wow  animate__fadeIn  " )
 				h2 Дополнительные услуги
+			//- +e.items
 			+e.items
 				+sAddItem(1, 'Бесплатно')
 					| Пользование кухней, интернетом, электричеством, водой, туалетом для студентов школы
@@ -24,18 +25,18 @@ mixin sAdditionalServises(data)
 				+sAddItem(9, '2000 ₽')
 					| Фотосессия в с кайтом в Межводном
 				+sAddItem(10, '2000 ₽ за человека')
-					| Пейнтболл в Межводном (100 шаров)
+					| Пейнтболл в Межводном (100 шаров) 
 				+sAddItem(11, '2500 ₽ за 2 часа')
 					| Квадроцикл в прокат
 				+sAddItem(12, '600 ₽ за сутки')
 					| Велосипед в аренду на кайт споте Межводное
 				+sAddItem(13, '500 ₽ за час')
 					| Сап в аренду
-			+e.title(class="wow  animate__fadeIn  " )
-				| Цены на отдельные услуги станции
-				br
-				| (если вы не пользуетесь всеми услугами станции):
-			+e.items
+				+e.title(class="wow  animate__fadeIn  " )
+					| Цены на отдельные услуги станции
+					br
+					| (если вы не пользуетесь всеми услугами станции):
+					//- +e.items
 				+sAddItem(14, '150 ₽ за 20 минут')
 					| Душ горячий
 				+sAddItem(15, '20 ₽ за 1 кг')
@@ -54,8 +55,8 @@ mixin sAdditionalServises(data)
 					| Автомобиль
 				+sAddItem(22, 'от 600 ₽ за сутки')
 					| Мопед
-			+e.btn-cont.text-center(class="wow  animate__fadeIn  " )
-				+e.btn(href='#') Свернуть информацию
+			+e.btn-cont.text-center.toggle-servises(class="wow  animate__fadeIn  " )
+				+e.btn(type='button') Показать еще 
 				//
 	// end sAdditionalServises
 

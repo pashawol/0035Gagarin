@@ -2,22 +2,22 @@
 mixin mnu()
 	-
 		var nav= {
-			"О нас":"#",
-			"Преимущества  ":"#",
-			"Отзывы":"#",
-			"Как стать кайтером ":"#",
-			"Курсы и цены":"#",
-			"Инструкторы":"#",
-			"Станция":"#",
-			"Досуг":"#", 
-			"Питание":"#", 
-			"Кайт спот":"#", 
-			"Аренда":"#", 
-			"Услуги":"#", 
-			"Проживание":"#", 
-			"Как добраться":"#", 
-			"Блог":"#", 
-			"Контакты":"#", 
+			"О нас":"#sAbout",
+			"Преимущества  ":"#sAdvantages",
+			"Отзывы":"#sRews",
+			"Как стать кайтером ":"#sSteps",
+			"Курсы и цены":"#sPrices",
+			"Инструкторы":"#sInstructors",
+			"Станция":"#sSertificates",
+			"Досуг":"#sKiteStation", 
+			"Питание":"#sLeisure", 
+			"Кайт спот":"#sCuisine", 
+			"Аренда":"#sPlace", 
+			"Услуги":"#sRent", 
+			"Проживание":"#sAdditionalServises", 
+			"Как добраться":"#sAccommodation", 
+			"Блог":"#sBlog", 
+			"Контакты":"#sContact", 
 			}
 	ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
 		each linkPatch, linkName in nav

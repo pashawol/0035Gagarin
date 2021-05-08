@@ -42,24 +42,25 @@
 		}
 		&__before{
 			position: absolute;
-			right: 0;
-			// top: 0;
-			bottom: 100%;
-
-			width: rem(116);
-			height: 100%;
-			// z-index: -1;
+			right: 0; 
+			// bottom: 0;
+			top: 10%;
+			width: rem(116); 
 			&::before{
 				content: attr(data-title);
-				position: absolute;
+				// position: absolute;
+				position: relative;
 				color: #fff;
+				display: block;
 				@include rfs(116px);
+				writing-mode:tb-rl;
 				// right: 0;
 				// left: 0;
 				// right: 0;	
-				left: 50%;
+				left: 0%;
 				top: 0%;
-				transform: translate(-50%, -60%) rotate(-90deg);
+				line-height: 1;
+				transform:  rotate(180deg);
 				text-transform: uppercase;
 				font-weight: 700; 
 				
@@ -69,6 +70,7 @@
 			// align-items: center;
 			background: #F6F8FB;
 			position: relative;
+			overflow: hidden;
 		 
 			&:nth-child(even){
 				flex-direction: row-reverse;
