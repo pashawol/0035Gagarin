@@ -513,15 +513,19 @@ a {
 	}
 	&__back{
 		cursor: pointer;
-		position: absolute;
 		color: #607286;
 		left: 0;
-		@include a-cent1(y);
+		@include media-breakpoint-up(lg) {
+			
+			position: absolute;
+			@include a-cent1(y);
+			margin-top: rem(5);
+		}
+		margin-top: rem(30);
 		display: inline-flex;
 		align-items: center;
 		font-weight: 600;
 		@include mt;
-		// margin-top: rem(30);
 		// margin-bottom: rem(30);
 		&:hover{
 			color: $body-color;

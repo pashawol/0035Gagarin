@@ -511,29 +511,32 @@ function eventHandler() {
 			"Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
 			"firstDay": 1
 		}
-	});
-	$(" .qwiz-radio-btn").each(function () {
-		let parent = $(this).parents(".form-wrap__step");
-		let btnNext = parent.find(".btn-next");
-		parent.find(".sQwiz__toggle-block").on('input change copy paste', 'input', function () {
-			if ($(this).val() != '') {
-				btnNext.removeClass("disabled");
-			} else {
-				btnNext.addClass("disabled");
-			}
-		});
-		$(this).change(function () {
-			if (!$(this).hasClass("toggle-input-js")) {
-				btnNext.removeClass("disabled");
-			} else if (parent.find(".sQwiz__toggle-block").find('input').val() != '') {
-				console.log('1');
-				btnNext.removeClass("disabled");
-			} else {
-				console.log('2');
-				btnNext.addClass("disabled");
-			}
-		});
-	});
+	}); // $(" .qwiz-radio-btn").each(function () {
+	// 	let parent = $(this).parents(".form-wrap__step");
+	// 	let btnNext = parent.find(".btn-next");
+	// 	parent.find(".sQwiz__toggle-block").on('input change copy paste', 'input', function () {
+	// 	if(	$(this).val() != '') {
+	// 		btnNext.removeClass("disabled") 
+	// 	}
+	// 	else{
+	// 		btnNext.addClass("disabled") 
+	// 	}
+	// 	})
+	// 	$(this).change(function () {
+	// 		if (!$(this).hasClass("toggle-input-js")) {
+	// 			btnNext.removeClass("disabled")
+	// 		}
+	// 		else if (parent.find(".sQwiz__toggle-block").find('input').val() != '') {
+	// 			console.log('1')
+	// 			btnNext.removeClass("disabled")
+	// 		}
+	// 		else {
+	// 			console.log('2')
+	// 			btnNext.addClass("disabled")
+	// 		}
+	// 	})
+	// })
+
 	let steps = 5;
 	console.log(steps);
 	let btnNav = $(".btn-nav");
@@ -544,14 +547,16 @@ function eventHandler() {
 	console.log(progressBar);
 	btnNav.click(function () {
 		let step = $(this).parents(".form-wrap__step");
-		let index = step.next().index() + 1;
+		let index;
 
 		if ($(this).hasClass("btn-next")) {
+			index = step.next().index() + 1;
 			step.removeClass("active").next().addClass("active");
 			progressBar.style.width = index < 5 ? (index - 1) * 100 / steps + "%" : "90%";
 		} else {
+			index = step.prev().index() + 1;
 			step.removeClass("active").prev().addClass("active");
-			progressBar.style.width = index = 2 ? "10%" : (index - 1) * 100 / steps + "%";
+			progressBar.style.width = index == 2 ? "10%" : (index - 1) * 100 / steps + "%";
 		} // console.log(progressBar);
 
 

@@ -58,11 +58,11 @@
 				// height: 100%;
 			}
 			img{
-			@include mt;
+			@include mt(.6s);
 		}
 		&:hover{
 			img{
-				transform: scale(1.2);
+				transform: scale(1.12);
 			}
 		}
 		}

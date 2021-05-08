@@ -541,12 +541,12 @@ iframe {
 	&:hover {
 		img {
 			// filter: brightness(80%);
-			transform: scale(1.2);
+			transform: scale(1.12);
 		}
 	}
 
 	img {
-		@include mt();
+		@include mt(.6s);
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -563,7 +563,7 @@ iframe {
 	overflow: hidden;
 
 	img {
-		@include mt();
+		@include mt(.6s);
 		position: absolute;
 		width: 100%;
 		height: 100%;

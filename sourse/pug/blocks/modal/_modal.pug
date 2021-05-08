@@ -125,8 +125,7 @@ mixin modal()
 					|
 				span.text-primary «Караван Сарай»
 			p.text-center Выберите период, на который хотите забронировать:
-			+input("__.__.____",'date')(required)
-			+input("__.__.____",'date')(required)
+			+input("__.__.____")(required class="date")  
 			+input("Ваше Имя")(required)
 			+input("Ваш телефон",'tel')(required)
 			+e.BUTTON.btn.btn(type="submit"  ) Забронировать
@@ -140,7 +139,7 @@ mixin modal()
 				|
 				br
 				| Укажите дату и время приезда:
-			+input("__.__.____",'date')(required)
+			+input("__.__.____")(required class="date") 
 			+input('10:00', 'select')
 			+input("Ваше Имя")(required)
 			+input("Ваш телефон",'tel')(required)
@@ -181,7 +180,7 @@ mixin modal()
 							block
 							if !f
 								+e.footer.mt-a
-									button.btn-center.disabled.btn-nav.btn-next(type="button") Продолжить
+									button.btn-center.btn-nav.btn-next(type="button") Продолжить
 									+e.back.btn-nav.btn-back
 										+icon("chevron-left")
 										| Вернуться назад
@@ -217,6 +216,7 @@ mixin modal()
 						+input('Ваше имя')
 						+input('Ваш телефон','tel')
 
+	// end modals
 mixin mwShedule()
 	+e.item
 		+e.row.row.align-items-center
@@ -241,4 +241,3 @@ mixin modHotelItem(data)
 				+e.btn-cont.text-center.text-xl-start
 					+e.armor-btn.link-modal-js(href='#modal-reserve') Забронировать
 			
-	// end modals

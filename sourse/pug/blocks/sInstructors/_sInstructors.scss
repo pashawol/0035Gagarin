@@ -19,7 +19,7 @@
 		margin-right: auto;
 		margin-bottom: $grid-gutter-width;
 		img{
-			@include mt;
+			@include mt(.6s);
 		}
 		
 	}
@@ -30,6 +30,7 @@
 		// --sPB: ;
 		// --sTPB: ;
 
+		
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
