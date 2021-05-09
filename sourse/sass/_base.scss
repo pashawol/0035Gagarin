@@ -610,7 +610,7 @@ iframe {
 		justify-content: center;
 		@include media-breakpoint-down(sm) {
 			margin-top: rem(60);
-			@include roww(24px, m);
+			@include roww(16px, m);
 		}
 	}
 }

@@ -558,35 +558,7 @@ function eventHandler() {
 		}
 	});
 
-
-
-	// $(" .qwiz-radio-btn").each(function () {
-	// 	let parent = $(this).parents(".form-wrap__step");
-	// 	let btnNext = parent.find(".btn-next");
-	// 	parent.find(".sQwiz__toggle-block").on('input change copy paste', 'input', function () {
-	// 	if(	$(this).val() != '') {
-	// 		btnNext.removeClass("disabled") 
-	// 	}
-	// 	else{
-	// 		btnNext.addClass("disabled") 
-	// 	}
-	// 	})
-	// 	$(this).change(function () {
-	// 		if (!$(this).hasClass("toggle-input-js")) {
-	// 			btnNext.removeClass("disabled")
-	// 		}
-
-	// 		else if (parent.find(".sQwiz__toggle-block").find('input').val() != '') {
-	// 			console.log('1')
-	// 			btnNext.removeClass("disabled")
-	// 		}
-	// 		else {
-	// 			console.log('2')
-	// 			btnNext.addClass("disabled")
-
-	// 		}
-	// 	})
-	// })
+ 
 
 	let steps =5;
 	// console.log(steps);
@@ -615,17 +587,7 @@ function eventHandler() {
 		progressCount.text(index );
 
 	})
-	// btnNext.click(function(){
-	// })
-	
-	// let btnBack = $(".btn-back");
-	// btnBack.click(function(){
-	// 	let step = $(this).parents(".form-wrap__step");
-	// 	let index = step.prev().index() + 1;
-	// 	progressCount.text(index );
-	// 	// console.log(index);
-	// 	console.log(progressBar);
-	// })
+	 
 
 
 	$('.btn-last-js').click(function () {
@@ -640,6 +602,19 @@ function eventHandler() {
 		$('html, body').animate({ scrollTop: position + 1 }, 0);
 	})
 
+
+	window.addEventListener('wheel', function (evt) {
+		let header = document.querySelector(".header")
+		if (evt.deltaY < 0  ) {
+			// поймали
+			header.classList.add("show")
+		}
+		else {
+			if (header.classList.contains("show")) {
+				header.classList.remove("show")
+			}
+		}
+	});
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

@@ -1,9 +1,21 @@
 
 	// start .header
+	*:not(.fixed) {
+		.header {
+			// @include media-breakpoint-up(lg) {
+				transform: translateY(-100%);
+			// }
+	}
+	}
 	.header {
+		&.show{
+			transform: translateY(0);
+			// @include mt;
+		}
 	// @include mt;
 	background-color: #fff;
 	transition: opacity .3s;
+	transition: transform .26s;
 	@include media-breakpoint-up(xxl) {
 
 		--container-x: #{rem(47)};

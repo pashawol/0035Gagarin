@@ -8,26 +8,6 @@
 	margin-top: 20px;
 	margin-right: 20px;
 	opacity: 1;
-	
-}
-.fancybox-is-open .fancybox-bg{
-	
-	opacity: 0.5;
-}
-
-.fancybox-bg{
-	@include media-breakpoint-up(lg){
-		background: #607286;
-		// opacity: 0.5;
-	
-	}
-	@include media-breakpoint-down(lg){
-	opacity: 1 !important;
-}
-background: #fff;
-// opacity: 1;
-}
-.fancybox-button {
 	opacity: 1 !important;
 	svg{
 		opacity: 1;
@@ -37,19 +17,52 @@ background: #fff;
 		opacity: 1 !important;
 		
 	}
+	
+}
+.fancybox-is-open .fancybox-bg{
+	
+	@include media-breakpoint-up(sm){
+	opacity: 0.5;
+}
+}
+
+.fancybox-bg{
+	@include media-breakpoint-up(sm){
+		background: #607286;
+		// opacity: 0.5;
+	
+	}
+	background: #fff;
+	// opacity: 1;
+}
+.fancybox-is-open{
+	@include media-breakpoint-down(lg){
+	 .fancybox-bg	{
+			// opacity: 1  ;
+		}
+	}
+}
+.fancybox-slide--html {
+    padding: 0;
+}
+.fancybox-button {
 }
 .modal-win {
 	// display: block;
 		@include media-breakpoint-down(sm) {
 			padding-left: rem(18);
 			padding-right: rem(18);
+
 		}
-		@include media-breakpoint-down(lg) {
+		@include media-breakpoint-up(sm) {
+
+			max-width: rem(640);
+		}
+		@include media-breakpoint-down(sm) {
 			position: static;
 		}
 	width: 100%;
 	position: relative;
-	max-width: rem(640);
 	&--lg{
 	max-width: rem(1320);
 
