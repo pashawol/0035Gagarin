@@ -27,11 +27,14 @@
 			img{
 			@include mt(.6s);
 		}
+			@include media-breakpoint-up(sm) {
 		&:hover{
+
 			img{
 				transform: scale(1.12);
 			}
 		} 
+		}
 		}
 
 	position: relative;

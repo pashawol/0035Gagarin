@@ -7,6 +7,11 @@
 		--sPB: #{rem(90)};
 		--sTPB: #{rem(70)};
 	}
+	
+	@include media-breakpoint-between(xl, xxl) {
+		--sTPB: #{rem(20)};
+
+	}
 
 	--sPT: #{rem(80)};
 	--sPB: #{rem(80)};
@@ -54,3 +59,9 @@
 	@include media-breakpoint-only(xl) {}
 	@include media-breakpoint-down(xl) {}
 }
+
+// @include media-breakpoint-down(sm) {
+// 	img{
+// 		transform: scale(1) !important;
+// 	}
+// }

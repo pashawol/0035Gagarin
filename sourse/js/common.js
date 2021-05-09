@@ -472,15 +472,15 @@ function eventHandler() {
 		var wipeAnimation = new TimelineMax()
 			// animate to second panel
 
-			.to("#sSteps  .swiper-wrapper", 1, { x: "-120%" })
+			.to("#sSteps  .swiper-wrapper", 1, { x: "-100%", ease: Power0.easeNone})
 
 		// create scene to pin and link animation
 		new ScrollMagic.Scene({
-			triggerElement: "#sSteps ",
+			triggerElement: ".sSteps__inner ",
 			triggerHook: "onLeave",
-			duration: "300%"
+			duration: "150%"
 		})
-			.setPin("#sSteps ")
+			.setPin(".sSteps__inner ")
 			.setTween(wipeAnimation)
 			// .addIndicators() // add indicators (requires plugin)
 			.addTo(controller);

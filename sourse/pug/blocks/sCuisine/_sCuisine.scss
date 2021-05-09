@@ -56,7 +56,10 @@
 		&:hover{
 			box-shadow: 0 rem(5) rem(15) rgba(45, 55, 65, 0.1);
 			.sCuisine__img img{
+					@include media-breakpoint-up(sm) {
 				transform: scale(1.12);
+
+			}
 			}
 		}
 	}
@@ -73,9 +76,8 @@
 			@include mt(.6s);
 		}
 		&:hover{
-			img{
-				transform: scale(1.12);
-			}
+
+		 
 		}  
 		img{
 			width: 100%;

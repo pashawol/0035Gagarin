@@ -37,10 +37,12 @@
 	border-radius: rem(10);
 	position: relative;
 	height: 100%;
+	@include media-breakpoint-up(sm) {
 	&:hover{
 		picture	img{
 			transform: scale(1.12);
 			}
+		}
 		}
 	// overflow: hidden;
 	&__video{

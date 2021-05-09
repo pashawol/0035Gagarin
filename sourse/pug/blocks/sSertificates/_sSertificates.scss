@@ -131,10 +131,12 @@
 	img{
 		@include mt;
 	}
+	@include media-breakpoint-up(sm) {
 	&:hover{
 			img{
 				transform: scale(1.12);
 			}
+		}
 		}
 	&:nth-child(1){
 

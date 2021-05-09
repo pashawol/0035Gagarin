@@ -543,11 +543,13 @@ iframe {
 	position: relative;
 
 	overflow: hidden;
+	@include media-breakpoint-up(sm) {
 	&:hover {
 		img {
 			// filter: brightness(80%);
 			transform: scale(1.12);
 		}
+	}
 	}
 
 	img {
