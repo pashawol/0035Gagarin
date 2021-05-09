@@ -106,15 +106,18 @@
 		color: #fff !important;
 		font-weight: 600;
 		display: inline-block;
+		@include mt;
 		.icon{
 				font-size: 1rem;
 				margin-top: rem(30);
 				@include mt;
 				position: relative;
+				transform: translateY(0);
 			}
 			&:hover{
 				.icon{
-					animation: 2s infinite  bubble;
+					transform: translateY(10px);
+					// animation: 2s infinite  bubble;
 				}
 			}
 

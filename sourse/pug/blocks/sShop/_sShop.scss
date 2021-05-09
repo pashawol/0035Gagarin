@@ -89,6 +89,7 @@
 	&__type{
 		display: flex;
 		align-items: center;
+		color: var(--txt-color);
 
 		--txt-b-opac: 0;
 		--txt-color: #{$body-color};
@@ -109,7 +110,6 @@
 	&__t-txt{
 		font-weight: 600;
 		margin-right: rem(6);
-		color: var(--txt-color);
 
 		position: relative;
 		z-index: 1;
@@ -136,6 +136,7 @@
 
 		font-weight: 600;
 		line-height: (19/16);
+		@include mt;
 
 		display: flex;
 		align-items: center;
@@ -246,7 +247,7 @@
 			min-height: 0;
 		}
 
-		color: $body-color;
+		// color: $body-color;
 	}
 	&__img{
 		width: 100%;
@@ -272,6 +273,7 @@
 		margin-top: auto;
 		margin-bottom: rem(24);
 		//color: #2D3741;
+			color: $body-color;
 	}
 	&__buy-btn{
 		@extend .btn;

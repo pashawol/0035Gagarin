@@ -25,7 +25,9 @@
 		position: absolute;
 		left: 0;
 		z-index: -1;
-		@include a-cent1(y);
+		// @include a-cent1(y);
+		// bottom: 0;
+		top: 0%;
 	}
 
 	.swiper-button-hand{
@@ -57,14 +59,17 @@
 
 .step-item{
 	picture{
-		@include block();
+			@include media-breakpoint-up(xxl) {
+				@include block();
+
+			}
+		@include block(3,2.2);
 		border-radius: 10px;
+		position: relative;
 		overflow: hidden;
 		margin-bottom: $grid-gutter-width;
 		img{
 			@include a-cent;
-		}
-		img{
 			@include mt(.6s);
 		}
 		&:hover{

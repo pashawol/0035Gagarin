@@ -407,6 +407,8 @@ img {
 }
 picture {
 	display: block;
+	// position: relative;
+	// overflow: hidden;
 	img {
 		@extend .res-i;
 	}
@@ -517,8 +519,11 @@ iframe {
 	}
 }
 
-.btn,
-.form-control {
+.form-control,
+.form-select{
+	
+}
+.btn {
 	box-shadow: none !important;
 }
 
@@ -755,7 +760,7 @@ div.text {
 }
 
 
-.btn{
+.footer__btn{
 	@extend .blesk;
 }
 

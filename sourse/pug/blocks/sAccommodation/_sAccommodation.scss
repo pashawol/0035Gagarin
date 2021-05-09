@@ -88,13 +88,9 @@
 				position: absolute;
 				left: 0;
 				top: 0;
-			@include mt;
+			@include mt(.6s);
 		}
-		&:hover{
-			img{
-				transform: scale(1.12);
-			}
-		}  
+		
 		@include media-breakpoint-up(xl){
 			height: rem(220);
 		}

@@ -39,7 +39,7 @@
 	height: 100%;
 	&:hover{
 		picture	img{
-				transform: scale(1.12);
+			transform: scale(1.12);
 			}
 		}
 	// overflow: hidden;
@@ -68,26 +68,27 @@
 		}
 		&:hover{
 			// img{
-			// 	transform: scale(1.12);
-			// }
+				// 	transform: scale(1.12);
+				// }
+			}
 		}
-	}
-	&__play{
-		@include a-cent1;
-		width: rem(68);
-		height: rem(68);
-		border-radius: 50%;
-		background-color: #fff;
-		z-index: 4;
-		
-		&::before{
-			content: '';
+		&__play{
 			@include a-cent1;
-			@include triangle(32px 24px,$danger, right);
-			margin-left: 2%;
+			width: rem(68);
+			height: rem(68);
+			border-radius: 50%;
+			background-color: #fff;
+			z-index: 4;
+			
+			&::before{
+				content: '';
+				@include a-cent1;
+				@include triangle(32px 24px,$danger, right);
+				margin-left: 2%;
+			}
 		}
-	}
-	&__block{
+		&__block{
+		border: 1px solid #D6E0EA;
 		padding: $grid-gutter-width ;
 		background-color: #fff;
 		@include mt;

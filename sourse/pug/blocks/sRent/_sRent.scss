@@ -56,12 +56,12 @@
 
 	//items
 	&__items{
-		margin-bottom: rem(60);
+		margin-bottom: rem(60 - 12);
 		@include media-breakpoint-up(lg){
-			margin-bottom: rem(80);
+			margin-bottom: rem(80 - 12);
 		}
 		@include media-breakpoint-up(xl){
-			margin-bottom: rem(90);
+			margin-bottom: rem(90 - 12);
 		}
 	}
 	&__item{
@@ -71,7 +71,7 @@
 		}
 		margin-bottom: rem(12);
 		&:last-child{
-			margin-bottom: 0;
+			// margin-bottom: 0;
 		}
 
 		background: $white;

@@ -350,6 +350,7 @@ function eventHandler() {
 		loop: true,
 		loopedSlides: 6,
 		centeredSlidesBounds: true,
+		// nested: false,
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
@@ -471,7 +472,7 @@ function eventHandler() {
 		var wipeAnimation = new TimelineMax()
 			// animate to second panel
 
-			.to("#sSteps  .swiper-wrapper", 1, { x: "-100%" })
+			.to("#sSteps  .swiper-wrapper", 1, { x: "-120%" })
 
 		// create scene to pin and link animation
 		new ScrollMagic.Scene({

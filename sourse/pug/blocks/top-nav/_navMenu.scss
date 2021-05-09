@@ -5,13 +5,16 @@
 	}
 	@include media-breakpoint-up(lg) {
 		
-		display: flex;
+		display: flex !important;
 		justify-content: center;
+		// justify-content: space-between;
 		@include roww(30px);
 		position: relative;
 		margin-bottom: 0;
 		max-width: 100%;
 		flex-wrap: wrap;
+		// flex-grow: 1;
+		// width: calc(100% + #{rem(30)});
 	}
 	li{
 		list-style: none;
