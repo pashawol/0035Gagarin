@@ -124,9 +124,11 @@
 	&:hover{
 		color: $primary;
 	}
+	transform: scale(1);
 	&:hover{
 			box-shadow: 0px rem(5) rem(15) rgba(45, 55, 65, 0.1);
 				@include media-breakpoint-up(sm) {
+					transform: scale(1);
 			  img{
 				transform: scale(1.12);
 			}

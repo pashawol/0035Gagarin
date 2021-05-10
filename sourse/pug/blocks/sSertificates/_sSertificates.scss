@@ -132,7 +132,9 @@
 		@include mt;
 	}
 	@include media-breakpoint-up(sm) {
+		transform: scale(1);
 	&:hover{
+		transform: scale(1);
 			img{
 				transform: scale(1.12);
 			}
