@@ -57,16 +57,16 @@
 		@include media-breakpoint-up(sm) {
 
 			max-width: rem(640);
+			&--lg{
+			max-width: rem(1320);
+		
+		}
 		}
 		@include media-breakpoint-down(sm) {
 			position: static;
 		}
 	width: 100%;
 	position: relative;
-	&--lg{
-	max-width: rem(1320);
-
-}
 	@include media-breakpoint-up(lg){
 
 		border: 1px solid #D6E0EA; 
