@@ -545,7 +545,7 @@ function eventHandler() {
 	window.addEventListener('wheel', function (evt) {
 		let header = document.querySelector(".header");
 
-		if (evt.deltaY < 0) {
+		if (evt.deltaY < 0 && evt.deltaY < header.offsetHeight) {
 			// поймали
 			header.classList.add("show");
 		} else {
