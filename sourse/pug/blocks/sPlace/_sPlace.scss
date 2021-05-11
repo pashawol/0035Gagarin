@@ -1,26 +1,26 @@
 // start .sPlace
 .sPlace {
 	--img-ar: #{(384/540) * 100%};
-	--sPT: #{rem(80)};
-	--sPB: #{rem(80)};
-	--sTPB: #{rem(60)};
+	// --sPT: #{rem(80)};
+	// --sPB: #{rem(80)};
+	// --sTPB: #{rem(60)};
 	@include media-breakpoint-up(md){
 		--img-ar: #{(384/464) * 100%};
-		--sPT: #{rem(80)};
-		--sPB: #{rem(80)};
-		--sTPB: #{rem(60)};
+		// --sPT: #{rem(80)};
+		// --sPB: #{rem(80)};
+		// --sTPB: #{rem(60)};
 	}
 	@include media-breakpoint-up(xl){
 		--img-ar: #{(480/580) * 100%};
-		--sPT: #{rem(100)};
-		--sPB: #{rem(100)};
-		--sTPB: #{rem(80)};
+		// --sPT: #{rem(100)};
+		// --sPB: #{rem(100)};
+		// --sTPB: #{rem(80)};
 	}
 	@include media-breakpoint-up(xxl){
 		--img-ar: #{(480/648) * 100%};
-		--sPT: #{rem(92)};
-		--sPB: #{rem(90)};
-		--sTPB: #{rem(66)};
+		// --sPT: #{rem(92)};
+		// --sPB: #{rem(90)};
+		// --sTPB: #{rem(66)};
 	}
 
 	position: relative;

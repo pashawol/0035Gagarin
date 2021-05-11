@@ -1,26 +1,26 @@
 // start .sKiteStation
 .sKiteStation {
 	--img-ar: #{(384/540) * 100%};
-	--sPT: #{rem(80)};
-	--sPB: #{rem(80)};
-	--sTPB: #{rem(40)};
+	// --sPT: #{rem(80)};
+	// --sPB: #{rem(80)};
+	// --sTPB: #{rem(40)};
 	@include media-breakpoint-up(md){
 		--img-ar: #{(384/464) * 100%};
-		--sPT: #{rem(80)};
-		--sPB: #{rem(80)};
-		--sTPB: #{rem(40)};
+		// --sPT: #{rem(80)};
+		// --sPB: #{rem(80)};
+		// --sTPB: #{rem(40)};
 	}
 	@include media-breakpoint-up(xl){
 		--img-ar: #{(480/580) * 100%};
-		--sPT: #{rem(100)};
-		--sPB: #{rem(100)};
-		--sTPB: #{rem(40)};
+		// --sPT: #{rem(100)};
+		// --sPB: #{rem(100)};
+		// --sTPB: #{rem(40)};
 	}
 	@include media-breakpoint-up(xxl){
 		--img-ar: #{(480/648) * 100%};
-		--sPT: #{rem(92)};
-		--sPB: #{rem(86)};
-		--sTPB: #{rem(40)};
+		// --sPT: #{rem(92)};
+		// --sPB: #{rem(86)};
+		// --sTPB: #{rem(40)};
 	}
 
 		.swiper-slide {

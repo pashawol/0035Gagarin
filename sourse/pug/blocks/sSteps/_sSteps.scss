@@ -54,7 +54,15 @@
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
+	.swiper-wrapper {
+			@include media-breakpoint-up(sm) {
+			// margin-left: calc(var(--slideW) * 6 - 100vw);
+			// left: 10%;
+			transform: translateX(100px);
+			position: relative;
+			width: calc(var(--slideW) * 6);
+		}
+	}
 	@include media-breakpoint-between(md, xl) {}
 	@include media-breakpoint-only(xl) {}
 	@include media-breakpoint-down(xl) {}

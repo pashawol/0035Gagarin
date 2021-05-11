@@ -342,19 +342,17 @@ function eventHandler() {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev'
 		}
-	}));
+	})); // if (isMobile) {
 
-	if (isMobile) {
-		let caruselSlider = new Swiper('.carusel__slider--not-center-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
-			slidesPerView: 'auto',
-			loopedSlides: 6,
-			loop: false,
-			navigation: {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev'
-			}
-		}));
-	}
+	let caruselSlider = new Swiper('.carusel__slider--not-center-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		slidesPerView: 'auto',
+		loopedSlides: 6,
+		loop: false,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev'
+		}
+	})); // }
 
 	let sOffersSlider = new Swiper('.sOffers-slider-js', {
 		//...defaultSl,
@@ -442,9 +440,12 @@ function eventHandler() {
 	// we'd only like to use iScroll for mobile...
 
 	if (!isMobile) {
-		var wipeAnimation = new TimelineMax() // animate to second panel
+		let windowWidth = window.innerWidth;
+		let slideW = $("#sSteps  .swiper-wrapper").width();
+		let delta = slideW - windowWidth + 200;
+		var wipeAnimation = new TimelineMax() // 	// animate to second panel
 		.to("#sSteps  .swiper-wrapper", 1, {
-			x: "-100%",
+			x: -delta,
 			ease: Power0.easeNone
 		}); // create scene to pin and link animation
 

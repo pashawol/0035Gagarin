@@ -3,7 +3,7 @@
 	position: relative;
 	overflow: hidden;
 	--sPB: 0;
-	@include media-breakpoint-up(lg){
+	@include media-breakpoint-up(xxl){
 		--slidew: #{rem(648)};
 	}
 	

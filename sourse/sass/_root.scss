@@ -9,13 +9,16 @@
 	}
 	
 	@include media-breakpoint-between(xl, xxl) {
-		--sTPB: #{rem(20)};
+		--sTPB: #{rem(40)};
 
 	}
 
 	--sPT: #{rem(80)};
 	--sPB: #{rem(80)};
 	--sTPB: #{rem(50)};
+	@include media-breakpoint-up(sm) {
+		--slideW: #{rem(424)};
+	}
 	
 	@include media-breakpoint-up(xl) {
 		--header-height: #{rem(160)};

@@ -588,7 +588,7 @@ iframe {
 	}
 	&__slide {
 		@include media-breakpoint-up(sm) {
-			width: rem(424);
+			width: var(--slideW);
 			&.swiper-slide-active {
 				transform: translateY(calc(-1 * #{$grid-gutter-width}));
 			}

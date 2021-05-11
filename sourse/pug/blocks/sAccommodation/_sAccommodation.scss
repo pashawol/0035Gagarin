@@ -1,23 +1,23 @@
 // start .sAccommodation
 .sAccommodation {
-	--sPT: #{rem(80)};
-	--sPB: #{rem(80)};
-	--sTPB: #{rem(60)};
-	@include media-breakpoint-up(md){
-		--sPT: #{rem(80)};
-		--sPB: #{rem(80)};
-		--sTPB: #{rem(60)};
-	}
-	@include media-breakpoint-up(xl){
-		--sPT: #{rem(100)};
-		--sPB: #{rem(100)};
-		--sTPB: #{rem(80)};
-	}
-	@include media-breakpoint-up(xxl){
-		--sPT: #{rem(90)};
-		--sPB: #{rem(88)};
-		--sTPB: #{rem(23)};
-	}
+	// --sPT: #{rem(80)};
+	// --sPB: #{rem(80)};
+	// --sTPB: #{rem(60)};
+	// @include media-breakpoint-up(md){
+	// 	--sPT: #{rem(80)};
+	// 	--sPB: #{rem(80)};
+	// 	--sTPB: #{rem(60)};
+	// }
+	// @include media-breakpoint-up(xl){
+	// 	--sPT: #{rem(100)};
+	// 	--sPB: #{rem(100)};
+	// 	--sTPB: #{rem(80)};
+	// }
+	// @include media-breakpoint-up(xxl){
+	// 	--sPT: #{rem(90)};
+	// 	--sPB: #{rem(88)};
+	// 	--sTPB: #{rem(23)};
+	// }
 
 	background-color: $light;
 	position: relative;

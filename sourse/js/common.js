@@ -356,7 +356,7 @@ function eventHandler() {
 			prevEl: '.swiper-button-prev',
 		},
 	});
-	if (isMobile) {
+	// if (isMobile) {
 
 		let caruselSlider = new Swiper('.carusel__slider--not-center-js', {
 			...defaultSl,
@@ -368,7 +368,7 @@ function eventHandler() {
 				prevEl: '.swiper-button-prev',
 			},
 		});
-	}
+	// }
 
 	let sOffersSlider = new Swiper('.sOffers-slider-js', {
 		//...defaultSl,
@@ -468,11 +468,14 @@ function eventHandler() {
 
 	// we'd only like to use iScroll for mobile...
 	if (!isMobile) {
-
+		let windowWidth = window.innerWidth;
+		let slideW = $("#sSteps  .swiper-wrapper").width();
+		let delta = slideW - windowWidth + 200;
+		
 		var wipeAnimation = new TimelineMax()
-			// animate to second panel
+		// 	// animate to second panel
 
-			.to("#sSteps  .swiper-wrapper", 1, { x: "-100%", ease: Power0.easeNone})
+			.to("#sSteps  .swiper-wrapper", 1, { x: -delta, ease: Power0.easeNone})
 
 		// create scene to pin and link animation
 		new ScrollMagic.Scene({
@@ -485,6 +488,8 @@ function eventHandler() {
 			// .addIndicators() // add indicators (requires plugin)
 			.addTo(controller);
 
+
+			
 	};
 
 
