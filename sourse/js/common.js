@@ -610,17 +610,24 @@ function eventHandler() {
 		$('html, body').animate({ scrollTop: position + 1 }, 0);
 	})
  
-	var prevScrollpos = window.pageYOffset;
-	window.addEventListener('wheel', function (evt) {
-		var currentScrollPos = window.pageYOffset;
-		var header = document.querySelector('.header');
-		if ((evt.deltaY) < 0 && prevScrollpos > currentScrollPos || currentScrollPos < header.offsetHeight  / 2) { header.classList.add("show") 
-		} else {
-			header.classList.remove("show")
-		} 
-			prevScrollpos = currentScrollPos; 
-	});
 
+
+	window.addEventListener('scroll', function (e) {
+		let el = document.querySelector('.header');
+		if (!el) return;
+		const
+			oldScroll = this.oldScroll || 0,
+			newScroll = this.scrollY,
+			height = el.innerHeight,
+			// isScrollDown = newScroll > oldScroll,
+			isScrollUp = newScroll < oldScroll && newScroll > 0,
+			isScrollDown = newScroll > 0;
+
+		el.classList.toggle('show', isScrollUp);
+		// el.classList.toggle('scroll-down', isScrollDown);
+
+		this.oldScroll = newScroll;
+	});
 	// let top = pageYOffset;
 	// window.addEventListener('wheel', function (evt) {
 	// 	let header = document.querySelector(".header");
