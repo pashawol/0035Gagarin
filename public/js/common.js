@@ -561,6 +561,8 @@ function eventHandler() {
 		el.classList.toggle('show', isScrollUp); // el.classList.toggle('scroll-down', isScrollDown);
 
 		this.oldScroll = newScroll;
+	}, {
+		passive: true
 	}); // let top = pageYOffset;
 	// window.addEventListener('wheel', function (evt) {
 	// 	let header = document.querySelector(".header");
