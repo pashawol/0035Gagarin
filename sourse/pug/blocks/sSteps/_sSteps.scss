@@ -2,6 +2,7 @@
 .sSteps {
 	background: #F6F8FB;
 	position: relative;
+	overflow: hidden;
 	
 		// --sPT: ;
 		// --sPB: ;
@@ -36,7 +37,7 @@
 	.swiper-button-hand{
 		@include media-breakpoint-up(sm) {
 			
-		}
+		} 
 		position: absolute;
 		top: 50%;
 		transform: translateY(calc(-1 * var(--swiperArrowSize) / 2));

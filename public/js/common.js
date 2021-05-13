@@ -248,40 +248,22 @@ function eventHandler() {
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
 	JSCCommon.heightwindow();
-	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile(); 
-
-	var x = window.location.host;
-	let screenName;
-	screenName = document.body.dataset.bg;
-
-	if (screenName && x.includes("localhost:30")) {
-		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
-	} // function setFixedNav() {
-	// 	let topNav = document.querySelector('.top-nav  ');
-	// 	if (!topNav) return;
-	// 	window.scrollY > 0
-	// 		? topNav.classList.add('fixed')
-	// 		: topNav.classList.remove('fixed');
-	// }
-	// function whenResize() {
-	// 	setFixedNav();
-	// }
-	// window.addEventListener('scroll', () => {
-	// 	setFixedNav();
-	// }, { passive: true })
-	// window.addEventListener('resize', () => {
-	// 	whenResize();
-	// }, { passive: true });
-	// whenResize();
-
-
+	JSCCommon.animateScroll();
 	let defaultSl = {
 		spaceBetween: 0,
 		lazy: {
 			loadPrevNext: true
 		},
 		watchOverflow: true,
-		loop: true
+		loop: true,
+		pagination: {
+			el: ' .swiper-pagination',
+			type: 'bullets',
+			clickable: true // renderBullet: function (index, className) {
+			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+			// }
+
+		}
 	};
 	const swiper4 = new Swiper('.sBanners__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		slidesPerView: 'auto',
@@ -329,6 +311,14 @@ function eventHandler() {
 		navigation: {
 			nextEl: '.sBlog .swiper-button-next',
 			prevEl: '.sBlog .swiper-button-prev'
+		},
+		pagination: {
+			el: ' .swiper-pagination',
+			type: 'bullets',
+			clickable: true // renderBullet: function (index, className) {
+			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+			// }
+
 		}
 	});
 	let caruselSliderCenter = new Swiper('.carusel__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
@@ -369,6 +359,14 @@ function eventHandler() {
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev'
+		},
+		pagination: {
+			el: ' .swiper-pagination',
+			type: 'bullets',
+			clickable: true // renderBullet: function (index, className) {
+			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+			// }
+
 		}
 	}); //
 
@@ -379,6 +377,14 @@ function eventHandler() {
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev'
+		},
+		pagination: {
+			el: ' .swiper-pagination',
+			type: 'bullets',
+			clickable: true // renderBullet: function (index, className) {
+			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+			// }
+
 		}
 	}); //end luckyone js
 
@@ -412,11 +418,11 @@ function eventHandler() {
 			duration: 1000
 		}).setPin("".concat(parent, " ").concat(text)).setTween(tween) // .addIndicators() // add indicators (requires plugin)
 		.addTo(controller);
-	}
+	} // animateText('#text-id-1', '#block-id-1', "-=100%", "2000");
+	// animateText('#text-id-2', '#block-id-2', "-=100%", "2000");
+	// animateText('#text-id-3', '#block-id-3', "-=50%");
 
-	animateText('#text-id-1', '#block-id-1', "-=100%", "2000");
-	animateText('#text-id-2', '#block-id-2', "-=100%", "2000");
-	animateText('#text-id-3', '#block-id-3', "-=50%");
+
 	animateText('.text', '#sSteps', "-=100%", 2000);
 	animateText('.text', '#sRews');
 	animateText('.bg-txt', '#sKiteStation');
@@ -543,18 +549,37 @@ function eventHandler() {
 			scrollTop: position + 1
 		}, 0);
 	});
+	var prevScrollpos = window.pageYOffset;
 	window.addEventListener('wheel', function (evt) {
-		let header = document.querySelector(".header");
+		var currentScrollPos = window.pageYOffset;
+		var header = document.querySelector('.header');
 
-		if (evt.deltaY < 0 && evt.deltaY < header.offsetHeight) {
-			// поймали
+		if (evt.deltaY < 0 && prevScrollpos > currentScrollPos || currentScrollPos < header.offsetHeight / 2) {
 			header.classList.add("show");
 		} else {
-			if (header.classList.contains("show")) {
-				header.classList.remove("show");
-			}
+			header.classList.remove("show");
 		}
-	});
+
+		prevScrollpos = currentScrollPos;
+	}); // let top = pageYOffset;
+	// window.addEventListener('wheel', function (evt) {
+	// 	let header = document.querySelector(".header");
+	// 	console.log(pageYOffset);
+	// 	// console.log(pageYOffset);
+	// 	console.log(top);
+	// 	if ((evt.deltaY) < 0  || pageYOffset <= header.offsetHeight / 2 ) {
+	// 		top = (top - pageYOffset) / pageYOffset - 100;
+	// 		// поймали
+	// 		header.classList.add("show")
+	// 		// top = pageYOffset;
+	// 	}
+	// 	else {
+	// 		// if (header.classList.contains("show")) {
+	// 			// top = $(window).scrollTop();
+	// 			header.classList.remove("show")
+	// 			// }
+	// 		}
+	// });
 }
 
 ;

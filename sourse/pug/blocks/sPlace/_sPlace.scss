@@ -111,6 +111,13 @@
 			right: rem(24);
 		}
 	}
+		.swiper-pagination{
+		position: absolute;
+		bottom: 10px;
+		width: 100%;
+		left: 0;
+	}
+
 	//
 	&__img{
 		@extend .accept-ratio-frame-nh;

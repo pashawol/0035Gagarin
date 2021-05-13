@@ -25,6 +25,7 @@ mixin sShop(data)
 					.swiper-wrapper
 						- for(var i = 0; i < 4; i++)
 							+sShopSlide()
+					.swiper-pagination.d-sm-none
 					+e.arrow-cont.d-sm-none
 						+arrow()
 			+e.btn-cont.text-center(class="wow  animate__fadeIn  " )

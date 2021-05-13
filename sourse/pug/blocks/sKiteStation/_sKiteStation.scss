@@ -23,6 +23,13 @@
 		// --sTPB: #{rem(40)};
 	}
 
+
+		.swiper-pagination{
+		position: absolute;
+		bottom: 10px;
+		width: 100%;
+		left: 0;
+	}
 		.swiper-slide {
 			img{
 			@include mt(.6s);

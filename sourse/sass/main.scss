@@ -2,7 +2,7 @@ $output-bourbon-deprecation-warnings: false;
 // @import "mq";
 @import "bourbon/app/assets/stylesheets/bourbon";
 // @import "../../node_modules/rfs/scss";
-@import "./node_modules/swiper/swiper.scss";
+@import "./node_modules/swiper/swiper";
 
 @import "mixin";
 @import "fonts";

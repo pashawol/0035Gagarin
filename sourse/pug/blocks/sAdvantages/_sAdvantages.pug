@@ -7,7 +7,9 @@ mixin sAdvantages(data)
 		.container-fluid.px-0
 			mixin item(i, t, id)
 				+e.item.row.gx-0(class="wow  animate__fadeIn  " id=`block-id-${i}`)
-					+e.before.d-none.d-md-block(data-title= t id=`text-id-${i}`)
+				
+					+e.before.d-none.d-md-block 
+						img(src=`img/svg/adv-text-${i}.svg`, alt="")
 					.col-md-6
 						+e.img-wrap.bg-wrap
 							+pic(`advanteges-${i}.jpg`,'bg').picture-bg
