@@ -1,8 +1,9 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock(class="wow  animate__fadeIn  " )&attributes(attributes)
-		video#bgvid.fillItUp.video(playsinline='playsinline' autoplay='autoplay' muted='muted' loop='loop')
-			source(src='video.mp4' type='video/mp4' loading='lazy')
+		video#bgvid.fillItUp.video(playsinline='playsinline' poster="img/@2x/poster.jpg" autoplay='autoplay' muted='muted' loop='loop')
+			
+			source(src='gagarin_short.mp4' type='video/mp4' loading='lazy')
 
 		.container
 			+e.top-text Сезон 2021&nbsp;&mdash; с&nbsp;1&nbsp;мая по&nbsp;31&nbsp;октября
