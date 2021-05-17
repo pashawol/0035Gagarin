@@ -11,7 +11,8 @@
 		width: 160% !important;
 		height: 160% !important;
 		z-index: -1;
-		// object-fit: cover;
+		object-fit: cover;
+		
 	}
 	min-height: 100vh;
 	min-height: calc(var(--vh, 1vh) * 100 - var(--header-height));
