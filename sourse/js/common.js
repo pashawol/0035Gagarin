@@ -617,14 +617,13 @@ function eventHandler() {
 		if (!el) return;
 		const
 			oldScroll = this.oldScroll || 0,
-			newScroll = this.scrollY,
 			height = el.innerHeight,
-			// isScrollDown = newScroll > oldScroll,
-			isScrollUp = newScroll < oldScroll && newScroll > 0,
-			isScrollDown = newScroll > 0;
+			newScroll = this.scrollY,
+			isScrollDown = newScroll > oldScroll,
+			isScrollUp = newScroll <= oldScroll && newScroll > 0;
 
-		el.classList.toggle('show', isScrollUp);
-		// el.classList.toggle('scroll-down', isScrollDown);
+		el.classList.toggle('up', isScrollUp);
+		el.classList.toggle('scroll-down', isScrollDown);
 
 		this.oldScroll = newScroll;
 	}, { passive: true });
