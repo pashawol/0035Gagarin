@@ -617,10 +617,12 @@ function eventHandler() {
 		if (!el) return;
 		const
 			oldScroll = this.oldScroll || 0,
-			height = el.innerHeight,
+			height = el.offsetHeight,
 			newScroll = this.scrollY,
-			isScrollDown = newScroll > oldScroll,
-			isScrollUp = newScroll <= oldScroll && newScroll > 0;
+			isScrollDown = newScroll > oldScroll || newScroll > height,
+			// isScrollDown =   newScroll > height,
+			isScrollUp = newScroll <= oldScroll && newScroll > height;
+			// console.log(height);
 
 		el.classList.toggle('up', isScrollUp);
 		el.classList.toggle('scroll-down', isScrollDown);

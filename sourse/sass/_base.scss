@@ -100,7 +100,7 @@ body {
 	overflow: hidden;
 	position: relative;
 	width: 100%;
-	padding-top: var(--header-height);
+	
 }
 
 .section {
@@ -378,7 +378,9 @@ ul {
 	text-align: center;
 	position: relative;
 	z-index: 10;
-
+	@include media-breakpoint-down(sm) {
+		top: rem(35);
+	}
 	&-bullet {
 		display: inline-block;
 		opacity: 1;
