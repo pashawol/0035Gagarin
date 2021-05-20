@@ -1,7 +1,10 @@
 :root {
 	--animate-delay: 1.2s;
 	--fontSizeBase: #{$em-base};
+	@include media-breakpoint-only(xl){
+		// --fontSizeBase: 15.6px;
 
+	}
 	@include media-breakpoint-up(md) {
 		--sPT: #{rem(90)};
 		--sPB: #{rem(90)};

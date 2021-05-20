@@ -181,13 +181,11 @@
 			height: auto;
 			@include mt;
 
-			&:hover {
-				box-shadow: 0 rem(5) rem(15) rgba(45, 55, 65, 0.1);
-			}
+		
+			border-radius: 10px;
 			@include media-breakpoint-down(sm){
 				border: 1px solid $gray-100;
-				border-radius: 10px;
-				padding: rem(24);
+				
 				width: 100%;
 			}
 
@@ -211,16 +209,27 @@
 		min-height: 100%;
 		text-align: center;
 		color: $body-color;
-		
+			&:hover {
+				box-shadow: 0 rem(5) rem(15) rgba(45, 55, 65, 0.1);
+			}
 		@include media-breakpoint-up(sm){
 			background: $white;
 			border: 1px solid $gray-100;
 			border-radius: rem(10);
 		}
 
-		max-width: rem(288);
 		margin: 0 auto;
+			@include media-breakpoint-down(sm){
+				padding: rem(24);
+				> * {
+					margin-left: auto;
+					margin-right: auto;
+					max-width: rem(288);
+
+				}
+			}
 		@include media-breakpoint-up(sm){
+			max-width: rem(288);
 			max-width: 100%;
 			padding: rem(24);
 		}

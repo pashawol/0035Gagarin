@@ -1,6 +1,14 @@
+.sticky-spacer{
+	display: none !important;
+}
 .top-nav {
 	position: relative;
 	z-index: 2;
+	top: 0;
+	width: 100%;
+	left: 0;
+	position: absolute;
+	top: 100%;
 	background-color: #fff;
 		border-bottom: 1px solid #D6E0EA;
 

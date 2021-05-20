@@ -8,11 +8,11 @@
 			}
 		}
 		.header {
-			transform: translateY(0);
-			&.scroll-down {
-			transform: translateY(-100%);
-			// @include mt;
-		}
+		// 	transform: translateY(0);
+		// 	&.scroll-down {
+		// 	transform: translateY(-100%);
+		// 	// @include mt;
+		// }
 	// @include mt;
 	background-color: #fff;
 	transition: opacity .3s;
@@ -36,6 +36,9 @@
 		width: 100%;
 		left: 0;
 		top: 0;
+		@include media-breakpoint-up(lg) {
+			position: absolute;
+		}
 		position: fixed;
 		z-index: 200;
 	@include media-breakpoint-up(xl) {}

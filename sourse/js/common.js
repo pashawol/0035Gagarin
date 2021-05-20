@@ -610,25 +610,27 @@ function eventHandler() {
 		$('html, body').animate({ scrollTop: position + 1 }, 0);
 	})
  
+	var Sticky = new hcSticky('.top-nav', {
+		stickTo: '.main-wrapper'
+	});
 
+	// window.addEventListener('scroll', function (e) {
+	// 	let el = document.querySelector('.header');
+	// 	if (!el) return;
+	// 	const
+	// 		oldScroll = this.oldScroll || 0,
+	// 		height = el.offsetHeight,
+	// 		newScroll = this.scrollY,
+	// 		isScrollDown = newScroll > oldScroll && newScroll > height,
+	// 		// isScrollDown =   newScroll > height,
+	// 		isScrollUp = newScroll <= oldScroll && newScroll > height;
+	// 		// console.log(height);
 
-	window.addEventListener('scroll', function (e) {
-		let el = document.querySelector('.header');
-		if (!el) return;
-		const
-			oldScroll = this.oldScroll || 0,
-			height = el.offsetHeight,
-			newScroll = this.scrollY,
-			isScrollDown = newScroll > oldScroll && newScroll > height,
-			// isScrollDown =   newScroll > height,
-			isScrollUp = newScroll <= oldScroll && newScroll > height;
-			// console.log(height);
+	// 	el.classList.toggle('up', isScrollUp);
+	// 	el.classList.toggle('scroll-down', isScrollDown);
 
-		el.classList.toggle('up', isScrollUp);
-		el.classList.toggle('scroll-down', isScrollDown);
-
-		this.oldScroll = newScroll;
-	}, { passive: true });
+	// 	this.oldScroll = newScroll;
+	// }, { passive: true });
 	// let top = pageYOffset;
 	// window.addEventListener('wheel', function (evt) {
 	// 	let header = document.querySelector(".header");

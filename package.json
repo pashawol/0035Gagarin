@@ -59,6 +59,7 @@
     "animate.css": "^4.1.1",
     "daterangepicker": "^3.1.0",
     "gsap": "^3.6.1",
+    "hc-sticky": "^2.2.6",
     "inputmask": "^5.0.5",
     "jquery": "^3.5.1",
     "loading-attribute-polyfill": "^1.5.4",

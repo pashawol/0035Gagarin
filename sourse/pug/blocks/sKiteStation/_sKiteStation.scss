@@ -26,7 +26,11 @@
 
 		.swiper-pagination{
 		position: absolute;
-		bottom: 10px;
+	
+		top: auto;
+			@include media-breakpoint-up(sm){
+
+			}
 		width: 100%;
 		left: 0;
 	}
@@ -152,3 +156,11 @@
 	&__{}
 	&__{}
 } // end.sKiteStation
+
+
+.sPlace__slider-wrap{
+	.swiper-pagination{
+		top: auto;
+			bottom: 10px;
+	}
+}

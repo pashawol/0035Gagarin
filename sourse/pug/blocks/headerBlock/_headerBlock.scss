@@ -16,6 +16,9 @@
 	}
 	min-height: 100vh;
 	padding-top: calc(var(--header-height) + var(--sPT));
+	@include media-breakpoint-only(xl){
+		--sPT: 40px;
+	}
 	min-height: calc(var(--vh, 1vh) * 100 );
 	text-align: center;
 	color: #fff;
@@ -48,11 +51,19 @@
 		position: relative;
 		font-weight: 600;
 		@include rfs(20px);
+			@include media-breakpoint-only(xl){
+
+				margin-bottom: rem(20);
+			}
 		margin-bottom: rem(30);
 		&::after{
 			content: url(../img/@2x/datu-white.png);
 			display: block;
 			text-align: center;
+				@include media-breakpoint-only(xl){
+
+					margin-top: rem(20);
+				}
 			margin-top: rem(30);
 		}
 	}
@@ -128,6 +139,11 @@
 
 	
 
+	@include media-breakpoint-only(xl) {
+		h1{
+			font-size: calc(1.6875rem + 3vw);
+		}
+	}
 	@include media-breakpoint-up(lg) {}
 
 	@include media-breakpoint-up(md) {}
