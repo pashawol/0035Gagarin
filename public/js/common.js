@@ -555,7 +555,7 @@ function eventHandler() {
 		const oldScroll = this.oldScroll || 0,
 					height = el.offsetHeight,
 					newScroll = this.scrollY,
-					isScrollDown = newScroll > oldScroll || newScroll > height,
+					isScrollDown = newScroll > oldScroll && newScroll > height,
 					// isScrollDown =   newScroll > height,
 		isScrollUp = newScroll <= oldScroll && newScroll > height; // console.log(height);
 
