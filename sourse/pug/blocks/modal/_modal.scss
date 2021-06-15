@@ -48,6 +48,12 @@
 .fancybox-button {
 }
 .modal-win {
+
+	.swiper-pagination{
+		position: absolute;
+		bottom: 20px;
+		top: auto;
+	}
 	// display: block;
 		@include media-breakpoint-down(sm) {
 			padding-left: rem(18);

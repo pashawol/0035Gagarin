@@ -387,10 +387,11 @@ function eventHandler() {
 
 	//
 	let sPlaceSlider = new Swiper('.sPlace-slider-js', {
-		slidesPerView: 'auto',
+		slidesPerView: 1,
 		spaceBetween: 10,
 		loop: true,
-
+		observer: true,
+		observeParents: true,
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
