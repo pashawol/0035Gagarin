@@ -32,6 +32,11 @@ mixin footer()
             +e.img
               img(loading="lazy" src='img/svg/email.svg' alt="")
             +e.l-txt GagarinKite@gmail.com
+        .text-center.col-12.pt-4
+          +e.development.d-block
+              span.gray  Основной сайт - 
+              | 
+              a.black(href='https://gagarinkite.com/' target="_blank") GagarinKite.com
       +e.lowest-row.row.align-items-center(class="wow  animate__fadeIn  " )
         .col-6.col-md
           +e.policy(href="#") Политика конфиденциальности
